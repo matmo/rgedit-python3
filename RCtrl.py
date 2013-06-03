@@ -269,7 +269,7 @@ class RGeditTerminal(Gtk.HBox):
         
         message_file = open(self._plugin.get_data_dir()+"/messages_and_warnings.txt","r")
         if not message_file:
-            print _("Error reading the messages and warnings file\n")
+            print("Error reading the messages and warnings file\n")
             return
             
         vte.feed_child( _("\n"), -1 )
@@ -772,7 +772,7 @@ class RGeditTerminal(Gtk.HBox):
         # Kill the shell process with the given PID
         #return # Not really working...
         if PID > 0:
-            print "Kill " + str(PID)
+            print("Kill " + str(PID))
             os.kill(PID,signal.SIGHUP)
 
     def on_vte2_exited(self,event):
@@ -1092,7 +1092,7 @@ class RGeditTerminal(Gtk.HBox):
     def change_vte_R_working_dir_to_the_document(self,vte,vte_num):
         # Change the given vte's R's working folder to the current document's:
         if not self._plugin.window:
-            #print _("Cannot get current window")
+            #print("Cannot get current window")
             return
             
         doc = self._plugin.window.get_active_document()
@@ -1111,7 +1111,7 @@ class RGeditTerminal(Gtk.HBox):
     def change_R_working_dir_to_the_document(self):
          # Change R's working folder to the current document's:
         if not self._plugin.window:
-            #print _("Cannot get current window")
+            #print("Cannot get current window")
             return
             
         doc = self._plugin.window.get_active_document()
@@ -1449,7 +1449,7 @@ class RStructurePanel:
 # Send given text to R
 def do_send_to_R( text_to_send, R_widget, as_source, max_lines_direct_send=50 ):
     if not R_widget:
-        print _("No R console open?")
+        print("No R console open?")
         return
         
     #print R_widget._plugin.prefs['echo_commands']
@@ -2755,7 +2755,7 @@ class RCtrlWindowHelper(GObject.Object):
                 found = True
                 break
         if not found:
-            print _("Something fishy: cannot find the wizard with description \"") + data + "\"..."
+            print("Something fishy: cannot find the wizard with description \"") + data + "\"..."
             
     def on_about_rwizards(self,widget,icon):
         # Get the current version of the official wizards pack:
@@ -3157,7 +3157,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
                     self.prefs[i] = saved_prefs[i]
             #close(pref_file)
         except: # (pickle.PickleError, pickle.PicklingError, pickle.UnpicklingError):
-            print _("Cannot load saved rgedit prefs: using the defaults!")
+            print("Cannot load saved rgedit prefs: using the defaults!")
             pass
             
         # Checks:
@@ -3216,17 +3216,17 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
                 def_prof = p
                 no_def_prof = no_def_prof + 1
         if no_def_prof == 0:
-            print "Profile management: there's no default profile!"
+            print("Profile management: there's no default profile!")
             return None
         elif no_def_prof > 1:
-            print "Profile management: there's more than one default profile!"
+            print("Profile management: there's more than one default profile!")
             return None
         return def_prof
         
     def set_default_profile(self,prof_name):
         # Set the default profile (if found) making sure all the others are reset:
         if self.get_profile(prof_name) == None:
-            print "Profile management: cannot find profile '" + str(prof_name) + "' to make default!"
+            print("Profile management: cannot find profile '" + str(prof_name) + "' to make default!")
             return False
         for p in self.prefs['profiles']:
             if p['name'] == prof_name:
@@ -3245,11 +3245,11 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
     def add_profile(self,profile):
         # Add a new profile (and check for conflicts):
         if len(profile) != 5:
-            print "Profile management: illegal profile '" + str(profile) + "'!"
+            print("Profile management: illegal profile '" + str(profile) + "'!")
             return False
         for p in self.prefs['profiles']:
             if p['name'] == profile['name']:
-                print "Profile management: duplicated profile '" + str(profile) + "'!"
+                print("Profile management: duplicated profile '" + str(profile) + "'!")
                 return False
         # Add it:
         self.prefs['profiles'] = self.prefs['profiles'] + [profile]
@@ -3276,7 +3276,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         else:
             profile = self.get_profile(profile_name)
         if profile is None:
-            print "Cannot retrieve profile '" + str(profile_name) + "'!"
+            print("Cannot retrieve profile '" + str(profile_name) + "'!")
             return None
         # Return the key:
         return profile[key]
@@ -3456,7 +3456,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
             pickle.dump(self.prefs,pref_file)
             pref_file.close()
         except:
-            print "Error saving preferences..."
+            print("Error saving preferences...")
             pass
         
 
@@ -4200,7 +4200,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         # The model behind the tree:
         model = tv.get_model()
         if model is None:
-            print "No model for profiles list!"
+            print("No model for profiles list!")
             return
         # Add a new row with default (build-in) values:
         default_profile = self.get_profile('built-in')
@@ -4227,12 +4227,12 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         # The model behind the tree:
         model = tv.get_model()
         if model is None:
-            print "No model for profiles list!"
+            print("No model for profiles list!")
             return
         # Get the current selection (if any):
         sel = tv.get_selection().get_selected()
         if sel[1] is None:
-            print "No selected profile: nothing to delete!"
+            print("No selected profile: nothing to delete!")
             return
         if model[sel[1]][1] == "built-in":
             question_dialog = Gtk.MessageDialog( None, Gtk.DialogFlags.MODAL, Gtk.MessageType.WARNING, Gtk.ButtonsType.OK, _("The built-in profile cannot be deleted!") )
@@ -4271,7 +4271,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         liststore, column = user_data
         #print liststore[path][1]
         if liststore[path][1] == "built-in":
-            print "Cannot edit built_in"
+            print("Cannot edit built_in")
             cell.stop_editing(True)
             return False
         return True
@@ -4304,7 +4304,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         # The model behind the tree:
         model = tv.get_model()
         if model is None:
-            print "No model for profiles list!"
+            print("No model for profiles list!")
             return False
 
         # Collect the profiles from the model, row by row, and do the sanity checks first:
@@ -4934,7 +4934,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         elif self.prefs['code_folding_block_preference'] == 'lowest_function':
             radio_PreferLowestFunctionRadio.set_active(True)
         else:
-            print "Unknown block preference option '" + str(self.prefs['code_folding_block_preference']) + "'!"
+            print("Unknown block preference option '" + str(self.prefs['code_folding_block_preference']) + "'!")
             radio_PreferHighestBlockRadio.set_active(True)
 
         CodeFoldingOptions_dialog = get_widget_from_ui_GtkBuilder_or_Glade(self.CodeFoldingOptions_ui,"CodeFoldingOptionsDialog")
@@ -5113,7 +5113,7 @@ class RWizard_Template:
         
     # Debug printing:
     def print_debug(self):
-        print "Template: " +  str(self.RawText)
+        print("Template: " +  str(self.RawText))
         
         
 # Class implementing a varibale within the block:
@@ -5145,13 +5145,13 @@ class RWizard_Variable:
         if xml_node.hasAttribute("name"):
             self.Name = xml_node.getAttribute("name")
         else:
-            print _("A variable must have a name!")
+            print("A variable must have a name!")
             return False
             
         if xml_node.hasAttribute("description"):
             self.Description = xml_node.getAttribute("description")
         else:
-            print _("A variable must have a description!")
+            print("A variable must have a description!")
             return False
             
         if xml_node.hasAttribute("required"):
@@ -5160,7 +5160,7 @@ class RWizard_Variable:
         if xml_node.hasAttribute("type"):
             self.Type = xml_node.getAttribute("type")
         else:
-            print _("A variable must have a type!")
+            print("A variable must have a type!")
             return False
             
         if xml_node.hasAttribute("default"):
@@ -5176,7 +5176,7 @@ class RWizard_Variable:
             # Try to get the values:
             values_nodes = xml_node.getElementsByTagName("value")
             if values_nodes == None and len(values_nodes) == 0:
-                print _("Variables of type \"list\" must have at least one value defined!")
+                print("Variables of type \"list\" must have at least one value defined!")
                 return False
             else:
                 # Get the values:
@@ -5184,12 +5184,12 @@ class RWizard_Variable:
                     if value_node.hasAttribute("name"):
                         self.ListValues = self.ListValues + [value_node.getAttribute("name")]
             if len(self.ListValues) == 0:
-                print _("Variables of type \"list\" must have at least one value defined!")
+                print("Variables of type \"list\" must have at least one value defined!")
         elif self.Type == "editablelist":
             # Try to get the values:
             values_nodes = xml_node.getElementsByTagName("value")
             if values_nodes == None and len(values_nodes) == 0:
-                print _("Variables of type \"editablelist\" must have at least one value defined!")
+                print("Variables of type \"editablelist\" must have at least one value defined!")
                 return False
             else:
                 # Get the values:
@@ -5197,15 +5197,15 @@ class RWizard_Variable:
                     if value_node.hasAttribute("name"):
                         self.ListValues = self.ListValues + [value_node.getAttribute("name")]
             if len(self.ListValues) == 0:
-                print _("Variables of type \"editablelist\" must have at least one value defined!")
+                print("Variables of type \"editablelist\" must have at least one value defined!")
             
         return True
         
     # Debug printing:
     def print_debug(self):
-        print "Variable: " +  str(self.Name) + " [" + str(self.Description) + " type=" + str(self.Type) + " default=" + str(self.Default) + "]"
+        print("Variable: " +  str(self.Name) + " [" + str(self.Description) + " type=" + str(self.Type) + " default=" + str(self.Default) + "]")
         if str(self.Type) == "list":
-            print "   Values: " + str(self.ListValues)
+            print("   Values: " + str(self.ListValues))
 
 # Class implementing a block within the vars:
 class RWizard_Block:
@@ -5235,7 +5235,7 @@ class RWizard_Block:
         # Parse the variables within this block:
         variables_node = xml_node.getElementsByTagName("variable")
         if variables_node == None or len(variables_node) == 0:
-            print "Blocks must have at least one variable!"
+            print("Blocks must have at least one variable!")
             return False
         for variable_node in variables_node:
             variable = RWizard_Variable()
@@ -5245,14 +5245,14 @@ class RWizard_Block:
                 self.Variables = self.Variables + [variable]
                 
         if len(self.Variables) == 0:
-            print _("There must be at least one variable defined for each block!")
+            print("There must be at least one variable defined for each block!")
             return False
         
         return True
         
     # Debug printing:
     def print_debug(self):
-        print "Block: " +  str(self.Title) + "[rselector=" + str(self.Rselector) + " layout=" + str(self.Layout) + "]"
+        print("Block: " +  str(self.Title) + "[rselector=" + str(self.Rselector) + " layout=" + str(self.Layout) + "]")
         for variable in self.Variables:
             variable.print_debug()
             
@@ -5514,7 +5514,7 @@ class RWizard_Block:
             
     def collect_data_for_variable(self,variable):
         if variable.GtkControl == None:
-            print _("Error: variable.GtkControl should have been defined!")
+            print("Error: variable.GtkControl should have been defined!")
             variable.Value = None
             variable.ValueDefined = False
             return
@@ -5580,7 +5580,7 @@ class RWizard:
         try:
             wizard_doc = minidom.parse( file_name )
         except:
-            print _("Error opening & parsing wizard file \"") + file_name + "\": ", sys.exc_info()[1]
+            print("Error opening & parsing wizard file \"") + file_name + "\": ", sys.exc_info()[1]
             question_dialog = Gtk.MessageDialog( None, Gtk.DialogFlags.MODAL, Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, _("Error opening & parsing wizard file \"") + file_name + "\":\n" + str(sys.exc_info()[1]) + _("\n\nRgedit plugin cannot continue! Please fix the problem...") )
             response = question_dialog.run()
             question_dialog.destroy()
@@ -5589,13 +5589,13 @@ class RWizard:
         # Proceed through the DOM and get the relevant stuff:
         root_node = wizard_doc.documentElement;
         if root_node.nodeName.lower() != 'rwizard':
-            print _("Error: rwizard xml expected, and instead got \"") + root_node.nodeName.lower() + "\"..."
+            print("Error: rwizard xml expected, and instead got \"") + root_node.nodeName.lower() + "\"..."
             wizard_doc.unlink()
             return False;
             
         # Get the name and description:
         if not root_node.hasAttribute("name"):
-            print _("Error: rwizard must have a name!")
+            print("Error: rwizard must have a name!")
             wizard_doc.unlink()
             return False;
         self.Name = root_node.getAttribute("name")
@@ -5633,7 +5633,7 @@ class RWizard:
             elif root_node.getAttribute("defaultbutton").lower() == "paste and run":
                 self.DefaultButton = 2
             else:
-                print _("Unknown value for the defaultbutton attribute :") + root_node.getAttribute("defaultbutton")
+                print("Unknown value for the defaultbutton attribute :") + root_node.getAttribute("defaultbutton")
 
         if root_node.hasAttribute("selectionas"):
             self.SelectionAs = root_node.getAttribute("selectionas")
@@ -5646,7 +5646,7 @@ class RWizard:
                     wizard_doc.unlink()
                     return False
             elif len(about_node) > 1:
-                print _("There must at most one \"about\" node inside a \"rwizard\"")
+                print("There must at most one \"about\" node inside a \"rwizard\"")
                 wizard_doc.unlink()
                 return False
             
@@ -5658,7 +5658,7 @@ class RWizard:
                     wizard_doc.unlink()
                     return False
             elif len(help_node) > 1:
-                print _("There must at most one \"help\" node inside a \"rwizard\"")
+                print("There must at most one \"help\" node inside a \"rwizard\"")
                 wizard_doc.unlink()
                 return False
             
@@ -5669,7 +5669,7 @@ class RWizard:
                 wizard_doc.unlink()
                 return False
         else:
-            print _("There must a single \"vars\" node inside a \"rwizard\"")
+            print("There must a single \"vars\" node inside a \"rwizard\"")
             wizard_doc.unlink()
             return False
             
@@ -5681,7 +5681,7 @@ class RWizard:
                     wizard_doc.unlink()
                     return False
             elif len(script_node) > 1:
-                print _("There must at most one \"script\" node inside a \"rwizard\"")
+                print("There must at most one \"script\" node inside a \"rwizard\"")
                 wizard_doc.unlink()
                 return False
             
@@ -5692,7 +5692,7 @@ class RWizard:
                 wizard_doc.unlink()
                 return False
         else:
-            print _("There must a single \"template\" node inside a \"rwizard\"")
+            print("There must a single \"template\" node inside a \"rwizard\"")
             wizard_doc.unlink()
             return False
             
@@ -5766,7 +5766,7 @@ class RWizard:
     
     def do_process_script(self,xml_node):
         # Process the script node:
-        print _("Processing script...")
+        print("Processing script...")
         return True
     
     def do_process_template(self,xml_node):
@@ -5778,7 +5778,7 @@ class RWizard:
     
     # Debug printing:
     def print_debug(self):
-        print "Wizard: " +  " " + str(self.Name) + " [" + str(self.Description) + "]" + ": " + str(self.ActualMenu) + " " + str(self.ActualIcon) + " " + str(self.ActualToolbar) + " " + str(self.ActualShortcut)
+        print("Wizard: " +  " " + str(self.Name) + " [" + str(self.Description) + "]" + ": " + str(self.ActualMenu) + " " + str(self.ActualIcon) + " " + str(self.ActualToolbar) + " " + str(self.ActualShortcut))
         for block in self.Blocks:
             block.print_debug()
         self.Template.print_debug()
@@ -5830,7 +5830,7 @@ class RWizard:
                     finished_OK = True
                     break
                 else:
-                    print _("Unknown block-level user action ") + user_action + "!"
+                    print("Unknown block-level user action ") + user_action + "!"
                     return
             
             if finished_OK or (len(self.Blocks) == 0):
@@ -6003,7 +6003,7 @@ class Userprefs_Item:
     
     # Debug printing:
     def print_debug(self):
-        print "Item: " +  " " + str(self.Rwizard) + " " + str(self.Menu) + " " + str(self.Icon) + " " + str(self.Toolbar) + " " + str(self.Shortcut)
+        print("Item: " +  " " + str(self.Rwizard) + " " + str(self.Menu) + " " + str(self.Icon) + " " + str(self.Toolbar) + " " + str(self.Shortcut))
         
 
 # This class implements the wizards manager:
@@ -6062,16 +6062,16 @@ class RWizardEngine:
         try:
             prefs_doc = minidom.parse( self.path + "userprefs.xml" )
         except Exception as inst:
-            print _("Error opening userprefs.xml!")
-            print type(inst)
-            print inst.args
-            print inst
+            print("Error opening userprefs.xml!")
+            print(type(inst))
+            print(inst.args)
+            print(inst)
             return False
             
         # Proceed through the DOM and get the relevant stuff:
         root_node = prefs_doc.documentElement;
         if root_node.nodeName.lower() != 'rwizardsuserprefs':
-            print _("Error: rwizardsuserprefs xml expected, and instead got \"") + root_node.nodeName.lower() + "\"..."
+            print("Error: rwizardsuserprefs xml expected, and instead got \"") + root_node.nodeName.lower() + "\"..."
             wizard_doc.unlink()
             return False;
             
@@ -6092,7 +6092,7 @@ class RWizardEngine:
                 prefs_doc.unlink()
                 return False
         else:
-            print _("There must a single \"prefs\" node inside a \"rwizardsuserprefs\"")
+            print("There must a single \"prefs\" node inside a \"rwizardsuserprefs\"")
             prefs_doc.unlink()
             return False
             
@@ -6158,7 +6158,7 @@ class RWizardEngine:
         
     # Debug printing:
     def print_debug(self):
-        print "RWizardEngine: " + " " + str(self.RootMenuEntry) + " " + str(self.ShowOnToolbar) + " " + str(self.ShortcutsActive)
+        print("RWizardEngine: " + " " + str(self.RootMenuEntry) + " " + str(self.ShowOnToolbar) + " " + str(self.ShortcutsActive))
         for item_info in self.userprefs:
             item_info.print_debug()
         for wizard in self.wizards:
@@ -6210,7 +6210,7 @@ class RCodeFolding:
             return False
             
         if not doc:
-            print _("Code folding: there must be a document for text to be (un)folded!")
+            print("Code folding: there must be a document for text to be (un)folded!")
             return False
             
         if not cur_pos_iterator:
@@ -6240,7 +6240,7 @@ class RCodeFolding:
             return False
             
         if not doc:
-            print _("Code folding: there must be a document for text to be (un)folded!")
+            print("Code folding: there must be a document for text to be (un)folded!")
             return False  
         return (len(doc.get_selection_bounds()) == 2)
         
@@ -6328,7 +6328,7 @@ class RCodeFolding:
             return
             
         if not doc or not view:
-            print _("Code folding: there must be a document and view for text to be (un)folded!")
+            print("Code folding: there must be a document and view for text to be (un)folded!")
             return
             
         if not cur_pos_iterator:
@@ -6359,7 +6359,7 @@ class RCodeFolding:
                 cur_line.forward_to_tag_toggle(self.folded_invisible_tag)
                 cur_line_end.forward_to_tag_toggle(self.folded_invisible_tag)
                 doc.remove_tag(self.folded_invisible_tag, cur_line, cur_line_end)
-                #print _("Code folding: removed one fold")
+                #print("Code folding: removed one fold")
             
                 # Consume the events, eisable tooltips and show the view:
                 while Gtk.events_pending():
@@ -6370,11 +6370,11 @@ class RCodeFolding:
                     view.props.has_tooltip = True
             except:
                 pass
-                print _("Could not unfold code on the current line...")
+                print("Could not unfold code on the current line...")
                 
             self.hide_folding_icon(doc,view,cur_line,cur_line_end)
         else:
-            print _("Is there a current line?...")
+            print("Is there a current line?...")
             
         
     # Unfold all folded code in this document:
@@ -6383,7 +6383,7 @@ class RCodeFolding:
         return
         
         if not doc or not view:
-            print _("Code folding: there must be a document and view for text to be (un)folded!")
+            print("Code folding: there must be a document and view for text to be (un)folded!")
             return
             
         # Make sure the folding tags are defined:
@@ -6422,7 +6422,7 @@ class RCodeFolding:
             return
             
         if not doc or not view:
-            print _("Code folding: there must be a document and view for text to be (un)folded!")
+            print("Code folding: there must be a document and view for text to be (un)folded!")
             return
             
         # Make sure the folding tags are defined:
@@ -6462,7 +6462,7 @@ class RCodeFolding:
                 # Gtk supports tooltips:
                 view.props.has_tooltip = True
         else:
-            print _("There's no selection to fold...")
+            print("There's no selection to fold...")
             
         
     # Fold the smallest containing block for the current line:
@@ -6474,7 +6474,7 @@ class RCodeFolding:
             return
             
         if not doc or not view:
-            print _("Code folding: there must be a document and view for text to be (un)folded!")
+            print("Code folding: there must be a document and view for text to be (un)folded!")
             return
             
         if not cur_pos_iterator:
@@ -6554,7 +6554,7 @@ class RCodeFolding:
                 blocks_for_heads[i] = (head.end(),block_end,block_type)
             else:
                 # What the heck is this?
-                print "Unexpected match: '" + head.group() + "'..."
+                print("Unexpected match: '" + head.group() + "'...")
             # Go to the next element in the list:
             i = i + 1
         
@@ -6693,7 +6693,7 @@ class RCodeFolding:
                 # Gtk supports tooltips:
                 view.props.has_tooltip = True
         else:
-            print _("There's no block to fold...")
+            print("There's no block to fold...")
             
     #def func(self, event, user_data):
     #    print "Got gdk event!"
@@ -6707,7 +6707,7 @@ class RCodeFolding:
         # Serach for the matching closed paranthesis of the open one at the param_start position:
         # Matching parantheses to consider: (), [] and {} and, of course, no comments # and strings "" or '':
         if whole_text[param_start] !="(":
-            print _("'Expecting (' but instead got '") + whole_text[param_start] + "'!"
+            print("'Expecting (' but instead got '") + whole_text[param_start] + "'!"
             return None
         # Initialize the counters for each type of thing (as a dictionary):
         counters = {'(':1,'[':0,'{':0,'#':0,'"':0,"'":0}
@@ -6771,7 +6771,7 @@ class RCodeFolding:
                 counters['['] -= 1
                 if counters['['] < 0:
                     # Oops!
-                    print "Error matching parantheses..."
+                    print("Error matching parantheses...")
                     return None
             elif cur_char == "{":
                 counters['{'] += 1
@@ -6779,7 +6779,7 @@ class RCodeFolding:
                 counters['{'] -= 1
                 if counters['{'] < 0:
                     # Oops!
-                    print "Error matching parantheses..."
+                    print("Error matching parantheses...")
                     return None
             
         return None
@@ -6840,7 +6840,7 @@ class RCodeFolding:
         # Serach for the matching closing block "}" of the open one at the block_start position:
         # Matching parantheses to consider: (), [] and {} and, of course, no comments # and strings "" or '':
         if whole_text[block_start] !="{":
-            print _("Expecting '{' but instead got '") + whole_text[param_start] + "'!"
+            print("Expecting '{' but instead got '") + whole_text[param_start] + "'!"
             return None
         # Initialize the counters for each type of thing (as a dictionary):
         counters = {'(':0,'[':0,'{':1,'#':0,'"':0,"'":0}
@@ -6929,7 +6929,7 @@ class RCodeFolding:
                 counters['['] -= 1
                 if counters['['] < 0:
                     # Oops!
-                    print "Error matching parantheses..."
+                    print("Error matching parantheses...")
                     return None
             elif cur_char == "(":
                 counters['('] += 1
@@ -6937,7 +6937,7 @@ class RCodeFolding:
                 counters['('] -= 1
                 if counters['('] < 0:
                     # Oops!
-                    print "Error matching parantheses..."
+                    print("Error matching parantheses...")
                     return None
             
         #print "Did not find '{' by the end of the file: " + str(counters)
@@ -7011,7 +7011,7 @@ class RCodeFolding:
             return
             
         if not doc or not view:
-            print _("Code folding: there must be a document and view for text to be (un)folded!")
+            print("Code folding: there must be a document and view for text to be (un)folded!")
             return
             
         if not cur_pos_iterator:
