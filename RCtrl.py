@@ -148,7 +148,7 @@ def create_UI_from_file_GtkBuilder_or_Glade(glade_file,gtkbuilder_file):
         # Using Glade:
         ui = Gtk.glade.XML(glade_file)
     return ui
-	
+    
 def get_widget_from_ui_GtkBuilder_or_Glade(ui,widget_name):
     if use_GtkBuilder_or_Glade():
         # Using GtkBuilder:
@@ -362,8 +362,8 @@ class RGeditTerminal(Gtk.HBox):
 
     def on_vte_key_press(self, term, event):
         if event.get_state() is None:
-			return False
-		
+            return False
+        
         modifiers = event.get_state() & Gtk.accelerator_get_default_mod_mask()
         key_name = Gdk.keyval_name(event.keyval)
         if key_name in ("v", "V") and modifiers == Gdk.ModifierType.CONTROL_MASK:
@@ -1078,13 +1078,13 @@ class RGeditTerminal(Gtk.HBox):
             # Assume R is working a ready:
             if self.vteTabs.get_current_page() == 0:
                 if not self.get_profile_attribute(1,'setwd') is None:
-					self._vte.feed_child((self.get_profile_attribute(1,'setwd') % ('"'+folder_name+'"')) + "\n", -1)
+                    self._vte.feed_child((self.get_profile_attribute(1,'setwd') % ('"'+folder_name+'"')) + "\n", -1)
             elif self.vteTabs.get_current_page() == self._vte2_page_number:
                 if not self.get_profile_attribute(2,'setwd') is None:
-					self._vte2.feed_child((self.get_profile_attribute(2,'setwd') % ('"'+folder_name+'"')) + "\n", -1)
+                    self._vte2.feed_child((self.get_profile_attribute(2,'setwd') % ('"'+folder_name+'"')) + "\n", -1)
             elif self.vteTabs.get_current_page() == self._vte3_page_number:
                 if not self.get_profile_attribute(3,'setwd') is None:
-					self._vte3.feed_child((self.get_profile_attribute(3,'setwd') % ('"'+folder_name+'"')) + "\n", -1)
+                    self._vte3.feed_child((self.get_profile_attribute(3,'setwd') % ('"'+folder_name+'"')) + "\n", -1)
             else:
                 print( _("Unknown R tab!") )
         folder_dialog.destroy()
@@ -1129,13 +1129,13 @@ class RGeditTerminal(Gtk.HBox):
         # Assume R is working and ready:
         if self.vteTabs.get_current_page() == 0:
             if not self.get_profile_attribute(1,'setwd') is None:
-				self._vte.feed_child((self.get_profile_attribute(1,'setwd') % ('"'+folder_name+'"')) + "\n", -1)
+                self._vte.feed_child((self.get_profile_attribute(1,'setwd') % ('"'+folder_name+'"')) + "\n", -1)
         elif self.vteTabs.get_current_page() == self._vte2_page_number:
             if not self.get_profile_attribute(2,'setwd') is None:
-				self._vte2.feed_child((self.get_profile_attribute(2,'setwd') % ('"'+folder_name+'"')) + "\n", -1)
+                self._vte2.feed_child((self.get_profile_attribute(2,'setwd') % ('"'+folder_name+'"')) + "\n", -1)
         elif self.vteTabs.get_current_page() == self._vte3_page_number:
             if not self.get_profile_attribute(3,'setwd') is None:
-				self._vte3.feed_child((self.get_profile_attribute(3,'setwd') % ('"'+folder_name+'"')) + "\n", -1)
+                self._vte3.feed_child((self.get_profile_attribute(3,'setwd') % ('"'+folder_name+'"')) + "\n", -1)
         else:
             print( "Unknown R tab!" )
         
@@ -1144,13 +1144,13 @@ class RGeditTerminal(Gtk.HBox):
 
         doc = self._plugin.window.get_active_document()
         if doc:
-		    folder_name = doc.get_uri_for_display()
-		    if folder_name:
-		        folder_name = os.path.dirname(folder_name)
-		    else:
-				folder_name = None
+            folder_name = doc.get_uri_for_display()
+            if folder_name:
+                folder_name = os.path.dirname(folder_name)
+            else:
+                folder_name = None
         else:
-		    folder_name = None
+            folder_name = None
 
         if folder_name:
             file_dialog.set_current_folder(folder_name)
@@ -1177,13 +1177,13 @@ class RGeditTerminal(Gtk.HBox):
         
         doc = self._plugin.window.get_active_document()
         if doc:
-		    folder_name = doc.get_uri_for_display()
-		    if folder_name:
-		        folder_name = os.path.dirname(folder_name)
-		    else:
-				folder_name = None
+            folder_name = doc.get_uri_for_display()
+            if folder_name:
+                folder_name = os.path.dirname(folder_name)
+            else:
+                folder_name = None
         else:
-		    folder_name = None
+            folder_name = None
 
         if folder_name:
             file_dialog.set_current_folder(folder_name)
@@ -1464,7 +1464,7 @@ def do_send_to_R( text_to_send, R_widget, as_source, max_lines_direct_send=50 ):
     else:
         print( _("Unknown R tab!") )
     if cur_tab > 0 and (R_widget.get_profile_attribute(cur_tab,'source-cmd') != None) and (R_widget.get_profile_attribute(cur_tab,'local') == True):
-	    can_use_source = True
+        can_use_source = True
         
     if (as_source or (text_to_send.count("\n") > max_lines_direct_send)) and can_use_source:
         # Write the text to a temp file and call source():
@@ -1486,10 +1486,10 @@ def is_empty_comment_line( line ):
 
 class RCtrlWindowHelper(GObject.Object):
     __gtype_name__ = "RCtrlWindowHelper"
-	
+    
     def __init__(self, plugin, window):
         GObject.Object.__init__(self)
-		
+        
         self._window = window
         self._plugin = plugin
         self.datadir = plugin.get_data_dir();
@@ -1969,29 +1969,29 @@ class RCtrlWindowHelper(GObject.Object):
         # Create the profiles menu:
         profiles = self._plugin.prefs['profiles']
         if not profiles == None:
-			default_icon = Gtk.Image()
-			#default_icon.set_from_stock(Gtk.STOCK_APPLY,24)
-			pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(self.datadir+"/default_profile.png" , 24, 24)
-			default_icon.set_from_pixbuf(pixbuf)
-			default_icon.show()
-			RCtrlNewTab_menu = Gtk.Menu()
-			for profile in profiles:
-				#menu_text = profile[0] + (""," [default]")[profile[3]]
-				filem = Gtk.ImageMenuItem(profile['name'])
-				if profile['default']:
-					filem.set_image(default_icon)
-				filem.connect("activate", self.on_create_new_R_tab, profile['name'])
-				filem.connect("select", self.profiles_menu_select, profile)
-				filem.connect("deselect", self.profiles_menu_select, None)
-				RCtrlNewTab_menu.append(filem)
-				filem.show()
-			RCtrlNewTab_menu.show()
-			RCtrlNewTab_toolarrow.set_menu(RCtrlNewTab_menu)
-			RCtrlNewTab_toolarrow.set_arrow_tooltip_text('Chose a profile for the new tab')
-			RCtrlNewTab_toolarrow.connect("clicked", self.on_create_new_R_tab)
+            default_icon = Gtk.Image()
+            #default_icon.set_from_stock(Gtk.STOCK_APPLY,24)
+            pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(self.datadir+"/default_profile.png" , 24, 24)
+            default_icon.set_from_pixbuf(pixbuf)
+            default_icon.show()
+            RCtrlNewTab_menu = Gtk.Menu()
+            for profile in profiles:
+                #menu_text = profile[0] + (""," [default]")[profile[3]]
+                filem = Gtk.ImageMenuItem(profile['name'])
+                if profile['default']:
+                    filem.set_image(default_icon)
+                filem.connect("activate", self.on_create_new_R_tab, profile['name'])
+                filem.connect("select", self.profiles_menu_select, profile)
+                filem.connect("deselect", self.profiles_menu_select, None)
+                RCtrlNewTab_menu.append(filem)
+                filem.show()
+            RCtrlNewTab_menu.show()
+            RCtrlNewTab_toolarrow.set_menu(RCtrlNewTab_menu)
+            RCtrlNewTab_toolarrow.set_arrow_tooltip_text('Chose a profile for the new tab')
+            RCtrlNewTab_toolarrow.connect("clicked", self.on_create_new_R_tab)
         if use_GtkBuilder_or_Glade():
             # Gtk supports tooltips:
-		    RCtrlNewTab_toolarrow.set_tooltip_text(_("Use the default profile (max 3 tabs allowed)..."))
+            RCtrlNewTab_toolarrow.set_tooltip_text(_("Use the default profile (max 3 tabs allowed)..."))
         toolbar = manager.get_widget('/ToolBar')
         insert_position = toolbar.get_item_index(manager.get_widget("/ToolBar/RCtrlBlock2Def"))
         if update_menus is True:
@@ -2028,34 +2028,34 @@ class RCtrlWindowHelper(GObject.Object):
         # Create the profiles menu:
         profiles = self._plugin.prefs['profiles']
         if not profiles == None:
-			default_icon = Gtk.Image()
-			#default_icon.set_from_stock(Gtk.STOCK_APPLY,24)
-			pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(self.datadir+"/default_profile.png" , 24, 24)
-			default_icon.set_from_pixbuf(pixbuf)
-			default_icon.show()
-			RCtrlNewTab_menu = Gtk.Menu()
-			for profile in profiles:
-				#menu_text = profile[0] + (""," [default]")[profile[3]]
-				filem = Gtk.ImageMenuItem(profile['name'])
-				if profile['default']:
-					filem.set_image(default_icon)
-				filem.connect("activate", self.on_create_new_R_tab, profile['name'])
-				filem.connect("select", self.profiles_menu_select, profile)
-				filem.connect("deselect", self.profiles_menu_select, None)
-				NewTabSubmenu.append(filem)
-				filem.show()
+            default_icon = Gtk.Image()
+            #default_icon.set_from_stock(Gtk.STOCK_APPLY,24)
+            pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(self.datadir+"/default_profile.png" , 24, 24)
+            default_icon.set_from_pixbuf(pixbuf)
+            default_icon.show()
+            RCtrlNewTab_menu = Gtk.Menu()
+            for profile in profiles:
+                #menu_text = profile[0] + (""," [default]")[profile[3]]
+                filem = Gtk.ImageMenuItem(profile['name'])
+                if profile['default']:
+                    filem.set_image(default_icon)
+                filem.connect("activate", self.on_create_new_R_tab, profile['name'])
+                filem.connect("select", self.profiles_menu_select, profile)
+                filem.connect("deselect", self.profiles_menu_select, None)
+                NewTabSubmenu.append(filem)
+                filem.show()
 
         NewTabMenu.set_submenu(NewTabSubmenu)
 
 
     def profiles_menu_select(self, action, profile=None ):
-	    # print infor to the statusbar:
-	    statusbar = self._window.get_statusbar()
-	    context = 3425 # my statusbar unique context id
-	    if profile == None:
-			statusbar.push(context, "")
-	    else:
-			statusbar.push(context, profile['name'] + ': ' + profile['cmd'] + (' [remote',' [local')[profile['local']] + (']',', default]')[profile['default']])
+        # print infor to the statusbar:
+        statusbar = self._window.get_statusbar()
+        context = 3425 # my statusbar unique context id
+        if profile == None:
+            statusbar.push(context, "")
+        else:
+            statusbar.push(context, profile['name'] + ': ' + profile['cmd'] + (' [remote',' [local')[profile['local']] + (']',', default]')[profile['default']])
 
 
     # Menu activate handlers
@@ -2409,7 +2409,7 @@ class RCtrlWindowHelper(GObject.Object):
             response = question_dialog.run()
             question_dialog.destroy()
             return
-			       
+                   
         # Present the user with the libraries to load:
         model = Gtk.ListStore(bool,str)
         tv = Gtk.TreeView(model)
@@ -2461,7 +2461,7 @@ class RCtrlWindowHelper(GObject.Object):
             for i in model:
                 libraries_to_load += i[0]
                 
-            if libraries_to_load > 0:		
+            if libraries_to_load > 0:        
                 do_send_to_R( "# Loading "+str(libraries_to_load)+" of script's libraries...\n", self.R_widget, False, self._plugin.prefs['max_lines_as_text'] )
                 for i in model:
                     if i[0] == True:
@@ -2469,7 +2469,7 @@ class RCtrlWindowHelper(GObject.Object):
                         do_send_to_R( i[1]+'\n', self.R_widget, False, self._plugin.prefs['max_lines_as_text'] )
                 do_send_to_R( "# DONE loading!\n", self.R_widget, False, self._plugin.prefs['max_lines_as_text'] )
             else:
-			    do_send_to_R( "# No libraries selected\n", self.R_widget, False, self._plugin.prefs['max_lines_as_text'] )
+                do_send_to_R( "# No libraries selected\n", self.R_widget, False, self._plugin.prefs['max_lines_as_text'] )
                 
         return
         
@@ -3055,21 +3055,21 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         'code_folding_block_preference' : 'highest_block',
         'profiles' : [ 
                        { # The built-in profile:
-                         'name':'built-in', 						# The profile's name
-                         'cmd':'R --no-save --no-restore', 			# The command 
-                         'local':True, 								# Is the profile local? (should we assume access to local resources?)
-                         'default':True, 							# Is this the default profile? (there can be only one!)
-                         'setwd':'setwd(%s)', 						# The command used to change the working folder (the only parameter is the folder's name)
-                         'init-script':True,						# Should the init script be called (this is specific for R and in the case of remote shells might not be available on the remote host)
-                         'help-type':'HTML',  						# Help type; can be 'HTML', 'Text', 'Default' or 'Custom' (in which case the next must be given)
-                         'help-custom-command':None,				#    - in case a custom help type this must be given
-                         'prompt':'> ',								# The prompt symbol
-                         'prompt-cmd':'options( prompt="%s" )',		# The prompt-setting command
-                         'continue':'+ ',							# The prompt continuation symbol
-                         'continue-cmd':'options( continue="%s" )',	# The prompt-continuation-setting command
-                         'source-cmd':'source("%s",echo=TRUE,print.eval=TRUE,max.deparse.length=500000,local=TRUE)',	# The source command (taking as parameter the file name): if no such thing, use None
-                         'quit-cmd':'q()',							# The command for quitting
-                         'comment':'#'								# The character(s) used for commenting a line
+                         'name':'built-in',                         # The profile's name
+                         'cmd':'R --no-save --no-restore',             # The command 
+                         'local':True,                                 # Is the profile local? (should we assume access to local resources?)
+                         'default':True,                             # Is this the default profile? (there can be only one!)
+                         'setwd':'setwd(%s)',                         # The command used to change the working folder (the only parameter is the folder's name)
+                         'init-script':True,                        # Should the init script be called (this is specific for R and in the case of remote shells might not be available on the remote host)
+                         'help-type':'HTML',                          # Help type; can be 'HTML', 'Text', 'Default' or 'Custom' (in which case the next must be given)
+                         'help-custom-command':None,                #    - in case a custom help type this must be given
+                         'prompt':'> ',                                # The prompt symbol
+                         'prompt-cmd':'options( prompt="%s" )',        # The prompt-setting command
+                         'continue':'+ ',                            # The prompt continuation symbol
+                         'continue-cmd':'options( continue="%s" )',    # The prompt-continuation-setting command
+                         'source-cmd':'source("%s",echo=TRUE,print.eval=TRUE,max.deparse.length=500000,local=TRUE)',    # The source command (taking as parameter the file name): if no such thing, use None
+                         'quit-cmd':'q()',                            # The command for quitting
+                         'comment':'#'                                # The character(s) used for commenting a line
                        },
                        { # Octave:
                          'name':'Octave', 
@@ -3164,26 +3164,26 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         if self.prefs['autostart_R_script_path'] == None:
             self.prefs['autostart_R_script'] = False
         if self.get_profile('built-in') is None:
-		    # The build-in profile MUST exist!
-		    self.add_profile({ 
-		                       'name':'built-in', 
-		                       'cmd':'R --no-save --no-restore', 
-		                       'local':True, 
-		                       'default':False, 
-		                       'setwd':'setwd(%s)', 
-		                       'init-script':True,
+            # The build-in profile MUST exist!
+            self.add_profile({ 
+                               'name':'built-in', 
+                               'cmd':'R --no-save --no-restore', 
+                               'local':True, 
+                               'default':False, 
+                               'setwd':'setwd(%s)', 
+                               'init-script':True,
                                'help-type':'HTML',
                                'help-custom-command':None,
-                               'prompt':'> ',	
+                               'prompt':'> ',    
                                'prompt-cmd':'options( prompt="%s" )',
                                'continue':'+ ',
                                'continue-cmd':'options( continue="%s" )',
                                'source-cmd':'source("%s",echo=TRUE,print.eval=TRUE,max.deparse.length=500000,local=TRUE)',
                                'quit-cmd':'q()',
                                'comment':'#'
-		                     })
-		    if self.get_default_profile() == None:
-		        self.set_default_profile('built-in')
+                             })
+            if self.get_default_profile() == None:
+                self.set_default_profile('built-in')
             
         # There are some special shortcuts of potential interest, esp. modifiers of ENTER:
         self.check_special_shortcuts()
@@ -3201,85 +3201,85 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         self.RCtrlNewTab_toolarrow = None
     
     def list_profiles_names(self):
-	    # Return the list of all profiles' names:
-	    ret_val = []
-	    for p in self.prefs['profiles']:
-	        ret_val += [p['name']]
-	    return ret_val
+        # Return the list of all profiles' names:
+        ret_val = []
+        for p in self.prefs['profiles']:
+            ret_val += [p['name']]
+        return ret_val
     
     def get_default_profile(self):
-	    # Return the current profile (and check for multiple default profiles):
-		def_prof = None
-		no_def_prof = 0
-		for p in self.prefs['profiles']:
-		    if p['default'] == True:
-		        def_prof = p
-		        no_def_prof = no_def_prof + 1
-		if no_def_prof == 0:
-		    print "Profile management: there's no default profile!"
-		    return None
-		elif no_def_prof > 1:
-		    print "Profile management: there's more than one default profile!"
-		    return None
-		return def_prof
-		
+        # Return the current profile (and check for multiple default profiles):
+        def_prof = None
+        no_def_prof = 0
+        for p in self.prefs['profiles']:
+            if p['default'] == True:
+                def_prof = p
+                no_def_prof = no_def_prof + 1
+        if no_def_prof == 0:
+            print "Profile management: there's no default profile!"
+            return None
+        elif no_def_prof > 1:
+            print "Profile management: there's more than one default profile!"
+            return None
+        return def_prof
+        
     def set_default_profile(self,prof_name):
-	    # Set the default profile (if found) making sure all the others are reset:
-		if self.get_profile(prof_name) == None:
-		    print "Profile management: cannot find profile '" + str(prof_name) + "' to make default!"
-		    return False
-		for p in self.prefs['profiles']:
-		    if p['name'] == prof_name:
-		        p['default'] = True
-		    else:
-		        p['default'] = False
-		return True
+        # Set the default profile (if found) making sure all the others are reset:
+        if self.get_profile(prof_name) == None:
+            print "Profile management: cannot find profile '" + str(prof_name) + "' to make default!"
+            return False
+        for p in self.prefs['profiles']:
+            if p['name'] == prof_name:
+                p['default'] = True
+            else:
+                p['default'] = False
+        return True
         
     def get_profile(self,prof_name):
-	    # Get the profile (if found):
-		for p in self.prefs['profiles']:
-		    if p['name'] == prof_name:
-		        return p
-		return None
+        # Get the profile (if found):
+        for p in self.prefs['profiles']:
+            if p['name'] == prof_name:
+                return p
+        return None
         
     def add_profile(self,profile):
-	    # Add a new profile (and check for conflicts):
-		if len(profile) != 5:
-		    print "Profile management: illegal profile '" + str(profile) + "'!"
-		    return False
-		for p in self.prefs['profiles']:
-		    if p['name'] == profile['name']:
-		        print "Profile management: duplicated profile '" + str(profile) + "'!"
-		        return False
-		# Add it:
-		self.prefs['profiles'] = self.prefs['profiles'] + [profile]
-		# Is this meant to be default? Then make it so:
-		if profile[3] == True:
-		    return self.set_default_profile( profile['name'] )
-		return True
+        # Add a new profile (and check for conflicts):
+        if len(profile) != 5:
+            print "Profile management: illegal profile '" + str(profile) + "'!"
+            return False
+        for p in self.prefs['profiles']:
+            if p['name'] == profile['name']:
+                print "Profile management: duplicated profile '" + str(profile) + "'!"
+                return False
+        # Add it:
+        self.prefs['profiles'] = self.prefs['profiles'] + [profile]
+        # Is this meant to be default? Then make it so:
+        if profile[3] == True:
+            return self.set_default_profile( profile['name'] )
+        return True
         
     def remove_profile(self,profile_name):
-	    # Remove an existing profile:
-		for p in self.prefs['profiles']:
-		    if p['name'] == profile_name:
-		        was_default = p['default']
-		        self.prefs['profiles'].remove( p )
-		        if was_default:
-					self.set_default_profile( 'built-in' )
-		        return True
-		return False
+        # Remove an existing profile:
+        for p in self.prefs['profiles']:
+            if p['name'] == profile_name:
+                was_default = p['default']
+                self.prefs['profiles'].remove( p )
+                if was_default:
+                    self.set_default_profile( 'built-in' )
+                return True
+        return False
          
     def get_profile_attribute(self,profile_name,key):
-	    # Retrieve the profile's key (if defined):
-	    if profile_name is None:
-		    profile = self.get_default_profile()
-	    else:
-		    profile = self.get_profile(profile_name)
-	    if profile is None:
-		    print "Cannot retrieve profile '" + str(profile_name) + "'!"
-		    return None
-	    # Return the key:
-	    return profile[key]
+        # Retrieve the profile's key (if defined):
+        if profile_name is None:
+            profile = self.get_default_profile()
+        else:
+            profile = self.get_profile(profile_name)
+        if profile is None:
+            print "Cannot retrieve profile '" + str(profile_name) + "'!"
+            return None
+        # Return the key:
+        return profile[key]
        
         
     def check_special_shortcuts(self):
@@ -3403,7 +3403,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         # Get the GtkUIManager
         manager = self.window.get_ui_manager()
         if manager == None:
-        	return
+            return
 
         RCtrlSel_toolitem = manager.get_widget("/ToolBar/RCtrlSel")
         RCtrlLine_toolitem = manager.get_widget("/ToolBar/RCtrlLine")
@@ -3940,7 +3940,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         return self.dialog
 
     def EditProfiles_clicked(self,widget):
-	    # Dynamically create a profile editing dialog using a list that contains all the dialogs with their columns:
+        # Dynamically create a profile editing dialog using a list that contains all the dialogs with their columns:
         model = Gtk.ListStore(bool,str,str,bool,str,bool,str,str,str,str,str,str,str,str,str)
         tv = Gtk.TreeView(model)
 
@@ -4200,8 +4200,8 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         # The model behind the tree:
         model = tv.get_model()
         if model is None:
-		    print "No model for profiles list!"
-		    return
+            print "No model for profiles list!"
+            return
         # Add a new row with default (build-in) values:
         default_profile = self.get_profile('built-in')
         model.append([ False,  # it's not created as default!
@@ -4227,13 +4227,13 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         # The model behind the tree:
         model = tv.get_model()
         if model is None:
-		    print "No model for profiles list!"
-		    return
+            print "No model for profiles list!"
+            return
         # Get the current selection (if any):
         sel = tv.get_selection().get_selected()
         if sel[1] is None:
-		    print "No selected profile: nothing to delete!"
-		    return
+            print "No selected profile: nothing to delete!"
+            return
         if model[sel[1]][1] == "built-in":
             question_dialog = Gtk.MessageDialog( None, Gtk.DialogFlags.MODAL, Gtk.MessageType.WARNING, Gtk.ButtonsType.OK, _("The built-in profile cannot be deleted!") )
             question_dialog.run()
@@ -4249,9 +4249,9 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
     def profile_as_string(self,profile,attribute_name):
         # Convert the attribute value to string taking into account the special case of None:
         if profile[attribute_name] is None:
-		    return '<None>'
+            return '<None>'
         else:
-		    return profile[attribute_name]
+            return profile[attribute_name]
 
     def edited_profile(self, cell, path, new_text, user_data):
         # One entry of one profile was modified:
@@ -4286,7 +4286,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         if column is 0:
             # Radio buttons:
             for row in model:
-        	    row[column] = False
+                row[column] = False
             model[path][column] = True
         else:
             # Check boxes:
@@ -4304,8 +4304,8 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         # The model behind the tree:
         model = tv.get_model()
         if model is None:
-		    print "No model for profiles list!"
-		    return False
+            print "No model for profiles list!"
+            return False
 
         # Collect the profiles from the model, row by row, and do the sanity checks first:
         for row in model:
@@ -4535,15 +4535,15 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         try:
             self.prefs['foreground1'] = color_button_foreground1.get_color().to_string()
         except AttributeError:
-			# Older gtk: Gdk.Color.to_string() is not defined: use my own:
-			self.prefs['foreground1'] = gtk_gdk_Color_to_string(color_button_foreground1.get_color())
+            # Older gtk: Gdk.Color.to_string() is not defined: use my own:
+            self.prefs['foreground1'] = gtk_gdk_Color_to_string(color_button_foreground1.get_color())
 
         color_button_background1 = get_widget_from_ui_GtkBuilder_or_Glade(self.ui,"BackgroundColor1")
         try:
             self.prefs['background1'] = color_button_background1.get_color().to_string()
         except AttributeError:
-			# Older gtk: Gdk.Color.to_string() is not defined: use my own:
-			self.prefs['background1'] = gtk_gdk_Color_to_string(color_button_background1.get_color())
+            # Older gtk: Gdk.Color.to_string() is not defined: use my own:
+            self.prefs['background1'] = gtk_gdk_Color_to_string(color_button_background1.get_color())
 
         combo_box_prompt_color1 = get_widget_from_ui_GtkBuilder_or_Glade(self.ui,"PromptColor1")
         self.prefs['prompt_color1'] = self.xterm_color_from_index(combo_box_prompt_color1.get_active())
@@ -4552,15 +4552,15 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         try:
             self.prefs['foreground2'] = color_button_foreground2.get_color().to_string()
         except AttributeError:
-			# Older gtk: Gdk.Color.to_string() is not defined: use my own:
-			self.prefs['foreground2'] = gtk_gdk_Color_to_string(color_button_foreground2.get_color())
+            # Older gtk: Gdk.Color.to_string() is not defined: use my own:
+            self.prefs['foreground2'] = gtk_gdk_Color_to_string(color_button_foreground2.get_color())
 
         color_button_background2 = get_widget_from_ui_GtkBuilder_or_Glade(self.ui,"BackgroundColor2")
         try:
             self.prefs['background2'] = color_button_background2.get_color().to_string()
         except AttributeError:
-			# Older gtk: Gdk.Color.to_string() is not defined: use my own:
-			self.prefs['background2'] = gtk_gdk_Color_to_string(color_button_background2.get_color())
+            # Older gtk: Gdk.Color.to_string() is not defined: use my own:
+            self.prefs['background2'] = gtk_gdk_Color_to_string(color_button_background2.get_color())
 
         combo_box_prompt_color2 = get_widget_from_ui_GtkBuilder_or_Glade(self.ui,"PromptColor2")
         self.prefs['prompt_color2'] = self.xterm_color_from_index(combo_box_prompt_color2.get_active())
@@ -4569,15 +4569,15 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         try:
             self.prefs['foreground3'] = color_button_foreground3.get_color().to_string()
         except AttributeError:
-			# Older gtk: Gdk.Color.to_string() is not defined: use my own:
-			self.prefs['foreground3'] = gtk_gdk_Color_to_string(color_button_foreground3.get_color())
+            # Older gtk: Gdk.Color.to_string() is not defined: use my own:
+            self.prefs['foreground3'] = gtk_gdk_Color_to_string(color_button_foreground3.get_color())
 
         color_button_background3 = get_widget_from_ui_GtkBuilder_or_Glade(self.ui,"BackgroundColor3")
         try:
             self.prefs['background3'] = color_button_background3.get_color().to_string()
         except AttributeError:
-			# Older gtk: Gdk.Color.to_string() is not defined: use my own:
-			self.prefs['background3'] = gtk_gdk_Color_to_string(color_button_background3.get_color())
+            # Older gtk: Gdk.Color.to_string() is not defined: use my own:
+            self.prefs['background3'] = gtk_gdk_Color_to_string(color_button_background3.get_color())
 
         combo_box_prompt_color3 = get_widget_from_ui_GtkBuilder_or_Glade(self.ui,"PromptColor3")
         self.prefs['prompt_color3'] = self.xterm_color_from_index(combo_box_prompt_color3.get_active())
@@ -5292,13 +5292,13 @@ class RWizard_Block:
         about_button.set_sensitive( wizard.AboutInfo != None )
         if use_GtkBuilder_or_Glade():
             # Gtk supports tooltips:
-		    about_button.set_tooltip_text(_("About the wizard..."))
+            about_button.set_tooltip_text(_("About the wizard..."))
         
         help_button = dialog.add_button(_("Help"), 1304 ) # Help on the dialog
         help_button.set_sensitive( wizard.Help != None )
         if use_GtkBuilder_or_Glade():
             # Gtk supports tooltips:
-		    help_button.set_tooltip_text("Wizard's help info...")
+            help_button.set_tooltip_text("Wizard's help info...")
         
         #dialog.action_area.add(Gtk.HSeparator())
         back_button = dialog.add_button(_("Back"), 1299 ) # Going back
@@ -6315,8 +6315,8 @@ class RCodeFolding:
         except AttributeError:
             # So it's probably an older version of GtkSourceView: try to use delete_marker:
             for marker_to_delete in doc.get_markers_in_region(start_block,end_block):
-				if marker_to_delete.get_marker_type() == "FoldedRCode_Folded":
-					doc.delete_marker(marker_to_delete)
+                if marker_to_delete.get_marker_type() == "FoldedRCode_Folded":
+                    doc.delete_marker(marker_to_delete)
             
     
     # Unfold the core on the current line:
@@ -6696,9 +6696,9 @@ class RCodeFolding:
             print _("There's no block to fold...")
             
     #def func(self, event, user_data):
-    #	print "Got gdk event!"
-    #	Gtk.main_do_event(event)
-    #	return True
+    #    print "Got gdk event!"
+    #    Gtk.main_do_event(event)
+    #    return True
             
     def search_matching_paranthesis(self,whole_text,param_start):
         # DEBUG:
@@ -6986,9 +6986,9 @@ class RCodeFolding:
         if folded_text != None:
             # Good, extract the first two and the last two lines:
             first_lines_no = 3
-            last_lines_no  = 3        	
+            last_lines_no  = 3            
             tooltip_text = None
-        	
+            
             text_lines = folded_text.splitlines() # don't keep line breaks in there
             text_lines = [s for s in text_lines if s.strip()] # remove empty lines
             if len(text_lines) <= (first_lines_no + last_lines_no):
