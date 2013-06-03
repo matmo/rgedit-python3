@@ -1,0 +1,33 @@
+<!-- Define a rwizard -->
+<rwizard name="readspss" description="Read data from SPSS file" 
+         menu="/Data import and export" icon="read_spss.png">
+    <about 
+        name="Read data from SPSS file"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Read an SPSS file using foreign's read.spss(...)"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="read_spss.png"/>
+        
+    <help rhelp="require(foreign); ?read.spss"/>
+
+    <vars>  
+        <block title="read.spss() parameters...">
+            <variable name="file" description="The data file's path" type="text" default="" required="True" tooltip='Use quotes if filename is a simple &lt;b&gt;string&lt;/b&gt; (e.g. "file.spss") but not if it is an &lt;b&gt;expression&lt;/b&gt; (e.g. paste( "file", "spss", sep="" )).'/>
+            <variable name="use.value.labels" description="Convert variables with value labels into R factors with those levels?" type="bool" default="True" required="False"/>
+            <variable name="to.data.frame" description="Return a data frame?" type="bool" default="False" required="False"/>
+        </block>
+    </vars>  
+
+    <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+    <template> 
+require(foreign); 
+read.spss( file=${file}, use.value.labels=$[Python str(${use.value.labels}).upper() $], to.data.frame=$[Python str(${to.data.frame}).upper() $] )
+    </template> 
+
+</rwizard>

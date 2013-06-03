@@ -1,0 +1,25 @@
+New in version 0.7.0.5:
+1) Messages and warnings concerning new releases can be displayed here, unless disabled from the Configure R Interface dialog (they can be found in the /RCtrl/messages_and_warnings.txt file);
+2) In the R console, <Ctrl>C now *copies the current selection* instead of stopping the current operation, action taken over by <ESC> and <Ctrl>Q (to change these settings and revert to the default behaviour, please visit the Configure R Interface -> Edit keyboard shortcuts);
+3) Also in the R console, <Ctrl>K copies the last executed line to the clipboard, and <Ctrl><Shift>K also pastes it in the current gedit tab.
+
+New in version 0.7.0.6:
+1) rgedit-specific toolbar and sidebar can be shown only for R source files (toggle using the Show/hide toolbat -> Show toolbar only for R files)
+
+New in version 0.7.0.7:
+rgedit is compatible with older systems (like RHEL5 and CentOS).
+
+New in version 0.7.1.0:
+Basic code folding capabilities (please treat it as BETA and report any bugs!).
+
+New in version 0.8:
+Workspace loading and saving implicitely open in the current document's folder.
+Can load all libraries used by the script.
+Run selection or current line.
+Profiles: rgedit can interact with Python, Octave, etc. or have remote sessions through SSH.
+
+New in version 0.8.0.1:
+Fixed icon marking the current profile.
+
+New in version 0.8.0.2-Gtk3:
+Minor bugfix: Ctrl+Tab switches between R console and edtor, and Ctrl+C breaks the computation (with Ctrl+X copying selection from R console)

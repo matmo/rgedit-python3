@@ -1,0 +1,50 @@
+<!-- Define a rwizard -->
+<rwizard name="readtable" description="Read data from flat file" 
+         menu="/Data import and export" icon="read_table.png">
+    <about 
+        name="Read data from flat file"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Read a flat file or CSV into a data.frame using read.table(...)"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="read_table.png"/>
+        
+    <help rhelp="?read.table"/>
+
+    <vars>  
+        <block title="read.table() parameters...">
+            <variable name="file" description="The data file's path" type="text" default="" required="True" tooltip='Use quotes if filename is a simple &lt;b&gt;string&lt;/b&gt; (e.g. "file.spss") but not if it is an &lt;b&gt;expression&lt;/b&gt; (e.g. paste( "file", "spss", sep="" )).'/>
+            <variable name="header" description="Does the first line contain variable names" type="bool" default="True" required="False"/>
+            <variable name="sep" description="The field separator" type="editablelist" singlechoice="True" default="TAB" required="False" tooltip="Don't use quotes here: they are automatically added">
+                <value name=""/>
+                <value name=","/>
+                <value name=";"/>
+                <value name="TAB"/>
+                <value name="SPACE"/>
+            </variable> 
+            <variable name="quote" description="The quoting characters" type="editablelist" singlechoice="True" default='' required="False" tooltip="Don't use quotes here: they are automatically added">
+                <value name='"'/>
+                <value name="'"/>
+                <value name=""/>
+            </variable> 
+            <variable name="dec" description="The decimal point" type="editablelist" singlechoice="True" default="." required="False" tooltip="Don't use quotes here: they are automatically added">
+                <value name="."/>
+                <value name=","/>
+            </variable> 
+            <variable name="stringsAsFactors" description="Strings as factors?" type="bool" default="True" required="False"/>
+            <variable name="NAstrings" description="The NA values" type="text" default="NA" required="False" tooltip="Don't use quotes here: they are automatically added"/>
+            <variable name="skip" description="The number of lines to skip at the begining" type="text" default="0" required="False"/>
+        </block>
+    </vars>  
+
+    <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+    <template> 
+read.table( file=${file}, header=$[Python str(${header}).upper() $], sep="$[Python ("\\t",(" ",str("${sep}").upper())[not (str("${sep}").upper()=="SPACE")])[not (str("${sep}").upper()=="TAB")] $]", quote="${quote}", dec="${dec}", stringsAsFactors=$[Python str(${stringsAsFactors}).upper() $], NAstrings="${NAstrings}", skip=${skip} )
+    </template> 
+
+</rwizard>

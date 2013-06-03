@@ -1,0 +1,27 @@
+<!-- Define a rwizard -->
+<rwizard name="chooseCRANmirror" description="Choose CRAN mirror" 
+         menu="/Package management" icon="chooseCRANmirror.png">
+    <about 
+        name="Choose CRAN mirror"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Select the CRAN mirror to use"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="chooseCRANmirror.png"/>
+        
+    <help rhelp="?chooseCRANmirror"/>
+
+    <vars/>  
+
+    <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+    <!-- ATTENTION! in the R code template you must use XML substitution codes (e.g., "<" must be given as "&lt;")! -->
+    <template> 
+chooseCRANmirror()
+    </template> 
+
+</rwizard>

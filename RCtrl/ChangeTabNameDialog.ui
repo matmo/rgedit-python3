@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<interface>
+  <!-- interface-requires gtk+ 2.12 -->
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkDialog" id="ChangeTabNameDialog">
+    <property name="border_width">5</property>
+    <property name="title" translatable="yes">Change tab name</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <property name="default_width">500</property>
+    <property name="default_height">500</property>
+    <property name="type_hint">normal</property>
+    <property name="has_separator">False</property>
+    <child internal-child="vbox">
+      <object class="GtkVBox" id="dialog-vbox1">
+        <property name="visible">True</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child>
+          <object class="GtkFixed" id="fixed1">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkLabel" id="label1">
+                <property name="width_request">120</property>
+                <property name="height_request">25</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">New name for tab </property>
+              </object>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="TabNumber">
+                <property name="width_request">50</property>
+                <property name="height_request">25</property>
+                <property name="visible">True</property>
+              </object>
+              <packing>
+                <property name="x">125</property>
+                <property name="y">5</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="TabName">
+                <property name="width_request">150</property>
+                <property name="height_request">25</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="max_length">15</property>
+                <property name="invisible_char">&#x2022;</property>
+                <property name="activates_default">True</property>
+              </object>
+              <packing>
+                <property name="x">180</property>
+                <property name="y">5</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child internal-child="action_area">
+          <object class="GtkHButtonBox" id="dialog-action_area1">
+            <property name="visible">True</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="ButtonCancel">
+                <property name="label">gtk-cancel</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="ButtonOk">
+                <property name="label">gtk-ok</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <action-widgets>
+      <action-widget response="-1">ButtonCancel</action-widget>
+      <action-widget response="-2">ButtonOk</action-widget>
+    </action-widgets>
+  </object>
+</interface>

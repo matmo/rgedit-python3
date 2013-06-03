@@ -1,0 +1,677 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: rgedit 0.7.0.6\n"
+"POT-Creation-Date: 2010-10-13 19:43+CEST\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Dan Dediu <ddediu@hotmail.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Romanian\n"
+"X-Poedit-Country: ROMANIA\n"
+
+#: RCtrl.py:117
+msgid " your text goes here"
+msgstr "textul dvs apare aici"
+
+#: RCtrl.py:195
+msgid "# Run misc stuff required by rgedit...\n"
+msgstr "# Execută diferite sarcini cerute de rgedit...\n"
+
+#: RCtrl.py:205
+msgid "Error reading the messages and warnings file\n"
+msgstr "Erroare de citire a fişierului de mesaje şi avertismente\n"
+
+#: RCtrl.py:208
+msgid ""
+"\n"
+"############################ rgedit messages #################################\n"
+msgstr ""
+"\n"
+"############################## mesaje rgedit ##################################\n"
+
+#: RCtrl.py:341
+#: RCtrl.py:373
+#: RCtrl.py:486
+#: RCtrl.py:499
+#: RCtrl.py:514
+#: RCtrl.py:543
+#: RCtrl.py:679
+#: RCtrl.py:917
+msgid "Unknown R tab!"
+msgstr "Pagină R necunoscută!"
+
+#: RCtrl.py:383
+msgid "Change tab name"
+msgstr "Schimb"
+
+#: RCtrl.py:387
+msgid "Always show tabs?"
+msgstr "Arată paginile mereu?"
+
+#: RCtrl.py:392
+msgid "Show tabs on"
+msgstr "Arată paginile"
+
+#: RCtrl.py:395
+msgid "top"
+msgstr "deasupra"
+
+#: RCtrl.py:399
+msgid "left"
+msgstr "la stânga"
+
+#: RCtrl.py:403
+msgid "right"
+msgstr "la dreapta"
+
+#: RCtrl.py:407
+msgid "bottom"
+msgstr "jos"
+
+#: RCtrl.py:417
+msgid "Close tab"
+msgstr "Închide pagina"
+
+#: RCtrl.py:423
+msgid "Start R"
+msgstr "Porneşte R"
+
+#: RCtrl.py:427
+msgid "Restart R"
+msgstr "Reporneşte R"
+
+#: RCtrl.py:434
+msgid "Change R's working folder"
+msgstr "Schimbă directorul de lucru al R"
+
+#: RCtrl.py:438
+msgid "Use document's folder"
+msgstr "Foloseşte directorul documentului"
+
+#: RCtrl.py:451
+msgid "Save R workspace"
+msgstr "Salvează spaţiul de lucru R"
+
+#: RCtrl.py:905
+msgid "Choose R's working folder"
+msgstr "Schimbă directorul de lucru al R"
+
+#: RCtrl.py:923
+#: RCtrl.py:941
+msgid "Cannot get current window"
+msgstr "Nu pot sa obţin fereastra curentă"
+
+#: RCtrl.py:950
+msgid "Current document has not been saved: cannot change R's working folder to this..."
+msgstr "Documentul curent nu a fost salvat: nu pot schimba directorul de lucru al R la aşa ceva..."
+
+#: RCtrl.py:967
+msgid "Open R Workspace"
+msgstr "Deschide spaţiu de lucru R"
+
+#: RCtrl.py:987
+msgid "Save R Workspace"
+msgstr "Salvează spaţiu de lucru R"
+
+#: RCtrl.py:1019
+msgid "No R console open?"
+msgstr "Nici o consolă R nu e deschisă?"
+
+#: RCtrl.py:1076
+#: RCtrl.py:1077
+#: RCtrl.py:1393
+msgid "Run current line through R..."
+msgstr "Execută linia curentă prin R..."
+
+#: RCtrl.py:1079
+#: RCtrl.py:1080
+msgid "Run selection through R..."
+msgstr "Execută selecţia prin R..."
+
+#: RCtrl.py:1082
+#: RCtrl.py:1083
+#: RCtrl.py:1405
+msgid "Run whole file through R..."
+msgstr "Execută îintregul fişier prin R..."
+
+#: RCtrl.py:1085
+#: RCtrl.py:1086
+msgid "Run block 1 through R..."
+msgstr "Execută blocul 1 prin R..."
+
+#: RCtrl.py:1088
+#: RCtrl.py:1089
+#: RCtrl.py:1417
+msgid "Define block 1..."
+msgstr "Defineşte blocul 1..."
+
+#: RCtrl.py:1091
+#: RCtrl.py:1092
+#: RCtrl.py:1423
+msgid "Run block 2 through R..."
+msgstr "Execută blocul 2 prin R..."
+
+#: RCtrl.py:1094
+#: RCtrl.py:1095
+#: RCtrl.py:1429
+msgid "Define block 2..."
+msgstr "Defineşte blocul 2..."
+
+#: RCtrl.py:1097
+#: RCtrl.py:1435
+msgid "Create new R workspace tab..."
+msgstr "Crează o noua pagina de lucru în R..."
+
+#: RCtrl.py:1098
+msgid "Create new R workspace tab (max 3 tabs allowed)..."
+msgstr "Crează o noua pagina de lucru în R (maximum 3 sunt permise)..."
+
+#: RCtrl.py:1100
+#: RCtrl.py:1101
+msgid "Configure R interface"
+msgstr "Configurare interfaţă R"
+
+#: RCtrl.py:1103
+#: RCtrl.py:1104
+msgid "Check for updates"
+msgstr "Caută aduceri la zi"
+
+#: RCtrl.py:1112
+#: RCtrl.py:1113
+#: RCtrl.py:2492
+msgid "Insert Landmark Comment"
+msgstr "Inserează "
+
+#: RCtrl.py:1115
+#: RCtrl.py:1116
+#: RCtrl.py:2486
+msgid "Wizards"
+msgstr "Experţi"
+
+#: RCtrl.py:1127
+#: RCtrl.py:1128
+msgid "Show/hide toolbar"
+msgstr "Arată/ascunde bara de unelte"
+
+#: RCtrl.py:1130
+#: RCtrl.py:1131
+msgid "Attach/detach R Console"
+msgstr "Ataşează/detaşează consola R"
+
+#: RCtrl.py:1133
+#: RCtrl.py:1134
+msgid "Close R Console"
+msgstr "Închide consola R"
+
+#: RCtrl.py:1136
+#: RCtrl.py:1137
+#: RCtrl.py:3616
+msgid "Help"
+msgstr "Ajutor"
+
+#: RCtrl.py:1139
+#: RCtrl.py:1140
+#: RCtrl.py:3612
+msgid "About"
+msgstr "Despre"
+
+#: RCtrl.py:1384
+msgid "Show toolbar only for R files..."
+msgstr "Atară bara de unelte doar pentru fişiere R..."
+
+#: RCtrl.py:1399
+msgid "Run current selection through R..."
+msgstr "Execută selecţia curentă prin R..."
+
+#: RCtrl.py:1474
+msgid "About Rwizards..."
+msgstr "Despre Experţi..."
+
+#: RCtrl.py:1554
+msgid "Something fishy: cannot find the wizard with description \""
+msgstr "Ceva nu-i în regulă: nu pot găsi descrierea Expertului \""
+
+#: RCtrl.py:1565
+msgid "RWizards official package"
+msgstr "Pachetul ofocial RWizards (Experţi R) "
+
+#: RCtrl.py:1567
+msgid "(c) 2009,2010, Dan Dediu"
+msgstr "(c) 2009, 2010, Dan Dediu"
+
+#: RCtrl.py:1568
+msgid "A set of predefined Rwizards"
+msgstr "Un set de Experţi R pre-definit"
+
+#: RCtrl.py:1569
+msgid ""
+"\n"
+"    Rwizards official package: a set of wizards for rgedit\n"
+"    Copyright (C) 2009  Dan Dediu\n"
+"\n"
+"    This program is free software: you can redistribute it and/or modify\n"
+"    it under the terms of the GNU General Public License as published by\n"
+"    the Free Software Foundation, either version 3 of the License, or\n"
+"    (at your option) any later version.\n"
+"\n"
+"    This program is distributed in the hope that it will be useful,\n"
+"    but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+"    GNU General Public License for more details.\n"
+"\n"
+"    You should have received a copy of the GNU General Public License\n"
+"    along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
+msgstr ""
+"\n"
+"    Rwizards official package: a set of wizards for rgedit\n"
+"    Copyright (C) 2009  Dan Dediu\n"
+"\n"
+"    This program is free software: you can redistribute it and/or modify\n"
+"    it under the terms of the GNU General Public License as published by\n"
+"    the Free Software Foundation, either version 3 of the License, or\n"
+"    (at your option) any later version.\n"
+"\n"
+"    This program is distributed in the hope that it will be useful,\n"
+"    but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+"    GNU General Public License for more details.\n"
+"\n"
+"    You should have received a copy of the GNU General Public License\n"
+"    along with this program.  If not, see <http://www.gnu.org/licenses/>.\n"
+
+#: RCtrl.py:1683
+msgid "Detached R console"
+msgstr "Consola R detaşată"
+
+#: RCtrl.py:1723
+msgid "R Console"
+msgstr "Consola R"
+
+#: RCtrl.py:1825
+msgid "Block 1 is not defined in the current document!"
+msgstr "Blocul 1 nu e definit in documentul curent!"
+
+#: RCtrl.py:1837
+#: RCtrl.py:1900
+msgid "You need a selection in order to define a block!"
+msgstr "Este nevoie de o selecţie pentru a defini un bloc!"
+
+#: RCtrl.py:1888
+msgid "Block 2 is not defined in the current document!"
+msgstr "Blocul 2 nu e definit in documentul curent!"
+
+#: RCtrl.py:1960
+msgid ""
+"Cannot read the latest available version from rgedit's website!\n"
+"Please, try again later..."
+msgstr ""
+"Nu pot citi ultima versiune disponibilă de pe site-ul rgedit!\n"
+"Vă rog sa reveniţi..."
+
+#: RCtrl.py:1967
+msgid ""
+"Cannot read the latest available version of the wizards package from rgedit's website!\n"
+"Please, try again later..."
+msgstr ""
+"Nu pot citi ultima versiune disponibilă de Experţi R de pe site-ul rgedit!\n"
+"Vă rog sa reveniţi..."
+
+#: RCtrl.py:1974
+msgid ") and official wizards package ("
+msgstr ") şi versiunea oficială de Experţi ("
+
+#: RCtrl.py:1974
+msgid ") installed."
+msgstr ") instalate."
+
+#: RCtrl.py:1974
+msgid "You have the latest version of rgedit ("
+msgstr "Aveţi ultima versiune de rgedit ("
+
+#: RCtrl.py:1978
+msgid " is available, and version "
+msgstr " e disponibilă, iar versiunea "
+
+#: RCtrl.py:1978
+msgid ""
+" is available.\n"
+" Would you like to download them?"
+msgstr ""
+" e disponibilă.\n"
+" Doriţi să la descărcaţi?"
+
+#: RCtrl.py:1978
+#: RCtrl.py:1984
+msgid " of rgedit installed, but the newer "
+msgstr " rgedit instată, dar mai recenta "
+
+#: RCtrl.py:1978
+#: RCtrl.py:1984
+#: RCtrl.py:1990
+msgid "You have version "
+msgstr "Aveţi versiunea "
+
+#: RCtrl.py:1978
+#: RCtrl.py:1990
+msgid " of the official wizards package installed, but the newer "
+msgstr " a pachetului oficial de Experţi, dar mai recenta "
+
+#: RCtrl.py:1984
+#: RCtrl.py:1990
+msgid ""
+" is available.\n"
+" Would you like to download it?"
+msgstr ""
+" a disponibilă.\n"
+" Doriţi să o descărcaţi?"
+
+#: RCtrl.py:2162
+msgid ""
+"Are you sure you want to completely close the R console?\n"
+"All open tabs will also be closed!"
+msgstr ""
+"Sunteţi sigur că doriţi să închideţi consola R complet?\n"
+"Toate paginile R deschise vor fi închise!"
+
+#: RCtrl.py:2671
+msgid "Black"
+msgstr "Negru"
+
+#: RCtrl.py:2671
+msgid "Blue"
+msgstr "Albastru"
+
+#: RCtrl.py:2671
+msgid "Cyan"
+msgstr "Verzui"
+
+#: RCtrl.py:2671
+msgid "Green"
+msgstr "Verde"
+
+#: RCtrl.py:2671
+msgid "Magenta"
+msgstr "Mov"
+
+#: RCtrl.py:2671
+msgid "None"
+msgstr "Nici una"
+
+#: RCtrl.py:2671
+msgid "Red"
+msgstr "Roşu"
+
+#: RCtrl.py:2671
+msgid "White"
+msgstr "Alb"
+
+#: RCtrl.py:2671
+msgid "Yellow"
+msgstr "Galben"
+
+#: RCtrl.py:2825
+msgid "Key shortcut for 'Run current line' is malformed!"
+msgstr "Combinaţia de taste pentru 'Execută linia curentă' este incorectă!"
+
+#: RCtrl.py:2834
+msgid "Key shortcut for 'Run selection' is malformed!"
+msgstr "Combinaţia de taste pentru 'Execută selecţia' este incorectă!"
+
+#: RCtrl.py:2843
+msgid "Key shortcut for 'Run whole file' is malformed!"
+msgstr "Combinaţia de taste pentru 'Execută întregul fişier' este incorectă!"
+
+#: RCtrl.py:2852
+msgid "Key shortcut for 'Run block 1' is malformed!"
+msgstr "Combinaţia de taste pentru 'Execută blocul 1' este incorectă!"
+
+#: RCtrl.py:2861
+msgid "Key shortcut for 'Define block 1' is malformed!"
+msgstr "Combinaţia de taste pentru 'Defineşte blocul 1' este incorectă!"
+
+#: RCtrl.py:2870
+msgid "Key shortcut for 'Run block 2' is malformed!"
+msgstr "Combinaţia de taste pentru 'Execută blocul 2' este incorectă!"
+
+#: RCtrl.py:2879
+msgid "Key shortcut for 'Define block 2' is malformed!"
+msgstr "Combinaţia de taste pentru 'Defineşte blocul 2' este incorectă!"
+
+#: RCtrl.py:2888
+msgid "Key shortcut for 'Create new R tab' is malformed!"
+msgstr "Combinaţia de taste pentru 'Crează o nouă pagină R' este incorectă!"
+
+#: RCtrl.py:2897
+msgid "Key shortcut for 'Configure R interface' is malformed!"
+msgstr "Combinaţia de taste pentru 'Configurează interfaţa R' este incorectă!"
+
+#: RCtrl.py:2906
+msgid "Key shortcut for 'Load R Workspace' is malformed!"
+msgstr "Combinaţia de taste pentru 'Încarcă spaţiul de lucru R' este incorectă!"
+
+#: RCtrl.py:2915
+msgid "Key shortcut for 'Save R Workspace' is malformed!"
+msgstr "Combinaţia de taste pentru 'Salvează spaţiul de lucru R' este incorectă!"
+
+#: RCtrl.py:2951
+msgid "Key shortcut for 'Attach/detach R console' is malformed!"
+msgstr "Combinaţia de taste pentru 'Ataşează/detaşează consola R' este incorectă!"
+
+#: RCtrl.py:2960
+msgid "Key shortcut for 'Close R console' is malformed!"
+msgstr "Combinaţia de taste pentru 'Închide consola R' este incorectă!"
+
+#: RCtrl.py:2968
+msgid ""
+"Key shortcuts have changed:\n"
+"please restart gedit for changed to become effective!"
+msgstr ""
+"Combinaţiile de taste au fost schimbate:\n"
+"vă rugăm să restartaţi gedit astfel încât schimbările să devină efective!"
+
+#: RCtrl.py:3051
+msgid "Make AutorunScriptPath relative"
+msgstr "Fă AutorunScriptPath relativă"
+
+#: RCtrl.py:3084
+#: RCtrl.py:3089
+msgid "The number of scrollback lines must be a positive integer!"
+msgstr "Numărul de linii reţinute trebuie sa fie un număr întreg pozitiv!"
+
+#: RCtrl.py:3197
+msgid ""
+"Please note that using COLORED PROMPTS has a side effect when browsing R's history (keys UP and DOWN).\n"
+"Please see the manual for details."
+msgstr ""
+"Atenţie: utilizarea de PROMPT COLORAT are efecte nedorite asupra navigării prin istoria comezilor R (folosind tastele SUS şi JOS).\n"
+"Vă rugăm să consultaţi manualul pentru detalii."
+
+#: RCtrl.py:3410
+msgid "Python directives must end with $]...."
+msgstr "Directivele Pyhton trebuie să se termine cu $]...."
+
+#: RCtrl.py:3470
+msgid "A variable must have a name!"
+msgstr "O variablă trebuie să aibă un nume!"
+
+#: RCtrl.py:3476
+msgid "A variable must have a description!"
+msgstr "O variablă trebuie să aibă o descriere!"
+
+#: RCtrl.py:3485
+msgid "A variable must have a type!"
+msgstr "O variablă trebuie să aibă un tip!"
+
+#: RCtrl.py:3501
+#: RCtrl.py:3509
+msgid "Variables of type \"list\" must have at least one value defined!"
+msgstr "Variabilele de tip \"list\" trebuie să aibă cel puţin o valoare definită!"
+
+#: RCtrl.py:3514
+#: RCtrl.py:3522
+msgid "Variables of type \"editablelist\" must have at least one value defined!"
+msgstr "Variabilele de tip \"editablelist\" trebuie să aibă cel puţin o valoare definită!"
+
+#: RCtrl.py:3570
+msgid "There must be at least one variable defined for each block!"
+msgstr "Cel puţin o variablă trebuie definită per bloc!"
+
+#: RCtrl.py:3614
+msgid "About the wizard..."
+msgstr "Despre Experţi..."
+
+#: RCtrl.py:3621
+msgid "Back"
+msgstr "Înapoi"
+
+#: RCtrl.py:3623
+msgid "Go to previous block..."
+msgstr "Îintoarce-te la blocul anterior..."
+
+#: RCtrl.py:3626
+msgid "Inspect code"
+msgstr "Inspectează codul"
+
+#: RCtrl.py:3627
+msgid "Inspect the generated R code..."
+msgstr "Inspectează codul R generat..."
+
+#: RCtrl.py:3628
+msgid "Run code!"
+msgstr "Execută codul!"
+
+#: RCtrl.py:3629
+msgid "I trust the wizard: go ahead and run the generated R code..."
+msgstr "Am încredere în acest Expert: execută direct codul R generat..."
+
+#: RCtrl.py:3631
+msgid "Next"
+msgstr "Următorul"
+
+#: RCtrl.py:3633
+msgid "Continue to next block..."
+msgstr "Continuă cu blocul următor..."
+
+#: RCtrl.py:3635
+msgid "Cancel"
+msgstr "Anulare"
+
+#: RCtrl.py:3636
+msgid "Cancel the wizard..."
+msgstr "Anulează Expertul..."
+
+#: RCtrl.py:3808
+msgid "\" is undefined!"
+msgstr "\" este nedefint!"
+
+#: RCtrl.py:3808
+msgid "Required variable \""
+msgstr "Variabila necesară \""
+
+#: RCtrl.py:3816
+msgid "Error: variable.GtkControl should have been defined!"
+msgstr "Erroare: variable.GtkControl ar fi trebuit definită!"
+
+#: RCtrl.py:3882
+#: RCtrl.py:3883
+msgid "Error opening & parsing wizard file \""
+msgstr "Eroare de deschidere şi citire a fişierului Expert \""
+
+#: RCtrl.py:3883
+msgid ""
+"\n"
+"\n"
+"Rgedit plugin cannot continue! Please fix the problem..."
+msgstr ""
+"\n"
+"\n"
+"Pluginul Rgedit nu poate continua! Vă rugăm să rezolvaţi problema..."
+
+#: RCtrl.py:3891
+msgid "Error: rwizard xml expected, and instead got \""
+msgstr "Eroare: xml rwizard era aşteptat, dar am găsit \""
+
+#: RCtrl.py:3897
+msgid "Error: rwizard must have a name!"
+msgstr "Eroare: rwizard trebuie sa aibă un nume!"
+
+#: RCtrl.py:3935
+msgid "Unknown value for the defaultbutton attribute :"
+msgstr "Valoare necunoscută pentru atributul defaultbutton :"
+
+#: RCtrl.py:3948
+msgid "There must at most one \"about\" node inside a \"rwizard\""
+msgstr "Trebuie să existe cel mult un nod \"about\" în interiorul unui \"rwizard\""
+
+#: RCtrl.py:3960
+msgid "There must at most one \"help\" node inside a \"rwizard\""
+msgstr "Trebuie să existe cel mult un nod \"help\" în interiorul unui \"rwizard\""
+
+#: RCtrl.py:3971
+msgid "There must a single \"vars\" node inside a \"rwizard\""
+msgstr "Trebuie să existe un singur nod \"vars\" în interiorul unui \"rwizard\""
+
+#: RCtrl.py:3983
+msgid "There must at most one \"script\" node inside a \"rwizard\""
+msgstr "Trebuie să existe cel mult un nod \"script\" în interiorul unui \"rwizard\""
+
+#: RCtrl.py:3994
+msgid "There must a single \"template\" node inside a \"rwizard\""
+msgstr "Trebuie să existe un singur nod \"template\" în interiorul unui \"rwizard\""
+
+#: RCtrl.py:4068
+msgid "Processing script..."
+msgstr "Script în curs de executare..."
+
+#: RCtrl.py:4132
+msgid "Unknown block-level user action "
+msgstr "Acţiune necunoscută la nivel de bloc "
+
+#: RCtrl.py:4150
+#: RCtrl.py:4162
+msgid "The resulting R code is empty..."
+msgstr "Codul R rezultat e gol..."
+
+#: RCtrl.py:4365
+msgid "Error opening userprefs.xml!"
+msgstr "Eroare de deschidere a fişierului userprefs.xml!"
+
+#: RCtrl.py:4371
+msgid "Error: rwizardsuserprefs xml expected, and instead got \""
+msgstr "Eroare: xml rwizardsuserprefs era aşteptat, dar a fost găsit \""
+
+#: RCtrl.py:4392
+msgid "There must a single \"prefs\" node inside a \"rwizardsuserprefs\""
+msgstr "Trebuie să existe un singur nod \"prefs\" în interiorul unui \"rwizard\""
+
+#: RCtrl.py:4487
+msgid "R structure"
+msgstr "Structura R"
+
+#: RCtrl.py:4495
+msgid "Enable?"
+msgstr "Activat?"
+
+#: RCtrl.py:4496
+msgid "Enable or disable the info concerning the structure of the R file..."
+msgstr "Activează sau dezactivează informaţiile privind structura fişierului R..."
+
+#: RCtrl.py:4503
+msgid "Force refresh of info concerning the structure of the R file..."
+msgstr "Activează forţat informaţiile privind structura fişierului R..."
+
+#: RCtrl.py:4621
+msgid "\" is illegal!"
+msgstr "\" este incorect!"
+
+#: RCtrl.py:4621
+msgid "The line number \""
+msgstr "Numărul de linie \""
+
+#: RCtrl.py:4626
+msgid "The line number must be a positive integer smaller than the number of lines in the document!"
+msgstr "Numărul de linie trebuie să fie un număr întreg pozitiv mai mic decât numărul de linii din document!"
+

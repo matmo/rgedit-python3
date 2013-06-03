@@ -1,0 +1,489 @@
+<?xml version="1.0"?>
+<glade-interface>
+  <!-- interface-requires gtk+ 2.12 -->
+  <!-- interface-naming-policy toplevel-contextual -->
+  <widget class="GtkDialog" id="EditKeyboardShortcuts">
+    <property name="border_width">5</property>
+    <property name="title" translatable="yes">Rgedit keyboard shortcuts...</property>
+    <property name="type_hint">normal</property>
+    <property name="has_separator">False</property>
+    <child internal-child="vbox">
+      <widget class="GtkVBox" id="dialog-vbox1">
+        <property name="visible">True</property>
+        <property name="spacing">2</property>
+        <child>
+          <widget class="GtkFixed" id="fixed1">
+            <property name="visible">True</property>
+            <child>
+              <widget class="GtkLabel" id="label1">
+                <property name="width_request">590</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">The key shortcut can be "None" or something like "&lt;Alt&gt;m" or "&lt;Shift&gt;&lt;Ctrl&gt;F5":</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">5</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label2">
+                <property name="width_request">105</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Run current line:</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">45</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="RCtrlLine_Shortcut">
+                <property name="width_request">150</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+              </widget>
+              <packing>
+                <property name="x">115</property>
+                <property name="y">40</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label3">
+                <property name="width_request">90</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Run selection:</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">85</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="RCtrlSel_Shortcut">
+                <property name="width_request">150</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+              </widget>
+              <packing>
+                <property name="x">115</property>
+                <property name="y">80</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label4">
+                <property name="width_request">93</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Run whole file:</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">125</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="RCtrlAll_Shortcut">
+                <property name="width_request">150</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+              </widget>
+              <packing>
+                <property name="x">115</property>
+                <property name="y">120</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label5">
+                <property name="width_request">80</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Run block 1:</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">165</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="RCtrlBlock1Run_Shortcut">
+                <property name="width_request">150</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+              </widget>
+              <packing>
+                <property name="x">115</property>
+                <property name="y">160</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label6">
+                <property name="width_request">95</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Define block 1:</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">205</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="RCtrlBlock1Def_Shortcut">
+                <property name="width_request">150</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+              </widget>
+              <packing>
+                <property name="x">115</property>
+                <property name="y">200</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label7">
+                <property name="width_request">80</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Run block 2:</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">245</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="RCtrlBlock2Run_Shortcut">
+                <property name="width_request">150</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+              </widget>
+              <packing>
+                <property name="x">115</property>
+                <property name="y">240</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label8">
+                <property name="width_request">95</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Define block 2:</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">285</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="RCtrlBlock2Def_Shortcut">
+                <property name="width_request">150</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+              </widget>
+              <packing>
+                <property name="x">115</property>
+                <property name="y">280</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label9">
+                <property name="width_request">115</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Create new R tab:</property>
+              </widget>
+              <packing>
+                <property name="x">300</property>
+                <property name="y">45</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="RCtrlNewTab_Shortcut">
+                <property name="width_request">150</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+              </widget>
+              <packing>
+                <property name="x">445</property>
+                <property name="y">40</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label10">
+                <property name="width_request">140</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Configure R interface:</property>
+              </widget>
+              <packing>
+                <property name="x">300</property>
+                <property name="y">85</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="RCtrlConfig_Shortcut">
+                <property name="width_request">150</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+              </widget>
+              <packing>
+                <property name="x">445</property>
+                <property name="y">80</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label11">
+                <property name="width_request">125</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Load R Workspace:</property>
+              </widget>
+              <packing>
+                <property name="x">300</property>
+                <property name="y">125</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="RCtrlLoadWorkspace_Shortcut">
+                <property name="width_request">150</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+              </widget>
+              <packing>
+                <property name="x">445</property>
+                <property name="y">120</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label12">
+                <property name="width_request">125</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Save R Workspace:</property>
+              </widget>
+              <packing>
+                <property name="x">300</property>
+                <property name="y">165</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="RCtrlSaveWorkspace_Shortcut">
+                <property name="width_request">150</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+              </widget>
+              <packing>
+                <property name="x">445</property>
+                <property name="y">160</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label16">
+                <property name="width_request">590</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="ypad">1</property>
+                <property name="label" translatable="yes">&lt;b&gt;ATTENTION&lt;/b&gt;: gedit must be restarted for changes in key shortcuts to become effective!</property>
+                <property name="use_markup">True</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">380</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label17">
+                <property name="width_request">95</property>
+                <property name="height_request">40</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Attach/detach
+R console</property>
+              </widget>
+              <packing>
+                <property name="x">300</property>
+                <property name="y">195</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="RCtrlAttach_Shortcut">
+                <property name="width_request">150</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+              </widget>
+              <packing>
+                <property name="x">445</property>
+                <property name="y">200</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label18">
+                <property name="width_request">110</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Close R console:</property>
+              </widget>
+              <packing>
+                <property name="x">300</property>
+                <property name="y">245</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="RCtrlClose_Shortcut">
+                <property name="width_request">150</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+              </widget>
+              <packing>
+                <property name="x">445</property>
+                <property name="y">240</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="CtrlC_4_Copy">
+                <property name="label" translatable="yes">Use &lt;Ctrl&gt;C in console to copy selection instead of breaking computation?</property>
+                <property name="width_request">550</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="xalign">0.46000000834465027</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">315</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="CtrlQ_break">
+                <property name="label" translatable="yes">Use &lt;Ctrl&gt;Q in console for breaking computation?</property>
+                <property name="width_request">500</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">335</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="Escape_break">
+                <property name="label" translatable="yes">Use ESC in console for breaking computation?</property>
+                <property name="width_request">500</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">355</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label13">
+                <property name="width_request">130</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Run to current line:</property>
+              </widget>
+              <packing>
+                <property name="x">300</property>
+                <property name="y">285</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="RCtrlCursor_Shortcut">
+                <property name="width_request">150</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+              </widget>
+              <packing>
+                <property name="x">445</property>
+                <property name="y">280</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child internal-child="action_area">
+          <widget class="GtkHButtonBox" id="dialog-action_area1">
+            <property name="visible">True</property>
+            <property name="layout_style">end</property>
+            <child>
+              <widget class="GtkButton" id="CancelButton">
+                <property name="label">gtk-cancel</property>
+                <property name="response_id">-1</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkButton" id="button1">
+                <property name="label">gtk-ok</property>
+                <property name="response_id">-2</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</glade-interface>

@@ -1,0 +1,811 @@
+<?xml version="1.0"?>
+<glade-interface>
+  <!-- interface-requires gtk+ 2.12 -->
+  <!-- interface-naming-policy toplevel-contextual -->
+  <widget class="GtkDialog" id="RConfigDialog">
+    <property name="border_width">5</property>
+    <property name="title" translatable="yes">Rgedit options...</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <property name="default_width">500</property>
+    <property name="default_height">500</property>
+    <property name="type_hint">normal</property>
+    <property name="has_separator">False</property>
+    <child internal-child="vbox">
+      <widget class="GtkVBox" id="dialog-vbox1">
+        <property name="visible">True</property>
+        <property name="spacing">2</property>
+        <child>
+          <widget class="GtkFixed" id="fixed1">
+            <property name="visible">True</property>
+            <child>
+              <widget class="GtkSpinButton" id="MaxLinesToSendSpin">
+                <property name="width_request">40</property>
+                <property name="height_request">25</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="climb_rate">1</property>
+              </widget>
+              <packing>
+                <property name="x">230</property>
+                <property name="y">5</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label1">
+                <property name="width_request">220</property>
+                <property name="height_request">25</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Send as text a selection of at most</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">5</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label2">
+                <property name="width_request">50</property>
+                <property name="height_request">25</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">lines.</property>
+              </widget>
+              <packing>
+                <property name="x">270</property>
+                <property name="y">5</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label4">
+                <property name="width_request">100</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Cursor blink:   </property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">230</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkRadioButton" id="BlinkSystem">
+                <property name="label" translatable="yes">system</property>
+                <property name="width_request">80</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">100</property>
+                <property name="y">230</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkRadioButton" id="BlinkOn">
+                <property name="label" translatable="yes">on</property>
+                <property name="width_request">50</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+                <property name="group">BlinkSystem</property>
+              </widget>
+              <packing>
+                <property name="x">190</property>
+                <property name="y">230</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkRadioButton" id="BlinkOff">
+                <property name="label" translatable="yes">off</property>
+                <property name="width_request">50</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+                <property name="group">BlinkSystem</property>
+              </widget>
+              <packing>
+                <property name="x">260</property>
+                <property name="y">230</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label5">
+                <property name="width_request">100</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Cursor shape: </property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">250</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkRadioButton" id="ShapeBlock">
+                <property name="label" translatable="yes">block</property>
+                <property name="width_request">70</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">100</property>
+                <property name="y">250</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkRadioButton" id="ShapeIBeam">
+                <property name="label" translatable="yes">ibeam</property>
+                <property name="width_request">70</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+                <property name="group">ShapeBlock</property>
+              </widget>
+              <packing>
+                <property name="x">190</property>
+                <property name="y">250</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkRadioButton" id="ShapeUnderline">
+                <property name="label" translatable="yes">underline</property>
+                <property name="width_request">90</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+                <property name="group">ShapeBlock</property>
+              </widget>
+              <packing>
+                <property name="x">260</property>
+                <property name="y">250</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label6">
+                <property name="width_request">40</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Font </property>
+              </widget>
+              <packing>
+                <property name="x">220</property>
+                <property name="y">115</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkFontButton" id="CurrentFont">
+                <property name="width_request">190</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_font">True</property>
+                <property name="use_size">True</property>
+              </widget>
+              <packing>
+                <property name="x">260</property>
+                <property name="y">110</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="ScrollOnKeystroke">
+                <property name="label" translatable="yes">Scroll on keystroke?</property>
+                <property name="width_request">150</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">270</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="ScrollOnOutput">
+                <property name="label" translatable="yes">Scroll on output?</property>
+                <property name="width_request">130</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">160</property>
+                <property name="y">270</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label7">
+                <property name="width_request">110</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Scrollback lines </property>
+              </widget>
+              <packing>
+                <property name="x">295</property>
+                <property name="y">270</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkEntry" id="ScrollbackLines">
+                <property name="width_request">50</property>
+                <property name="height_request">25</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="invisible_char">&#x2022;</property>
+              </widget>
+              <packing>
+                <property name="x">400</property>
+                <property name="y">268</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="AutostartR">
+                <property name="label" translatable="yes">Start R console automatically when gedit starts?</property>
+                <property name="width_request">350</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">295</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="TabNameInPrompt">
+                <property name="label" translatable="yes">Use tab name in R's prompt?</property>
+                <property name="width_request">210</property>
+                <property name="height_request">25</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">240</property>
+                <property name="y">70</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkComboBox" id="PromptColor1">
+                <property name="width_request">125</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+              </widget>
+              <packing>
+                <property name="x">325</property>
+                <property name="y">140</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label8">
+                <property name="width_request">60</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">prompt</property>
+              </widget>
+              <packing>
+                <property name="x">270</property>
+                <property name="y">145</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label9">
+                <property name="width_request">120</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Tab 1: foreground</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">145</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkColorButton" id="ForegroundColor1">
+                <property name="width_request">30</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="title" translatable="yes">Pick the R console foreground color</property>
+              </widget>
+              <packing>
+                <property name="x">125</property>
+                <property name="y">140</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label3">
+                <property name="width_request">90</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">background</property>
+              </widget>
+              <packing>
+                <property name="x">155</property>
+                <property name="y">145</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkColorButton" id="BackgroundColor1">
+                <property name="width_request">30</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="title" translatable="yes">Pick the R console background color</property>
+              </widget>
+              <packing>
+                <property name="x">240</property>
+                <property name="y">140</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label10">
+                <property name="width_request">120</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Tab 2: foreground</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">175</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkColorButton" id="ForegroundColor2">
+                <property name="width_request">30</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="title" translatable="yes">Pick the R console foreground color</property>
+              </widget>
+              <packing>
+                <property name="x">125</property>
+                <property name="y">170</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label11">
+                <property name="width_request">90</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">background</property>
+              </widget>
+              <packing>
+                <property name="x">155</property>
+                <property name="y">175</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkColorButton" id="BackgroundColor2">
+                <property name="width_request">30</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="title" translatable="yes">Pick the R console background color</property>
+              </widget>
+              <packing>
+                <property name="x">240</property>
+                <property name="y">170</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label12">
+                <property name="width_request">60</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">prompt</property>
+              </widget>
+              <packing>
+                <property name="x">270</property>
+                <property name="y">175</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkComboBox" id="PromptColor2">
+                <property name="width_request">125</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+              </widget>
+              <packing>
+                <property name="x">325</property>
+                <property name="y">170</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label13">
+                <property name="width_request">120</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Tab 3: foreground</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">205</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkColorButton" id="ForegroundColor3">
+                <property name="width_request">30</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="title" translatable="yes">Pick the R console foreground color</property>
+              </widget>
+              <packing>
+                <property name="x">125</property>
+                <property name="y">200</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label14">
+                <property name="width_request">90</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">background</property>
+              </widget>
+              <packing>
+                <property name="x">155</property>
+                <property name="y">205</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkColorButton" id="BackgroundColor3">
+                <property name="width_request">30</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="title" translatable="yes">Pick the R console background color</property>
+              </widget>
+              <packing>
+                <property name="x">240</property>
+                <property name="y">200</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkLabel" id="label15">
+                <property name="width_request">60</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">prompt</property>
+              </widget>
+              <packing>
+                <property name="x">270</property>
+                <property name="y">205</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkComboBox" id="PromptColor3">
+                <property name="width_request">125</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+              </widget>
+              <packing>
+                <property name="x">325</property>
+                <property name="y">200</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkButton" id="ChangeShortcuts">
+                <property name="label" translatable="yes">Keyboard shortcuts</property>
+                <property name="width_request">140</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <signal name="clicked" handler="on_ChangeShortcuts_clicked"/>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">430</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="StartRAttached">
+                <property name="label" translatable="yes">Start R console detached from gedit's bottom panel?</property>
+                <property name="width_request">370</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">370</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="AutostartScriptCheck">
+                <property name="label" translatable="yes">Autorun R script on startup?</property>
+                <property name="width_request">210</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">400</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkFileChooserButton" id="AutorunScriptPath">
+                <property name="width_request">230</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="title" translatable="yes">Select R script to run at startup</property>
+              </widget>
+              <packing>
+                <property name="x">220</property>
+                <property name="y">395</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkButton" id="SidePanelOptions">
+                <property name="label" translatable="yes">Side panel options</property>
+                <property name="width_request">140</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <signal name="clicked" handler="on_SidePanelOptions_clicked"/>
+              </widget>
+              <packing>
+                <property name="x">158</property>
+                <property name="y">430</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="VisibleBell">
+                <property name="label" translatable="yes">Visible bell?</property>
+                <property name="width_request">100</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">120</property>
+                <property name="y">115</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="AudibleBell">
+                <property name="label" translatable="yes">Audible bell?</property>
+                <property name="width_request">105</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">115</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="AdvanceLineCheck">
+                <property name="label" translatable="yes">Advance to next line after sending the current one to R?</property>
+                <property name="width_request">400</property>
+                <property name="height_request">25</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">90</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="SkipEmptyAndCommentCheck">
+                <property name="label" translatable="yes">Skip empty and comment lines?</property>
+                <property name="width_request">230</property>
+                <property name="height_request">25</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">70</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="HTMLHelpCheck">
+                <property name="label" translatable="yes">Use HTML help (opened with the default WEB browser)?</property>
+                <property name="width_request">400</property>
+                <property name="height_request">25</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">50</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="EchoPipedCommandsCheck">
+                <property name="label" translatable="yes">Echo commands sent through source() (i.e., not as text)?</property>
+                <property name="width_request">400</property>
+                <property name="height_request">25</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_underline">True</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">30</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="UseDocDirectory">
+                <property name="label" translatable="yes">Should new R consoles use the current document's directory?</property>
+                <property name="width_request">415</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">320</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkCheckButton" id="ShowMessageCheck">
+                <property name="label" translatable="yes">Show rgedit's warnings and messages when R starts?</property>
+                <property name="width_request">400</property>
+                <property name="height_request">20</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="draw_indicator">True</property>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">345</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkButton" id="CodeFoldingOptions">
+                <property name="label" translatable="yes">Code folding options</property>
+                <property name="width_request">140</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_underline">True</property>
+                <signal name="clicked" handler="on_CodeFoldingOptions_clicked"/>
+              </widget>
+              <packing>
+                <property name="x">310</property>
+                <property name="y">430</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkButton" id="EditProfiles">
+                <property name="label" translatable="yes">Edit profiles</property>
+                <property name="width_request">445</property>
+                <property name="height_request">30</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <signal name="clicked" handler="on_EditProfiles_clicked"/>
+              </widget>
+              <packing>
+                <property name="x">5</property>
+                <property name="y">470</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child internal-child="action_area">
+          <widget class="GtkHButtonBox" id="dialog-action_area1">
+            <property name="visible">True</property>
+            <property name="layout_style">end</property>
+            <child>
+              <widget class="GtkButton" id="ButtonCancel">
+                <property name="label">gtk-cancel</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="on_ButtonCancel_clicked"/>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="GtkButton" id="ButtonOk">
+                <property name="label">gtk-ok</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="on_ButtonOk_clicked"/>
+              </widget>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</glade-interface>

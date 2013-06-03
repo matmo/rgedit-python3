@@ -1,0 +1,9 @@
+[Plugin]
+Loader=python
+Module=RCtrl
+IAge=3
+Name=R integration
+Description=Allows R to be controlled from Gedit
+Authors=Dan Dediu <ddediu@gmail.com>
+Copyright=Copyright © 2009-2011 Dan Dediu <ddediu@gmail.com>
+Website=http://sourceforge.net/projects/rgedit

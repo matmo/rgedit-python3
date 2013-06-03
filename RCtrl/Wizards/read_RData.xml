@@ -1,0 +1,31 @@
+<!-- Define a rwizard -->
+<rwizard name="readrdata" description="Read previously saved R data" 
+         menu="/Data import and export" icon="read_RData.png">
+    <about 
+        name="Read previously saved R data"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Read an R object using load(...)"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="read_RData.png"/>
+        
+    <help rhelp="?load"/>
+
+    <vars>  
+        <block title="load() parameters...">
+            <variable name="file" description="The data file's path" type="text" default="" required="True" tooltip='Use quotes if filename is a simple &lt;b&gt;string&lt;/b&gt; (e.g. "file.spss") but not if it is an &lt;b&gt;expression&lt;/b&gt; (e.g. paste( "file", "spss", sep="" )).'/>
+            <variable name="envir" description="The environment where the data should be loaded" type="text" default="parent.frame()" required="True" tooltip="The default is usually ok"/>
+        </block>
+    </vars>  
+
+    <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+    <template> 
+load( file=${file}, envir=${envir} )
+    </template> 
+
+</rwizard>

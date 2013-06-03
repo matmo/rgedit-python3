@@ -1,0 +1,38 @@
+<!-- Define a rwizard -->
+<rwizard name="ln" description="Multiple linear regression" 
+         menu="/Regression" icon="ln.png" selectionas="DV">
+    <about 
+        name="Multiple linear regression"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Multiple linear regression using lm"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="ln.png"/>
+        
+    <help rhelp="?lm"/>
+
+    <vars>  
+        <!-- Define the variables (placeholders) -->
+    
+        <!-- This will be a single dialog (screen) in the vertical order given -->
+        <block title="The DV, IVs and dataset">
+            <variable name="DV" description="The dependent variable" type="text" default="" required="True" tooltip="Must be numeric or factor"/>
+            <variable name="IVs" description="The model containing the independent variables" type="text" default="" required="True" tooltip="Describe the full model using &lt;b&gt;+&lt;/b&gt; &lt;b&gt;*&lt;/b&gt; &lt;b&gt;:&lt;/b&gt; &lt;b&gt;I(.)&lt;/b&gt; (e.g., &lt;b&gt;x * I(x^2)&lt;/b&gt;)."/>
+            <variable name="dataset" description="The dataset (if any)" type="text" default="NA" required="True" tooltip="NA means that no dataset is defined"/>
+        </block>
+        
+    </vars>  
+
+    <template> 
+        <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+        <!-- and the Python scripts within $[Python ... $] which are evlautated and the result inserted in the R code -->
+lm( ${DV} ~ ${IVs} $[Python (', data=${dataset}','')[not ('${dataset}' != 'NA')] $] );
+    </template> 
+
+</rwizard>
+

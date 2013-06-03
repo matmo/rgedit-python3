@@ -1,0 +1,28 @@
+<!-- Define a rwizard -->
+<rwizard name="loadpackage" description="Load package" 
+         menu="/Package management" icon="load_package.png">
+    <about 
+        name="Load package"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Load an already installed package"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="load_package.png"/>
+        
+    <help rhelp="?library"/>
+
+    <vars/>  
+
+    <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+    <!-- ATTENTION! in the R code template you must use XML substitution codes (e.g., "<" must be given as "&lt;")! -->
+    <template> 
+local({pkg &lt;- sort(.packages(all.available = TRUE))[menu(sort(.packages(all.available = TRUE)),graphics=T)]
+if(nchar(pkg)) library(pkg, character.only=TRUE)})
+    </template> 
+
+</rwizard>

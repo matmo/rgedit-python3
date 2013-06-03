@@ -1,0 +1,72 @@
+<!-- Define a rwizard -->
+<rwizard name="indexplot" description="Plots the data versus observation index" 
+         menu="/Plots" icon="plots_index_plot.png">
+    <about 
+        name="Index plot"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Plots the data versus observation index. Inspired by R Commander's 'Index plot'"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="plots_index_plot.png"/>
+        
+    <help rhelp="?plot"/>
+
+    <vars>  
+        <block title="Index plot's parameters...">
+            <variable name="x" description="The variable to be plotted" type="text" default="" required="True" tooltip="Must represent a numeric vector"/>
+            <variable name="type" description="The type of plot" type="list" singlechoice="True" default="0" required="True">
+                <value name="p (points)"/>
+                <value name="l (lines)"/>
+                <value name="b (both points and lines)"/>
+                <value name="h (histogram-like)"/>
+                <value name="s (stair steps)"/>
+                <value name="n (no plotting)"/>
+            </variable> 
+            <variable name="pch" description="The plotting symbol or character" type="editablelist" singlechoice="True" default="default" required="False" tooltip='Can be either a number of a quoted character (e.g., "x"). To see the symbols represented by these numbers run in R &lt;b&gt; plot(0:25,0:25,pch=0:25); text(0:25,0:25+1,0:25); &lt;/b&gt;'>
+                <value name="default"/>
+                <value name="NA (no symbol)"/>
+                <value name="0 (large square)"/>
+                <value name="1 (circle)"/>
+                <value name="2 (triangle tip up)"/>
+                <value name="3 (cross)"/>
+                <value name="4 (oblique cross)"/>
+                <value name="5 (rhomb)"/>
+                <value name="6 (triangle tip down)"/>
+                <value name="7 (square + oblique cross)"/>
+                <value name="8 (star)"/>
+                <value name="9 (rhomb + cross)"/>
+                <value name="10 (circle + cross)"/>
+                <value name="11 (star of David)"/>
+                <value name="12 (square + cross)"/>
+                <value name="13 (circle + oblique cross)"/>
+                <value name="14 (square + 'V')"/>
+                <value name="15 (filled square)"/>
+                <value name="16 (filled circle)"/>
+                <value name="17 (filled triangle tip up)"/>
+                <value name="18 (filled rhomb)"/>
+                <value name="19 (filled large circle)"/>
+                <value name="20 (filled small circle)"/>
+                <value name="21 (large circle)"/>
+                <value name="22 (large square)"/>
+                <value name="23 (small rhomb)"/>
+                <value name="24 (small traingle tip up)"/>
+                <value name="25 (small traingle tip down)"/>
+            </variable>
+            <variable name="cex" description="Relative font size" type="text" default="1.0" required="False" tooltip="A numerical value giving the amount by which plotting text and symbols should be magnified relative to the default"/>
+            <variable name="main" description="The plot's main title" type="text" default="default" required="True" tooltip="Make sure to quote fixed strings!"/>
+            <variable name="xlab" description="The x-axis label" type="text" default="default" required="True" tooltip="Make sure to quote fixed strings!"/>
+            <variable name="ylab" description="The y-axis label" type="text" default="default" required="True" tooltip="Make sure to quote fixed strings!"/>
+        </block>
+    </vars>  
+
+    <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+    <template> 
+plot( x=${x}, type="$[Python str("${type}")[0] $]",  cex=${cex} $[Python (("",', pch=${pch}')[not ('${pch}' == "default")],str(', pch=')+str('${pch}')[:2])['${pch}' in ["NA (no symbol)", "0 (large square)", "1 (circle)", "2 (triangle tip up)", "3 (cross)", "4 (oblique cross)", "5 (rhomb)", "6 (triangle tip down)", "7 (square + oblique cross)", "8 (star)", "9 (rhomb + cross)", "10 (circle + cross)", "11 (star of David)", "12 (square + cross)", "13 (circle + oblique cross)", "14 (square + 'V')", "15 (filled square)", "16 (filled circle)", "17 (filled triangle tip up)", "18 (filled rhomb)", "19 (filled large circle)", "20 (filled small circle)", "21 (large circle)", "22 (large square)", "23 (small rhomb)", "24 (small traingle tip up)", "25 (small traingle tip down)"]] $] $[Python ('',', main=${main}')[not ('${main}' == "default")] $] $[Python ('',', xlab=${xlab}')[not ('${xlab}' == "default")] $] $[Python ('',', ylab=${ylab}')[not ('${ylab}' == "default")] $] )
+    </template> 
+
+</rwizard>

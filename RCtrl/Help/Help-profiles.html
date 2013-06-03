@@ -1,0 +1,403 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html dir="ltr"><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8"><title>Rgedit Help: Managing Profiles</title>
+  
+  <meta name="GENERATOR" content="OpenOffice.org 3.1  (Linux)">
+  <meta name="CREATED" content="0;0">
+  <meta name="CHANGED" content="20090817;13104400">
+  <meta content="Dan Dediu" name="author">
+  <meta content="Rgedit help pages" name="description">
+  <link rel="icon" href="../Rgedit-icon16.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../Rgedit-icon16.ico" type="image/x-icon"><!--link rel="icon" type="image/png" href="/graphics/gnu-head-mini.png" /--><meta http-equiv="content-type" content="text/html; charset=utf-8"></head><body>
+<p align="center"><a href="http://sourceforge.net/projects/rgedit/" name="Rgedit website"><img src="../Rgedit-icon.png" title="Rgedit logo" name="graphics1" alt="Rgedit logo" style="border: 0px solid ; width: 64px; height: 64px;"></a></p>
+<h1 align="center">Managing Profiles in Rgedit<br>
+</h1>
+<p align="center">(c) 2012, Dan Dediu<br>
+
+
+</p>
+<p style="text-align: center; font-weight: bold;"><br>
+</p>
+<p style="text-align: left; font-weight: bold;">Table of Contents</p>
+<p style="text-align: left;">&nbsp;&nbsp;&nbsp; <a href="#Introduction">Introduction</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#Main_features">The profile editor</a><br><a href="#Acknowledgements"></a><br>
+</p>
+
+<ol>
+  <ol>
+    <h2><a name="Introduction"></a>Introduction</h2>
+  </ol>
+</ol>
+<p align="left"><span style="font-weight: bold;">Profiles</span> are introduced in version 0.8 and allow <span style="font-weight: bold; font-family: monospace;">Rgedit</span> to <span style="font-style: italic;">flexibly</span> interact with <span style="font-weight: bold; font-family: monospace;">R</span> or even other command-line interactive programs such as <span style="font-weight: bold; font-family: monospace;">Octave</span>, <span style="font-style: italic;">locally</span> or <span style="font-style: italic;">remotely</span> through, for example, <span style="font-weight: bold; font-family: monospace;">ssh</span>.<br>
+</p>
+<p align="left">Profiles have the following components:<br>
+</p>
+<ul>
+  <li><span style="font-weight: bold;">name</span>: this is the profile's user-friendly name and must be unique (for example, "<span style="font-style: italic;">My custom-built R</span>");</li>
+  <li><span style="font-weight: bold;">cmd</span>: represents the actual command line (including options) used to start an interactive session (for example, "<span style="font-style: italic;">/opt/R-optimized/R --no-save --no-restore</span>");</li>
+  <li><span style="font-weight: bold;">local</span>: a boolean specifying if the profile is to be run locally or remotely (for example, <span style="font-style: italic;">True</span>);</li>
+  <li><span style="font-weight: bold;">default</span>: is the profile
+the default profile? There can be a single default profile and this
+will be used implicitely in any new rgedit tab/session (for example, <span style="font-style: italic;">False</span>);</li>
+  <li><span style="font-weight: bold;">setwd</span>: the command used
+to change the current (working) folder (directory) taking as single
+parameter (identified in standard Python string notation as "<span style="font-style: italic;">%s</span>") the path, or <span style="font-style: italic;">None</span> if no such command should be run (for example, "<span style="font-style: italic;">setwd(%s)</span>");</li>
+  <li><span style="font-weight: bold;">init-script</span>: a boolean
+value specifying if the init script containing various R routines used
+by rgedit will called on a new session (for example, <span style="font-style: italic;">True</span>);</li>
+  <li><span style="font-weight: bold;">help-type</span>: the help system used by the session; can be one of "<span style="font-style: italic;">HTML</span>", "<span style="font-style: italic;">Text</span>", "<span style="font-style: italic;">Default</span>" or "<span style="font-style: italic;">Custom</span>" (in which case the "<span style="font-weight: bold;">help-custom-command</span>" attribute must be given);</li>
+  <li><span style="font-weight: bold;">help-custom-command</span>: the actual commands to be run for a custom help system or <span style="font-style: italic;">None</span> if not applicable;</li>
+  <li><span style="font-weight: bold;">prompt</span>: the prompt symbol (for example "<span style="font-style: italic;">&gt; </span>");</li>
+  <li><span style="font-weight: bold;">prompt-cmd</span>: the actual command used to set the prompt symbol given as the only parameter (for example, "<span style="font-style: italic;">options( prompt="%s" )</span>");</li>
+  <li><span style="font-weight: bold;">continue</span>: the prompt-continuation symbol (for example "<span style="font-style: italic;">+ </span>");</li>
+  <li><span style="font-weight: bold;">continue-cmd</span>: the actual command used to set the prompt continuation symbol given as the only parameter (for example, "<span style="font-style: italic;">options( continue="%s" )</span>");</li>
+  <li><span style="font-weight: bold;">source-cmd</span>: the actual
+command used to send a file containing commands to the interpreter
+(taking as parameter the file path), or, if no such thing, <span style="font-style: italic;">None</span> (for example, "<span style="font-style: italic;">source("%s",echo=TRUE,print.eval=TRUE,max.deparse.length=500000,local=TRUE)</span>");</li>
+  <li><span style="font-weight: bold;">quit-cmd</span>; the command used to finish a session (for example "<span style="font-style: italic;">q()</span>");</li>
+  <li><span style="font-weight: bold;">comment</span>: the comment character (for example, "<span style="font-style: italic;">#</span>").</li>
+</ul>
+There always is a <span style="font-weight: bold;">built-in</span> profile (guaranteed to be always present in any <span style="font-weight: bold; font-family: monospace;">rgedit</span> installation and using a standard <span style="font-weight: bold; font-family: monospace;">R</span> installation) defined as:<br>
+<br>
+<table style="text-align: left; width: 75%; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+  <caption style="caption-side: bottom;"><br>
+  </caption><tbody>
+    <tr>
+      <td style="vertical-align: top; width: 10%; background-color: rgb(255, 255, 204); font-weight: bold; text-align: center;">Attribute<br>
+      </td>
+      <td style="vertical-align: top; background-color: rgb(255, 255, 204); font-weight: bold; text-align: center;">Value<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">name</span></td>
+      <td style="vertical-align: top;">built-in<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">cmd</span></td>
+      <td style="vertical-align: top;">R --no-save --no-restore<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">local</span></td>
+      <td style="vertical-align: top;">True<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">default</span></td>
+      <td style="vertical-align: top;">True<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">setwd</span></td>
+      <td style="vertical-align: top;">setwd(%s)<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">init-script</span></td>
+      <td style="vertical-align: top;">True<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">help-type</span></td>
+      <td style="vertical-align: top;">HTML<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">help-custom-command</span></td>
+      <td style="vertical-align: top;">None<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">prompt</span></td>
+      <td style="vertical-align: top;">&gt; <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">prompt-cmd</span></td>
+      <td style="vertical-align: top;">options( prompt="%s" )<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">continue</span></td>
+      <td style="vertical-align: top;">+ <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">continue-cmd</span></td>
+      <td style="vertical-align: top;">options( continue="%s" )<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">source-cmd</span></td>
+      <td style="vertical-align: top;">source("%s",echo=TRUE,print.eval=TRUE,max.deparse.length=500000,local=TRUE)<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">quit-cmd</span></td>
+      <td style="vertical-align: top;">q()<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">comment</span></td>
+      <td style="vertical-align: top;">#<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+Below is an example of a profile using a local installation of <a href="http://www.gnu.org/software/octave/" target="_blank"><span style="font-weight: bold; font-family: monospace;">GNU Octave</span></a>:<br>
+
+<br>
+
+<table style="text-align: left; width: 75%; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+
+  <caption style="caption-side: bottom;"><br>
+  </caption><tbody>
+    <tr>
+      <td style="vertical-align: top; width: 10%; background-color: rgb(255, 255, 204); font-weight: bold; text-align: center;">Attribute<br>
+      </td>
+      <td style="vertical-align: top; background-color: rgb(255, 255, 204); font-weight: bold; text-align: center;">Value<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">name</span></td>
+      <td style="vertical-align: top;">octave<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">cmd</span></td>
+      <td style="vertical-align: top;">octave<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">local</span></td>
+      <td style="vertical-align: top;">True<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">default</span></td>
+      <td style="vertical-align: top;">False<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">setwd</span></td>
+      <td style="vertical-align: top;">chdir %s<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">init-script</span></td>
+      <td style="vertical-align: top;">False<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">help-type</span></td>
+      <td style="vertical-align: top;">Default<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">help-custom-command</span></td>
+      <td style="vertical-align: top;">None<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">prompt</span></td>
+      <td style="vertical-align: top;">&gt; <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">prompt-cmd</span></td>
+      <td style="vertical-align: top;">PS1( "%s" )<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">continue</span></td>
+      <td style="vertical-align: top;">+ <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">continue-cmd</span></td>
+      <td style="vertical-align: top;">PS2( "%s" )<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">source-cmd</span></td>
+      <td style="vertical-align: top;">source("%s")<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">quit-cmd</span></td>
+      <td style="vertical-align: top;">quit<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">comment</span></td>
+      <td style="vertical-align: top;">#<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+And, finally, an example of a <span style="font-weight: bold;">remote <span style="font-family: monospace;">R</span> session</span> thorugh two <span style="font-weight: bold; font-family: monospace;">ssh</span>
+hops (please note that the hostnames are fictious but this is based on
+my current remote setup!). For remote sessions is probably advisable to
+fall back on the <span style="font-weight: bold;">text help</span> (no remote browsers), no automatic <span style="font-weight: bold;">setwd</span> (as the local
+and remote paths will be probably different, meaning that the user should be careful to <span style="font-style: italic;">manually</span> change the working directory), and <span style="font-weight: bold;">no source</span> (as local
+temp files are not directly accessible on the remote host, meaning that <span style="font-style: italic;">small pieces of text</span> can be send to the console at any given time):<br>
+
+
+<br>
+
+
+<table style="text-align: left; width: 75%; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
+
+
+  <caption style="caption-side: bottom;"><br>
+  </caption><tbody>
+    <tr>
+      <td style="vertical-align: top; width: 10%; background-color: rgb(255, 255, 204); font-weight: bold; text-align: center;">Attribute<br>
+      </td>
+      <td style="vertical-align: top; background-color: rgb(255, 255, 204); font-weight: bold; text-align: center;">Value<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">name</span></td>
+      <td style="vertical-align: top;">remote R through chained ssh<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">cmd</span></td>
+      <td style="vertical-align: top;">ssh -X -t user@host1 ssh -X -t host2 "R --no-save --no-restore"<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">local</span></td>
+      <td style="vertical-align: top;">False<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">default</span></td>
+      <td style="vertical-align: top;">False<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">setwd</span></td>
+      <td style="vertical-align: top;">None<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">init-script</span></td>
+      <td style="vertical-align: top;">True<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">help-type</span></td>
+      <td style="vertical-align: top;">Text<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">help-custom-command</span></td>
+      <td style="vertical-align: top;">None<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">prompt</span></td>
+      <td style="vertical-align: top;">&gt; <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">prompt-cmd</span></td>
+      <td style="vertical-align: top;">options( prompt="%s" )</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">continue</span></td>
+      <td style="vertical-align: top;">+ <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">continue-cmd</span></td>
+      <td style="vertical-align: top;">options( continue="%s" )<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">source-cmd</span></td>
+      <td style="vertical-align: top;">None<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">quit-cmd</span></td>
+      <td style="vertical-align: top;">q()<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">comment</span></td>
+      <td style="vertical-align: top;">#<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+Thus, the profiles mechanism is quite flexible an can accomodate at
+least GNU octave (a requested extenssion) and remote sessions (a setup
+that is probably not uncommon). I'm pretty sure other uses ca be found
+:)<br>
+<br>
+<ol>
+  <ol>
+    <h2>&nbsp;&nbsp;&nbsp; <a name="Main_features"></a>The profile editor<br>
+    </h2>
+  </ol>
+</ol>
+<p align="left"><font style="line-height: 200%;">Below is a screen shot
+of the profile editor:<br>
+</font></p>
+<div style="text-align: center;"><a name="Screenshot1"></a><img style="width: 802px; height: 232px;" alt="The profile editor" title="The profile editor" src="profile-editor.jpg"><br>
+</div>
+<br>Basically, the profile editor allows the user to edit, delete or add profiles using a simple GUI. <span style="font-weight: bold;"><br>
+</span>
+<ul>
+  <li><span style="font-weight: bold;">Editing</span> is simple and ivolves toggling radio buttons and check boxes and double-clicking on text fields to edit the text. The <span style="font-style: italic;">built-in</span> profile cannot be edited.<br>
+  </li>
+  <li>To <span style="font-weight: bold;">remove</span> the currently selected profile press the "Delete profile" button. The <span style="font-style: italic;">built-in</span> profile cannot be removed.</li>
+  <li>To <span style="font-weight: bold;">add</span>
+a new profile, press the "Add profile" button and select a template to
+use by pressing one of the buttons; of course everything can be
+customized afterwards...<br>
+</li>
+</ul>
+<div style="text-align: center;"><img style="width: 302px; height: 242px;" alt="Add profile" title="Add profile" src="profile-editor-add.jpg"><br>
+</div>
+<br>
+
+Please note some <span style="font-weight: bold;">conventions</span>:<br>
+<ul>
+  <li>The special value "<span style="font-style: italic;">None</span>" must be given as "<span style="font-style: italic;">&lt;None&gt;</span>";</li>
+  <li>The changed values will be validated on pressing ENTER or any of the buttons (except Cancel);</li>
+  <li>The strings are <span style="font-style: italic;">case-sensitive</span>. <br>
+  </li>
+</ul>
+<br>
+<div style="text-align: center;"><a href="Help.html"><span style="font-weight: bold;">Back to the main help page.</span></a><br>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+</body></html>

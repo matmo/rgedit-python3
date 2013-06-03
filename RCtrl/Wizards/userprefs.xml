@@ -1,0 +1,13 @@
+<!-- Define he user preferences for rwizards -->
+<rwizardsuserprefs rootmenuentry="Wizards" showontoolbar="false" shortcutsactive="true">
+    <!-- rootmenuentry - the menu entry for all the wizards 
+         showontoolbar - should wizards which are defined as showing on the toolbar be actually shown?
+         shortcutsactive - should the keyboard shortcuts be honoured? -->
+
+    <!-- The user-defined menu entries for rwizards -->
+    <prefs>
+        <!--item rwizard="corr" menu="/Association tests/Correlation" icon="corr.png" toolbar="false" shortcut="Ctrl+Alt+C"/-->
+    </prefs>
+
+</rwizardsuserprefs>
+

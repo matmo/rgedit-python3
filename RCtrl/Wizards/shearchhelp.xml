@@ -1,0 +1,29 @@
+<!-- Define a rwizard -->
+<rwizard name="searchHelp" description="Search help" 
+         menu="/Helpers" selectionas="V1" icon="selection_help.png">
+    <about 
+        name="Search help"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Search in R's help using ?"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="selection_help.png"/>
+        
+    <vars>  
+        <block title="Please select the keyword to search...">
+            <variable name="V1" description="Keyword" type="text" default="" required="True"/>
+        </block>
+        
+    </vars>  
+
+    <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+    <template> 
+?${V1}
+    </template> 
+
+</rwizard>

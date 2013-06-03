@@ -1,0 +1,29 @@
+<!-- Define a rwizard -->
+<rwizard name="fixData" description="Edit dataframe or matrix" 
+         menu="/Helpers/View and edit" selectionas="V1" icon="selection_editdata.png">
+    <about 
+        name="Edit dataframe or matrix"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Edit a dataframe or matrix using R's fix() function with a graphic interface"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="selection_editdata.png"/>
+        
+    <vars>  
+        <block title="Please select the keyword to search...">
+            <variable name="V1" description="Dataframe/matrix" type="text" default="" required="True"/>
+        </block>
+        
+    </vars>  
+
+    <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+    <template> 
+fix(${V1});
+    </template> 
+
+</rwizard>

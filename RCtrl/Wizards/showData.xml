@@ -1,0 +1,34 @@
+<!-- Define a rwizard -->
+<rwizard name="showData" description="View dataframe or matrix" 
+         menu="/Helpers/View and edit" selectionas="V1" icon="selection_showdata.png">
+    <about 
+        name="View dataframe or matrix"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Display a dataframe or matrix using relimp's showData() function with a nice Tcl/Tk interface"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="selection_showdata.png"/>
+        
+    <!-- help file="corr-help.html"/ --> <!-- could be url="..." instead -->
+
+    <vars>  
+        <!-- Define the variables (placeholders) -->
+    
+        <!-- This will be a single dialog (screen) in the vertical order given -->
+        <block title="Please select the dataframe or matrix...">
+            <variable name="V1" description="Dataframe/matrix" type="text" default="" required="True"/>
+        </block>
+        
+    </vars>  
+
+    <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+    <template> 
+require(relimp,quietly=T); showData(as.data.frame(${V1}));
+    </template> 
+
+</rwizard>

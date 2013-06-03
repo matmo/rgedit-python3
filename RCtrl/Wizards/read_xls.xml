@@ -1,0 +1,32 @@
+<!-- Define a rwizard -->
+<rwizard name="readxls" description="Read data from Excel file" 
+         menu="/Data import and export" icon="read_xls.png">
+    <about 
+        name="Read data from Excel file"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Read an Excel file using gdata's read.xls(...)"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="read_xls.png"/>
+        
+    <help rhelp="require(gdata); ?read.xls"/>
+
+    <vars>  
+        <block title="read.xls() parameters...">
+            <variable name="file" description="The data file's path" type="text" default="" required="True" tooltip='Use quotes if filename is a simple &lt;b&gt;string&lt;/b&gt; (e.g. "file.spss") but not if it is an &lt;b&gt;expression&lt;/b&gt; (e.g. paste( "file", "spss", sep="" )).'/>
+            <variable name="sheet" description="Number of the sheet to read" type="text" default="1" required="True" tooltip="Don't quote as this must be an &lt;b&gt;integer&lt;/b&gt;"/>
+        </block>
+    </vars>  
+
+    <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+    <template> 
+require(gdata); 
+read.xls( file=${file}, sheet=${sheet} )
+    </template> 
+
+</rwizard>

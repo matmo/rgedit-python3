@@ -1,0 +1,47 @@
+<!-- Define a rwizard -->
+<rwizard name="writetable" description="Write data to flat file" 
+         menu="/Data import and export" icon="write_table.png">
+    <about 
+        name="Write data to flat file"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Write a data.frame to a flat file or CSV  using write.table(...)"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="write_table.png"/>
+        
+    <help rhelp="?write.table"/>
+
+    <vars>  
+        <block title="write.table() parameters...">
+            <variable name="object" description="The object to be written" type="text" default="" required="True" tooltip="Don't quote this except if you want the &lt;b&gt;string&lt;/b&gt; as such to be saved instead of the &lt;b&gt;object&lt;/b&gt; with that name!"/>
+            <variable name="file" description="The data file's path" type="text" default="" required="True" tooltip='Use quotes if filename is a simple &lt;b&gt;string&lt;/b&gt; (e.g. "file.spss") but not if it is an &lt;b&gt;expression&lt;/b&gt; (e.g. paste( "file", "spss", sep="" )).'/>
+            <variable name="append" description="Append to file?" type="bool" default="False" required="False"/>
+            <variable name="quote" description="Quote character and factor columns?" type="bool" default="False" required="False"/>
+            <variable name="sep" description="The field separator" type="editablelist" singlechoice="True" default="TAB" required="False" tooltip="Don't use quotes here: they are automatically added">
+                <value name=""/>
+                <value name=","/>
+                <value name=";"/>
+                <value name="TAB"/>
+                <value name="SPACE"/>
+            </variable> 
+            <variable name="dec" description="The decimal point" type="editablelist" singlechoice="True" default="." required="False" tooltip="Don't use quotes here: they are automatically added">
+                <value name="."/>
+                <value name=","/>
+            </variable> 
+            <variable name="na" description="The NA string" type="text" default="NA" required="False" tooltip="Don't use quotes here: they are automatically added"/>
+            <variable name="row.names" description="Write row names?" type="bool" default="True" required="False"/>
+            <variable name="col.names" description="Write column names?" type="bool" default="True" required="False"/>
+        </block>
+    </vars>  
+
+    <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+    <template> 
+write.table( x=${object}, file=${file}, append=$[Python str(${append}).upper() $], quote=$[Python str(${quote}).upper() $], sep="$[Python ("\\t",(" ",str("${sep}").upper())[not (str("${sep}").upper()=="SPACE")])[not (str("${sep}").upper()=="TAB") $]", na="${na}", dec="$[Python str("${dec}").upper() $]", row.names=$[Python str(${row.names}).upper() $], col.names=$[Python str(${col.names}).upper() $] )
+    </template> 
+
+</rwizard>

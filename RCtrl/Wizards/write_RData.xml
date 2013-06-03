@@ -1,0 +1,33 @@
+<!-- Define a rwizard -->
+<rwizard name="writerdata" description="Write R data to file" 
+         menu="/Data import and export" icon="write_RData.png">
+    <about 
+        name="Write R data to file"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Save an R object using save(...)"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="write_RData.png"/>
+        
+    <help rhelp="?save"/>
+
+    <vars>  
+        <block title="save() parameters...">
+            <variable name="save.workspace" description="Save the whole workspace?" type="bool" default="Dalse" required="False" tooltip="If this is checked then &lt;b&gt;objects&lt;/b&gt; and &lt;b&gt;envir&lt;/b&gt; are ignored"/>
+            <variable name="file" description="The data file's path" type="text" default="" required="True" tooltip='Use quotes if filename is a simple &lt;b&gt;string&lt;/b&gt; (e.g. "file.spss") but not if it is an &lt;b&gt;expression&lt;/b&gt; (e.g. paste( "file", "spss", sep="" )).'/>
+            <variable name="objects" description="The names of the objects to be saved (as symbols or character strings)" type="text" default="" required="False" tooltip="If more than one object, please use commas (,) to separate them but &lt;b&gt;do not&lt;/b&gt; end with a comma (e.g., x, y, z)!"/>
+            <variable name="envir" description="The environment where the data should be loaded" type="text" default="parent.frame()" required="True" tooltip="The default is usually ok"/>
+        </block>
+    </vars>  
+
+    <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+    <template> 
+$[Python ('save.image(file=${file})','save( ${objects}, file=${file}, envir=${envir} )')[not (str("${save.workspace}").upper() == "TRUE")] $]
+    </template> 
+
+</rwizard>

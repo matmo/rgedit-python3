@@ -1,0 +1,39 @@
+<!-- Define a rwizard -->
+<rwizard name="hist" description="Plots a histogram" 
+         menu="/Plots" icon="plots_hist.png">
+    <about 
+        name="Histogram"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Plots a histogram. Inspired by R Commander's 'Histogram'"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="plots_hist.png"/>
+        
+    <help rhelp="?hist"/>
+
+    <vars>  
+        <block title="Histogram's parameters...">
+            <variable name="x" description="The variable to be plotted" type="text" default="" required="True" tooltip="Must represent a numeric vector"/>
+            <variable name="breaks" description="The alhorithm for computing the breaks" type="text" default='"Sturges"' required="True" tooltip="See documentation for possible values. Please quote strings!"/>
+            <variable name="freq" description="Represent frequencies" type="list" singlechoice="True" default="0" required="False" tooltip=''>
+                <value name="default"/>
+                <value name="TRUE"/>
+                <value name="FALSE"/>
+            </variable>
+            <variable name="main" description="The plot's main title" type="text" default="default" required="True" tooltip="Make sure to quote fixed strings!"/>
+            <variable name="xlab" description="The x-axis label" type="text" default="default" required="True" tooltip="Make sure to quote fixed strings!"/>
+            <variable name="ylab" description="The y-axis label" type="text" default="default" required="True" tooltip="Make sure to quote fixed strings!"/>
+        </block>
+    </vars>  
+
+    <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+    <template> 
+hist( x=${x}, breaks=${breaks} $[Python ('',', ${freq}')[not ('${freq}'=='default')] $] $[Python ('',', main=${main}')[not ('${main}' == "default")] $] $[Python ('',', xlab=${xlab}')[not ('${xlab}' == "default")] $] $[Python ('',', ylab=${ylab}')[not ('${ylab}' == "default")] $] )
+    </template> 
+
+</rwizard>

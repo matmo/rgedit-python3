@@ -1,0 +1,706 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html dir="ltr"><head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8"><title>Rgedit v0.8 Help</title>
+  
+  <meta name="GENERATOR" content="OpenOffice.org 3.1  (Linux)">
+  <meta name="CREATED" content="0;0">
+  <meta name="CHANGED" content="20090817;13104400">
+  <meta content="Dan Dediu" name="author">
+  <meta content="Rgedit help pages" name="description">
+  <link rel="icon" href="../Rgedit-icon16.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../Rgedit-icon16.ico" type="image/x-icon"><!--link rel="icon" type="image/png" href="/graphics/gnu-head-mini.png" /--><meta http-equiv="content-type" content="text/html; charset=utf-8"></head><body>
+<p align="center"><a href="http://sourceforge.net/projects/rgedit/" name="Rgedit website"><img src="../Rgedit-icon.png" title="Rgedit logo" name="graphics1" alt="Rgedit logo" style="border: 0px solid ; width: 64px; height: 64px;"></a></p>
+<h1 align="center">Rgedit 0.8 Help</h1>
+<p align="center">(c) 2009 - 2012, <a href="http://www.mpi.nl/people/dediu-dan" target="_blank">Dan Dediu</a><br>
+
+
+</p>
+<p align="center"><br>
+<br>
+</p>
+<p style="text-align: center; font-weight: bold;">First, please be aware of several potential <a href="#Security_issues"><big style="color: red; background-color: rgb(255, 255, 153);"><big><span style="font-weight: bold;">security issues</span></big></big></a> when installing new wizards!</p>
+<p style="text-align: center; font-weight: bold;"><br>
+</p>
+<p style="text-align: left; font-weight: bold;">Table of Contents</p>
+<p style="text-align: left;">&nbsp;&nbsp;&nbsp; <a href="#Introduction">Introduction</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#Main_features">Main features</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#Wizards">Wizards</a><br>
+
+&nbsp;&nbsp;&nbsp; <a href="#Profiles">Profiles</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#Notes_and_FAQ">Notes and FAQ</a><br>
+&nbsp;&nbsp;&nbsp; <a href="#Acknowledgements">Acknowledgements</a><br>
+<br>
+</p>
+
+<ol>
+  <ol>
+    <h2><a name="Introduction"></a>Introduction</h2>
+  </ol>
+</ol>
+<p align="left"><a style="font-weight: bold;" href="http://sourceforge.net/projects/rgedit/">Rgedit</a>&nbsp;<a href="http://sourceforge.net/projects/rgedit/"><img src="../Rgedit-icon24.png" style="border: 0px solid ; width: 24px; height: 24px;" title="Rgedit icon" alt=""></a>is a <a href="http://projects.gnome.org/gedit/">gedit</a>&nbsp;<a href="http://projects.gnome.org/gedit/"><img src="gedit-logo.png" style="border: 0px solid ; width: 36px; height: 24px;" title="gedit logo" alt=""></a> plug-in tranforming it into a light weight IDE capable to interface primarily with the statistical programming environment <a href="http://www.r-project.org/">R</a> <a href="http://www.r-project.org/"><img src="Rlogo.png" style="border: 0px solid ; width: 16px; height: 12px;" title="R logo" alt=""></a>, but also with other interactive software packages such as <a href="http://www.gnu.org/software/octave/" target="_blank">Octave</a>&nbsp;<a href="http://www.gnu.org/software/octave/"><img src="octave-logo.png" style="border: 0px solid ; width: 24px; height: 24px;" alt="octave" title="octave"></a> and <a href="http://www.python.org/">Pyhton</a>&nbsp;<a href="http://www.python.org/"><img src="python-logo.jpeg" alt="" title="Python logo" style="border: 0px solid ; width: 24px; height: 24px;"></a>, and even work remotely through, for example, <a href="http://en.wikipedia.org/wiki/Secure_Shell">SSH</a> connections.<br>
+</p>
+<p align="left">The project was
+inspired by the amazing <a href="http://rkward.sourceforge.net/">rkward</a>&nbsp;<a href="http://rkward.sourceforge.net/"><img src="rkward-icon.jpeg" style="border: 0px solid ; width: 24px; height: 24px;" title="rkward logo" alt=""></a>, <a href="http://jgr.markushelbig.org/JGR.html">JGR</a> <a href="http://jgr.markushelbig.org/JGR.html"><img src="JGR-logo.jpg" alt="" title="JGR logo" style="border: 0px solid ; width: 22px; height: 24px;"></a>, <a href="http://sourceforge.net/projects/tinn-r/">Tinn-R</a> <a href="http://sourceforge.net/projects/tinn-r/"><img src="tinn-r-icon.jpeg" alt="" title="Tinn-R logo" style="border: 0px solid ; width: 24px; height: 24px;"></a>
+and <a href="http://www.rstudio.com/">RStudio</a>&nbsp;<a href="http://www.rstudio.com/"><img src="rstudio-logo.png" style="border: 0px solid ; width: 24px; height: 24px;" alt="RStudio" title="RStudio"></a> (congratulations for a very good job!), which provide full-featured
+IDEs for R, designed for <a href="http://www.kde.org/">KDE</a>&nbsp;<a href="http://www.kde.org/"><img src="kde-icon.jpeg" alt="" title="KDE logo" style="border: 0px solid ; width: 24px; height: 24px;"></a>, <a href="http://www.java.com/en/">Java</a> <a href="http://www.java.com/en/"><img src="Java-logo.jpeg" alt="" title="Java logo" style="border: 0px solid ; width: 18px; height: 24px;"></a>, <a href="http://www.microsoft.com/windows/">MS Windows</a> <a href="http://www.microsoft.com/windows"><img src="windows-icon.jpeg" alt="" title="MS Windows logo" style="border: 0px solid ; width: 27px; height: 24px;"></a>, and cross-platformm
+respectively.</p>
+<p align="left"><font style="line-height: 200%;"><span style="font-weight: bold;">Rgedit,</span> however, aims to offer a
+simpler set of features than them,
+providing the proficient/professional R (and Octave, Python, etc.) user an environment which would
+boost their efficieny while keeping interference and resources
+consumption to a minimum. Moreover, by using <a href="http://www.gtk.org/">GTK+</a>&nbsp;<a href="http://www.gtk.org/"><img src="gtk-icon.jpeg" alt="" title="GTK+ logo" style="border: 0px solid ; width: 22px; height: 24px;"></a> and gedit,
+it is better suited not only to users of <a href="http://www.gnome.org/">Gnome</a>&nbsp;<a href="http://www.gnome.org/"><img src="gnome-icon.png" alt="" title="GNOME logo" style="border: 0px solid ; width: 20px; height: 24px;"></a> and <a href="http://www.xfce.org/"> Xfce<img src="xfce-logo.jpeg" alt="" title="Xfce logo" style="border: 0px solid ; width: 52px; height: 24px;"></a>, but also
+to those who prefer for example <a href="http://icculus.org/openbox/index.php/Main_Page">Openbox</a>&nbsp;<a href="http://icculus.org/openbox/index.php/Main_Page"><img src="openbox-logo.jpeg" alt="" title="Openbox logo" style="border: 0px solid ; width: 29px; height: 24px;"></a> or <a href="http://www.fluxbox.org/">Fluxbox&nbsp;<img src="Fluxbox-logo.png" style="border: 0px solid ; width: 34px; height: 24px;" alt="Fluxbox" title="Fluxbox"></a> and their
+own collection of applications. In fact, <span style="font-weight: bold;">Rgedit</span>
+is designed to facilitate working with R (and Octave, Python, etc.) under <a href="http://en.wikipedia.org/wiki/Linux">Linux</a>&nbsp;<a href="http://en.wikipedia.org/wiki/Linux"><img src="tux.jpeg" alt="" title="TUX" style="border: 0px solid ; width: 22px; height: 24px;"></a>
+more or less independently of the Window Manager/Desktop Environment (I now work primarily on </font><font style="line-height: 200%;"><a href="www.opensuse.org">OpenSuse <img src="opensuse-logo_sm.png" style="border: 0px solid ; width: 37px; height: 24px;" alt="OpenSuse" title="OpenSuse"></a></font><font style="line-height: 200%;">&nbsp; and <a href="http://www.centos.org/">CentOS</a>&nbsp;<a href="http://www.centos.org/"><img src="centos-logo.png" style="border: 0px solid ; width: 24px; height: 24px;" alt="CentOS" title="CentOS"></a>, but this project was developed and used also on <a href="http://www.debian.org/">Debian</a>&nbsp;<a href="http://www.debian.org/"><img src="debian-logo.jpg" style="border: 0px solid ; width: 20px; height: 24px;" alt="" title="Debian"></a> , </font><font style="line-height: 200%;"><a href="http://www.archlinux.org/">Archlinux</a> <a href="http://www.archlinux.org/"><img src="Archlinux-logo.png" alt="" title="Archlinux logo" style="border: 0px solid ; width: 24px; height: 24px;"></a> and <a href="http://www.ubuntu.com/">Ubuntu</a>&nbsp;<a href="http://www.ubuntu.com/"><img src="ubuntu-logo.jpeg" alt="" title="Ubuntu logo" style="border: 0px solid ; width: 25px; height: 24px;"></a>).<br>
+</font></p>
+<br>
+<ol>
+  <ol>
+    <h2>&nbsp;&nbsp;&nbsp; <a name="Main_features"></a>Main features<br>
+    </h2>
+  </ol>
+</ol>
+<p align="left"><font style="line-height: 200%;">Below is a screen shot
+of a session using <span style="font-weight: bold;">Rgedit</span>
+(screenshots taken on a variety of systems: Debian Lenny/Gnome,
+ArchLinux/Xfce &amp; Openbox, Debian Squeeze/Xfce, Ubuntu 10.04/Gnome).<br>
+</font></p>
+<div style="text-align: center;"><a name="Screenshot1"></a><img src="Rgedit-Screenshot1.jpg" style="width: 959px; height: 581px;" alt="" title="Screenshot of Rgedit in action"><br>
+</div>
+<br>
+This shot illustrates some of the main features of <span style="font-weight: bold;">Rgedit</span>:<br>
+<ul>
+  <li><span style="font-weight: bold;">advanced editing</span> offered
+by gedit, including <span style="font-weight: bold;">multiple tabs</span>
+each containing a different document and <span style="font-weight: bold;">syntax highlighting</span>;</li>
+  <li><span style="font-weight: bold;">bottom panel</span> containing <span style="font-weight: bold;">one or more different consoles</span>
+which can be accessed using the tabs on the right hand side (in this
+case, there are two R consoles open); <br>
+  </li>
+  <li>these tabs can have <span style="font-weight: bold;">custom
+names, color schemes and prompts</span> for easy identification;</li>
+  <li>the capacity to <span style="font-weight: bold;">run </span>the
+current line, current selection or the whole source file by clicking
+the appropriate <span style="font-weight: bold;">buttons in the
+toolbar</span>;</li>
+  <li>the capacity to define <span style="font-weight: bold;">blocks
+of source code</span> - which are smart enough to take into account
+editing - and run them (in this shot, there is a block defined between
+lines 29 and 37);</li>
+  <li>basic <span style="font-weight: bold;">code folding</span>: line 41 is the "head" of a whole section of source code, with
+the tooltip showing the first and last couple of folded lines;<br>
+  </li>
+
+  <li>an optional left <span style="font-weight: bold;">panel tab</span>
+showing the most important elements of the R file (function defintions,
+data.frame defintions and custom landmark comments) and allowing fast
+navigation with the mouse;</li>
+  <li><span style="font-weight: bold;">profiles</span> are a very powerful and general mechanism allowing the user to use not only <span style="font-family: monospace; font-weight: bold;">R</span> but also <span style="font-family: monospace; font-weight: bold;">Octave</span>, <span style="font-family: monospace; font-weight: bold;">Python</span> or even conduct remote sessions over <span style="font-weight: bold; font-family: monospace;">SSH</span>, but to define his/her own profile or customize them to his/her own environment (for more information please see <a href="Help-profiles.html">here</a>).<br>
+  </li>
+
+
+</ul>
+More options are provided by the <span style="font-weight: bold;">R</span>
+menu captured below:<br>
+<br>
+<div style="text-align: center;"><a name="MainMenu"></a><img src="Rgedit-Screenshot2.jpg" style="width: 960px; height: 581px;" alt="" title="The &quot;R&quot; menu"><br>
+</div>
+<p align="left"><br>The options accessible
+through the "<span style="font-weight: bold;">Configure R interface</span>" menu are the same as those
+accessible through gedit's plug-in configuration and are shown
+below:<br>
+</p>
+<div style="text-align: center;"><img src="Rgedit-Screenshot3.jpg" style="width: 359px; height: 411px;" alt="" title="Options"><br>
+</div>
+<p align="left"><br>
+</p>
+<ul>
+  <li><span style="font-weight: bold;">"Send as text a selection of at
+most </span><span style="font-style: italic; font-weight: bold;">NNN</span><span style="font-weight: bold;"> lines"</span>: implicitly, the current
+line and current selection are sent to the R console as if typed by the
+user using the keyboard, while the whole file and the source blocks are
+sent using R's <span style="font-family: monospace;">source()</span>
+function through a temporary file. The obvious advantage of the first
+method is that the line(s) are available in the history using the Up
+and Down keys, but it is limited by the size of R console's buffer.
+Therefore, it is recommended that selections larger than <span style="font-style: italic;">NNN</span> lines be sent using the <span style="font-family: monospace;">source()</span> method;</li>
+  <li><span style="font-weight: bold;">"Echo commands sent through source() (i.e., not as text)?"</span>:
+uncheck if you want to avoid seeing the actual commands piped to the R
+console using source(). This could be useful when sending large
+quantities of text to R and the interest is mainly in the actual
+results produced;<br>
+  </li>
+
+  <li><span style="font-weight: bold;">"Use HTML help?"</span>: if
+using HTML help the help pages will be opened using the current Web
+browser, otherwise the within-console system will be used;</li>
+  <li><span style="font-weight: bold;">"Advance to next line after
+sending the current one to R?"</span>: if yes, the editor will make the
+next line current, otherwise the current line will stay the same;</li>
+  <li><span style="font-weight: bold;">"Audible bell?"</span> and <span style="font-weight: bold;">"Visible bell?"</span>: console options
+concerning the bell;</li>
+  <li><span style="font-weight: bold;"></span>Each of the (at most
+three) tabs containing an R console can have its own <span style="font-weight: bold;">"foreground"</span>, <span style="font-weight: bold;">"background"</span> and R <span style="font-weight: bold;">"prompt"</span> colors (but see <a href="#PromptColor">note v</a>);</li>
+  <li><span style="font-weight: bold;">"Use tab name in R's prompt?"</span>:
+should R's prompt contain the tab's name in addition to the standard
+"&gt;" and "+" symbols? <a name="TabName"></a>You can rename a tab by
+right-clicking inside
+its R console, select <span style="font-weight: bold;">"Tab name"</span>
+from the menu and change the name in the dialog box (see screencaptures
+below);</li>
+</ul>
+<div style="text-align: center;"><a name="RConsoleMenu"></a><img src="Rgedit-Screenshot4.jpg" style="width: 254px; height: 230px;" alt="" title="Right click menu in R console"><br>
+<br>
+<img src="Rgedit-Screenshot5.jpg" style="width: 261px; height: 83px;" alt="" title="Change tab name dialog"><br>
+</div>
+<ul>
+  <br>
+  <li><span style="font-weight: bold;">"Cursor blink"</span>: the
+cursor in the R console can use either the system blinking settings,
+can blink anyway or not;</li>
+  <li><span style="font-weight: bold;">"Cursor shape"</span>: the
+cursor
+in the R console can be shaped as a block, beam or line;</li>
+  <li><span style="font-weight: bold;">"Font"</span>: allows the user
+to select the font used by the R console;</li>
+  <li><span style="font-weight: bold;">"Scroll on keystroke?"</span>
+and <span style="font-weight: bold;">"</span><span style="font-weight: bold;">Scroll</span><span style="font-weight: bold;"> on output?"</span>: should the R console
+scroll on these two events?</li>
+  <li><span style="font-weight: bold;">"Scrollback lines <span style="font-style: italic;">NNN</span>"</span>: how many lies to keep
+in the R console's history?</li>
+  <li><span style="font-weight: bold;">"Start R console automatically
+when gedit starts?"</span>: if yes, the first R console will
+automatically start when gedit starts, otherwise the user will have to
+explicitly spawn it using the "Create new R workspace tab..." command:
+this conserves resources when gedit is rarely used to edit R code;</li>
+  <li><span style="font-weight: bold;">"Should new R consoles use the current document's directory?"</span>: if checked, all newly started R consoles try to set the working directory to be the current' document's directory;</li>
+  <li><span style="font-weight: bold;">"Show rgedit's warnings and messages when R starts?"</span>:
+if checked, then upon starting a new R console the most current
+warnings and messages (concerning new features and issues) are
+displayed as comments in the R consoles;<br>
+  </li>
+
+  <li><span style="font-weight: bold;">"Start R console detached from
+gedit's bottom panel?"</span>: if yes, the R console will
+automatically start detached (as a separate window; <a href="#Attach_Detach">see below</a>);</li>
+  <li><span style="font-weight: bold;">"Autorun R script on startup?"</span>: if yes, automatically runs a user-specified R script with an R console starts (or restarts);<br>
+  </li>
+
+  <li><span style="font-weight: bold;">"Edit keyboard shortcuts"</span>:
+allows the user to define custom keyboard shortcuts through the dialog
+shown below. The shortcuts are introduced as text like
+"&lt;Ctlr&gt;&lt;Alt&gt;X" or &lt;Shift&gt;P&gt; or "None" if no
+shortcut is desired. For sending the current line/block/file/selection to R, "special" shortcuts involving <span style="font-weight: bold;">Return</span> and modifiers (&lt;CTRL&gt;,&lt;SHIFT&gt;,&lt;ALT&gt;) can be defined. Moreover, <span style="font-weight: bold;">&lt;Ctrl&gt;C</span>
+in the R console can be defined to copy the current selection (as in
+gedit itself), in which case &lt;ESC&gt; and/or &lt;Ctrl&gt;Q can be
+defined to do its job (i.e., to interrupt the current R task). Please
+note that gedit (actually, the plug-in)
+must be <span style="font-weight: bold;">restarted</span> for these
+changes to take effect. Also, shortcuts already used by gedit are
+unavailable;</li>
+</ul>
+<div style="text-align: center;"><img src="Rgedit-Screenshot6.jpg" style="width: 464px; height: 371px;" alt="" title="Keyboard shortcuts dialog"><br>
+</div>
+<br>
+<ul>
+  <li><span style="font-weight: bold;">"Side panel options"</span>:
+allows the user to define behaviour of the side panel tab showing the most important landmakrs in the R document. The <span style="font-weight: bold;">landmark comments</span> are specially structured comments of the form <span style="font-family: monospace; font-weight: bold;"># @@ RGEDIT LANDMARK @@: your text goes here</span> which allow the user to define important places in the R document (by replacing the <span style="font-weight: bold; font-family: monospace;">your text goes here</span>
+with the desired information). These can be directly written in the
+document or inserted at the desired place using the right-click menu's
+or the R's menu <span style="font-weight: bold;">Insert Landmark Comment</span>.<br>
+  </li>
+</ul>
+<div style="text-align: center;"><img src="Rgedit-Screenshot3-2.jpg" style="width: 270px; height: 130px;" alt="Side panel options" title="Side panel options"><br>
+</div>
+<br>
+<ul>
+  <li><span style="font-weight: bold;">"Code folding options"</span>: while waiting for proper cde folding to be implemented in <span style="font-weight: bold; font-family: monospace;">gtksourceview</span>,
+the code folding engine provided by rgedit is fairly basic but
+functional. Its options can be accessed through the right-click menu
+within the editor view and provides the following possible actions
+depending on the context:</li>
+  <ul>
+    <li><span style="font-weight: bold;">"Fold block containing current line"</span>: this looks through the sourcecode and finds all valid R blocks (i.e., enclosed between <span style="font-weight: bold; font-family: monospace;">{</span> and <span style="font-weight: bold; font-family: monospace;">}</span>) containing the line on which the right-click was produced. Then, depending on the user's options as specified in the <span style="font-weight: bold; font-family: monospace;">Code folding options</span>
+dialog, it folds the highest level (i.e., largest) containing block,
+the lowest level (i.e., smallest) containing block or the
+highest/lowest level <span style="font-weight: bold; font-family: monospace;">function()</span> block;</li>
+    <li><span style="font-weight: bold;">"Fold current selection"</span>: if there is a text selection, then the user can fold it;</li>
+    <li><span style="font-weight: bold;">"Unfold code on current line"</span>:
+if the right-click occured on a line containing folded text (marked by
+color, text style, left-margin icon and a specific tooltip), the user
+can unfold it;</li>
+    <li><span style="font-weight: bold;">"Unfold all folded code"</span>: this will unfold all (if any) folded code in the current document;</li>
+    <li><span style="font-weight: bold;">"Inspect folded code..."</span>: if the right-click occured on a line containing folded text (marked by
+color, text style, left-margin icon and a specific tooltip), the user
+can insect its content in a dialog box without actually unfolding it;</li>
+  </ul>
+</ul>
+<div style="text-align: center;"><a name="Code_folding_options"></a><img src="Rgedit-Screenshot6-1.jpg" style="width: 318px; height: 173px;" alt="Code folding options" title="Code folding options"><br>
+</div>
+<br><br>
+
+<ul>
+<li><span style="font-weight: bold;">"Edit profiles"</span>: adds/deletes/changes <a href="Help-profiles.html">profiles</a>.</li>
+</ul>
+<br>
+Please note that <span style="font-weight: bold;">some changes
+affecting R
+consoles</span> (namely <span style="font-weight: bold;">Use HTML help?</span>,
+<span style="font-weight: bold;">Use tab name in R's prompt?</span> and
+<span style="font-weight: bold;">prompt</span> color) <span style="font-style: italic;">assume that R is
+running in the console and that R is actually able to process commands</span>.
+This is because these change R options through <span style="font-family: monospace;">option()</span> commands which must be
+changes for the process to succeed; therefore, please avoid making this
+kind of changes when R is not running in one of the consoles or when
+typing commands to R or R is busy doing something.<br>
+<br>
+<a name="Attach_Detach"></a>The R consoles can be either <span style="font-weight: bold;">attached</span> to (embedded in, <a href="#Screenshot1">see bove</a>) gedit's bottom panel (the default)
+or <span style="font-weight: bold;">detached</span> (a stand-alone
+window, <a href="#Detached_R_Console">see below</a>), in which case
+they can be moved and resized at will. When detached, <span style="font-weight: bold;">Ctrl+Tab</span> does not work, but the
+standard window manager's windows switching shortcut (usually, <span style="font-weight: bold;">Alt+Tab</span>) does. Also, the position
+and size of the detached R console is saved and automatically restored.
+To switch between the attached and detached states use the <span style="font-weight: bold;">Attach R Console</span>/<span style="font-weight: bold;">Detach R Console</span> <a href="#MainMenu">menu
+entry</a> or simply close the detached R console to embed it. The <span style="font-weight: bold;">"Start R console detached from gedit's
+bottom panel?"</span> option controlls if the R console starts detached
+or attached (the default).<br>
+<br>
+<div style="text-align: center;"><a name="Detached_R_Console"></a><img src="Rgedit-Screenshot7.jpg" style="width: 960px; height: 600px;" alt="" title="Detached R Console"><br>
+</div>
+<br>
+From the R console's <a href="#RConsoleMenu">context menu</a> (right
+click) you can:<br>
+<ul>
+  <li><span style="font-weight: bold;">Copy </span>and<span style="font-weight: bold;"> Paste</span>: from and to the R console. <span style="font-weight: bold;">&lt;Ctrl+V&gt;</span>
+is the keyboard shortcut for paste and, if defined, <span style="font-weight: bold;">&lt;Ctrl+C&gt;</span> for copy (also see <a href="#CopyPaste">note
+iv</a>);</li>
+  
+  <li><span style="font-weight: bold;">Change the tab's name</span>:
+see details <a href="#TabName">above</a>;</li>
+  <li><span style="font-weight: bold;">Always show tabs</span>?: if checked show the tab even if a single R console exists;</li>
+  <li><span style="font-weight: bold;">Show tabs on</span>: defines the side of the bottom panel on which the R console tabs will be shown;<br>
+  </li>
+
+  <li><span style="font-weight: bold;">Close the tab</span>: you can
+close the current tab (but not the first one) by sending a <span style="font-weight: bold;">SIGHUP</span> signal to the shell process
+within which R is hosted;</li>
+  <li><span style="font-weight: bold;">Start R </span>and<span style="font-weight: bold;"> Restart R</span>: these two commands start
+a fresh R session in the current console (tab), the only difference
+being that <span style="font-weight: bold;">Start R</span> assumes
+that the bash session is active and ready to process user input (e.g.,
+after quitting R and working in bash for a while) as it simply starts a
+session with <span style="font-family: monospace;">R --no-save
+--no-restore</span>, followed by the appropriate option commands (e.g.,
+    <span style="font-family: monospace;">options(htmlhelp = TRUE)</span>
+and <span style="font-family: monospace;">options( prompt="2&gt; ",
+continue="2+ " )</span>), while <span style="font-weight: bold;">Restart
+R</span> assumes a running and ready R session, as it first quits it
+with <span style="font-family: monospace;">q()</span> and then calls
+the <span style="font-weight: bold;">Start R</span> commands (see note
+    <a href="Help.html#CommunicateWithR">viii</a> as well);</li>
+  <li><span style="font-weight: bold;">Change R's working folder</span>:
+allows the user to select the desired working folder and changes it
+(assumes a running and ready R session as it send a <span style="font-family: monospace;">setwd("&lt;selected_directory&gt;")</span>
+command; see note <a href="Help.html#CommunicateWithR">viii</a> as
+well);</li>
+  <li><span style="font-weight: bold;">Use document's folder</span>: changes R's working directory to the current document's directory;</li>
+  <li><span style="font-weight: bold;">Load</span> and <span style="font-weight: bold;">Save R Workspace</span>: allows the user to interactively load and save R's workspace.<br>
+  </li>
+
+</ul>
+<br>
+Pressing <span style="font-weight: bold;">Ctrl+Tab</span> in a gedit
+document/tab will give the focus to the bottom pane and if the active
+tab in the bottom pane is an R console, pressing <span style="font-weight: bold;">Ctrl+Tab</span> again will give back the
+focus to the active gedit document/tab. Thus, assuming that an R
+console is active in the bottom pane, <span style="font-weight: bold;">Ctrl+Tab</span>
+switches the focus between it and the active document.<br>
+Please note that when the R console is detached, <span style="font-weight: bold;">Ctrl+Tab</span> is replaced by the window
+manager's window switching mechanism (in most cases, <span style="font-weight: bold;">Alt+Tab</span>).<br>
+<br>
+One possible use scenario for rgedit is to edit a line of code in the R
+console using the various TAB-completion capabilities and incrementally
+test it, and then paste this working code in the R script: now this
+scenario is helped by two keyboard shortcuts in the R console: <span style="font-weight: bold;">&lt;Ctrl&gt;K</span> copies the last executed R line to clipboard, while <span style="font-weight: bold;">&lt;Ctrl&gt;&lt;Shift&gt;K</span> also pastes this in the current gedit document at the cursor's position.<br>
+<br>
+Selecting the <span style="font-weight: bold;">"Close R Console"</span>
+menu will close all open R tabs as well as the bottom panel
+tab/detached window containing R, in effect, closing the whole R
+console by seding to all running shells a <span style="font-weight: bold;">SIGHUP</span> signal.<br>
+<br>
+<ol>
+<ol><h2><a name="Wizards"></a>Wizards<br>
+    </h2></ol>
+</ol>
+
+<font style="line-height: 200%;">From the <span style="font-weight: bold;">user</span>'s point of view, <span style="font-weight: bold;">Wizards</span>
+are standardized dialogs allowing him/her to interactively define
+various parameters and which, in the end, generate pieces of R code to
+be run in the console, pasted in the R current document or both.
+Wizards can be accessed either through the <span style="font-weight: bold;">R menu</span> or through the <span style="font-weight: bold;">right-click menu</span> and as an example we will use the <span style="font-weight: bold;">Wizard for plotting a histogram</span>:<br>
+<br>
+</font>
+<div style="text-align: center;"><font style="line-height: 200%;"><img src="Rgedit-Screenshot8.jpg" style="width: 960px; height: 600px;" alt="Wizards menu" title="Wizards menu"></font><br>
+</div>
+<font style="line-height: 200%;"><br>
+</font>
+Selecting the <span style="font-weight: bold;">Plots a histogram</span> menu opens the wizard with the default values:<br>
+<br>
+<div style="text-align: center;"><a name="Plots_a_histogram"></a><img src="Rgedit-Screenshot9.jpg" style="width: 495px; height: 193px;" alt="Wizard" title="Wizard"><br>
+</div>
+<br>
+The user can give/select the relevant parameters using the messages, tooltips and the help page prduced by clicking on the <span style="font-weight: bold;">Help</span> button, as exemplified below:<br>
+<br>
+<div style="text-align: center;"><img src="Rgedit-Screenshot10.jpg" style="width: 495px; height: 193px;" alt="Wizard" title="Wizard"><br>
+</div>
+<br>
+By clicking <span style="font-weight: bold;">Inspect code</span> a
+widnow is opened presenting the user with the actual R code which will
+be generated using his/her values for the parameters. This code is
+generated from a predefined template (see below) and can be edited and
+checked for any possible issues:<br>
+<br>
+<div style="text-align: center;"><img src="Rgedit-Screenshot12.jpg" style="width: 482px; height: 154px;" alt="R code" title="R code"><br>
+</div>
+<br>
+<br>
+In this case, the code simply draws a histogram (<span style="font-weight: bold; font-family: monospace;">hist()</span>) using the defined <span style="font-weight: bold;">x</span> parameter (in this case, <span style="font-weight: bold; font-family: monospace;">rnorm(10000)</span>, but one could use already defined variables: for example, we could have already defined <span style="font-weight: bold; font-family: monospace;">x.test &lt;- rnorm(10000)</span> before calling the wizard, in which case using <span style="font-weight: bold; font-family: monospace;">x.test</span> as the value of <span style="font-weight: bold;">x</span> would be meaningful and produce the same outcome). Clicking <span style="font-weight: bold;">Paste and Run</span>
+both pastes this R code in the current document at the cursor's
+position (lines 745-746 in the screenshot below) and runs the same code
+in the current R console (last 2 lines in the R console in the
+screenshot), producing, as expected, the histogram in&nbsp; the image:<br>
+<br>
+<div style="text-align: center;"><img src="Rgedit-Screenshot13.jpg" style="width: 960px; height: 600px;" alt="Results" title="Results"><br>
+</div>
+<br>
+<br>
+This is just a simple wizard for illustration purposes, but more complex wizards can have more than a single dialog and <span style="font-weight: bold;">Back</span> and <span style="font-weight: bold;">Next</span> allow the navigation through them.<br>
+<br>
+Wizards can also use the current selection in the current document as
+the value of a specially-defined parameter, like, for example, the <span style="font-weight: bold;">Wizards -&gt; Helpers -&gt; View and edit -&gt; View dataframe or matrix</span>, where, for example, if we select <span style="font-weight: bold;">rnorm(10000)</span> in line 746 in the above screenshot, results in <span style="font-weight: bold;">rnorm(10000)</span> being automatically taken as the thing to be displayed:<br>
+<br>
+<div style="text-align: center;"><img src="Rgedit-Screenshot14.jpg" style="width: 960px; height: 600px;" alt="showData" title="showData"><br>
+</div>
+<br>
+The fileds marked with a star (<span style="font-weight: bold;">*</span>) are <span style="font-weight: bold;">required fields</span> which must be defined before the wizard can successfully end.<br>
+<br>
+A special class of wizards have no interface (i.e., the user does not
+need to give any parameters through this interface), as is the case for
+the <span style="font-weight: bold;">Package management</span>
+wizards, allowing the user to install, update and load packages through
+a pre-defined GUI (similar to the standard interfaces on Windows and
+Mac OS).<br>
+<br>
+This set of core packages is released independently of rgedit and the
+initial version (0.1) contains a small set, mostly for demostration
+purposes, which is expected to increase: <br>
+<br>
+- <span style="font-weight: bold;">Association tests</span><br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Correlation</span>: basic correlation between two numeric vectors, illustrating a wizard with two dialogs;<br>
+- <span style="font-weight: bold;">Data import and export</span>: saving, loading and importing data from and to R<br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Write data to flat file</span><br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Write R data to file</span><br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Read data from Excel file</span><br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Read data from flat file</span><br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Read data from SPSS file</span><br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Read previously saved R data</span><br>
+- <span style="font-weight: bold;">Helpers</span>:<br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Search help</span>: search the help for a keyrowd using <span style="font-weight: bold; font-family: monospace;">?</span><br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">View and edit</span>:<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  - <span style="font-weight: bold;">View dataframe or matrix</span>: <span style="font-weight: bold; font-family: monospace;">showData()</span><br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  - <span style="font-weight: bold;">Edit dataframe or matrix</span>: <span style="font-weight: bold; font-family: monospace;">fix()</span><br>
+- <span style="font-weight: bold;">Package management</span>:<br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Install packages from a CRAN mirror</span><br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Update packages from a CRAN mirror</span><br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Choose CRAN mirror</span><br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Load package</span><br>
+- <span style="font-weight: bold;">Plots</span>: basic plotting functions, for illustration purposes<br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Plots a histogram</span><br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Boxplot of a single variable</span><br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Plots the data versus observation index</span><br>
+- <span style="font-weight: bold;">Regression</span>: <br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Logistic regression</span><br>
+&nbsp;&nbsp;&nbsp; - <span style="font-weight: bold;">Multiple linear regression</span><br>
+<br>
+Thus, wizards allow rgedit to become more user-friendly, especially for
+those learning R, by encapsulating frequently used and/or complex R
+scripts in a series of menus and GUIs. <br>
+<br>
+However, the real power of wizards is that, by contrast to other
+packages offering menus and GUIs over R (Windows and Mac OS interfaces,
+rkward, Rcommander, etc), they can de very easily created and changed
+with minimal programming skills. In fact, a wizard is an XML file
+defining the parameters of interest, the R template and the mechanism
+of transfroming these two into the final, customized R code the user
+want. I will illustrate these below using the same <span style="font-weight: bold;">Plots a histogram</span> wizard. The wizard is defined in the <span style="font-weight: bold; font-family: monospace;">plots_hist.xml</span> file in the <span style="font-weight: bold; font-family: monospace;">Wizards</span> folder of the rgedit folder (usually, <span style="font-weight: bold; font-family: monospace;">~/.gnome2/gedit/plugins/RCtrl</span>):<br>
+<br>
+<table style="text-align: left; width: 85%; background-color: rgb(255, 255, 204); margin-left: auto; margin-right: auto; font-family: monospace;" border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;"><small><span style="color: rgb(51, 255, 51); font-weight: bold;"><span style="color: black;">01 </span>&lt;!-- Define a rwizard --&gt;</span><br>
+      <span style="color: rgb(51, 51, 255); font-weight: bold;"><span style="color: black;">02 </span>&lt;rwizard</span> name=<span style="color: red;">"hist"</span> description=<span style="color: red;">"Plots a histogram"</span> <br>
+      <span style="font-weight: bold;">03&nbsp;</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; menu=<span style="color: red;">"/Plots"</span> icon=<span style="color: red;">"plots_hist.png"</span><span style="font-weight: bold; color: rgb(51, 51, 255);">&gt;</span><br>
+      <span style="font-weight: bold;">04</span>&nbsp; &nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;about</span> <br>
+      <span style="font-weight: bold;">05</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name=<span style="color: red;">"Histogram"</span><br>
+      <span style="font-weight: bold;">06</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; version=<span style="color: red;">"0.1"</span><br>
+      <span style="font-weight: bold;">07</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; copyright=<span style="color: red;">"(c) 2010 Dan Dediu"</span><br>
+      <span style="font-weight: bold;">08</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; comments=<span style="color: red;">"Plots a histogram. Inspired by R Commander's 'Histogram'"</span><br>
+      <span style="font-weight: bold;">09</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; license=<span style="color: red;">"GLPv3"</span><br>
+      <span style="font-weight: bold;">10</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; website=<span style="color: red;">"http://rgedit.sourceforge.net/"</span><br>
+      <span style="font-weight: bold;">11</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; authors=<span style="color: red;">"Dan Dediu &amp;lt;ddediu@hotmail.com&amp;gt;"</span> <br>
+      <span style="font-weight: bold;">12</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; documenters=<span style="color: red;">""</span><br>
+      <span style="font-weight: bold;">13</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; artists=<span style="color: red;">""</span><br>
+      <span style="font-weight: bold;">14</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; translator_credits=<span style="color: red;">""</span><br>
+      <span style="font-weight: bold;">15</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; logo_icon_name=<span style="color: red;">"plots_hist.png"</span><span style="font-weight: bold; color: rgb(51, 51, 255);">/&gt;</span><br>
+      <span style="font-weight: bold;">16</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <br>
+      <span style="font-weight: bold;">17</span>&nbsp; &nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;help</span> rhelp=<span style="color: red;">"?hist"</span><span style="font-weight: bold; color: rgb(51, 51, 255);">/&gt;</span><br>
+      <span style="font-weight: bold;">18</span> <br>
+      <span style="font-weight: bold;">19</span>&nbsp; &nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;vars&gt;</span>&nbsp; <br>
+      <span style="font-weight: bold;">20</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;block</span> title=<span style="color: red;">"Histogram's parameters..."</span><span style="font-weight: bold; color: rgb(51, 51, 255);">&gt;</span><br>
+      <span style="font-weight: bold;">21</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;variable</span> name=<span style="color: red;">"x"</span> description=<span style="color: red;">"The variable to be plotted"</span> type=<span style="color: red;">"text"</span> default=<span style="color: red;">""</span> required=<span style="color: red;">"True"</span> tooltip="<span style="color: red;">Must represent a numeric vector"</span><span style="font-weight: bold; color: rgb(51, 51, 255);">/&gt;</span><br>
+      <span style="font-weight: bold;">22</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;variable</span> name=<span style="color: red;">"breaks"</span> description=<span style="color: red;">"The alhorithm for computing the breaks"</span> type=<span style="color: red;">"text"</span> default=<span style="color: red;">'"Sturges"'</span> required=<span style="color: red;">"True"</span> tooltip="See documentation for possible values. Please quote strings!"<span style="font-weight: bold; color: rgb(51, 51, 255);">/&gt;</span><br>
+      <span style="font-weight: bold;">23</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;variable</span> name=<span style="color: red;">"freq"</span> description=<span style="color: red;">"Represent frequencies"</span> type=<span style="color: red;">"list"</span> singlechoice=<span style="color: red;">"True"</span> default=<span style="color: red;">"0"</span> required=<span style="color: red;">"False"</span> tooltip=<span style="color: red;">''</span><span style="font-weight: bold; color: rgb(51, 51, 255);">&gt;</span><br>
+      <span style="font-weight: bold;">24</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;value</span> name=<span style="color: red;">"default"</span><span style="font-weight: bold; color: rgb(51, 51, 255);">/&gt;</span><br>
+      <span style="font-weight: bold;">25</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;value</span> name=<span style="color: red;">"TRUE"</span><span style="font-weight: bold; color: rgb(51, 51, 255);">/&gt;</span><br>
+      <span style="font-weight: bold;">26&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;value</span> name=<span style="color: red;">"FALSE"</span><span style="font-weight: bold; color: rgb(51, 51, 255);">/&gt;</span><br>
+      <span style="font-weight: bold;">27</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;/variable&gt;</span><br>
+      <span style="font-weight: bold;">28</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;variable</span> name=<span style="color: red;">"main" </span>description=<span style="color: red;">"The plot's main title"</span> type=<span style="color: red;">"text"</span> default=<span style="color: red;">"default"</span> required=<span style="color: red;">"True"</span> tooltip=<span style="color: red;">"Make sure to quote fixed strings!"</span><span style="font-weight: bold; color: rgb(51, 51, 255);">/&gt;</span><br>
+      <span style="font-weight: bold;">29</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;variable</span> name=<span style="color: red;">"xlab"</span> description=<span style="color: red;">"The x-axis label"</span> type=<span style="color: red;">"text"</span> default=<span style="color: red;">"default"</span> required=<span style="color: red;">"True"</span> tooltip=<span style="color: red;">"Make sure to quote fixed strings!"</span><span style="font-weight: bold; color: rgb(51, 51, 255);">/&gt;</span><br>
+      <span style="font-weight: bold;">30</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;variable</span> name=<span style="color: red;">"ylab"</span> description=<span style="color: red;">"The y-axis label"</span> type=<span style="color: red;">"text"</span> default=<span style="color: red;">"default"</span> required=<span style="color: red;">"True"</span> tooltip=<span style="color: red;">"Make sure to quote fixed strings!"</span><span style="font-weight: bold; color: rgb(51, 51, 255);">/&gt;</span><br>
+      <span style="font-weight: bold;">31</span>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;/block&gt;</span><br>
+      <span style="font-weight: bold;">32</span>&nbsp; &nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;/vars&gt;</span>&nbsp; <br>
+      <span style="font-weight: bold;">33</span> <br>
+      <span style="font-weight: bold;">34</span>&nbsp; &nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 255, 51);">&lt;!--
+The actual R code template: only strange things are the placeholders
+call using ${PLACEHOLDER_NAME} and the Python code $[...$] --&gt;</span><br>
+      <span style="font-weight: bold;">35</span>&nbsp; &nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;template&gt;</span> <br>
+      <span style="font-weight: bold;">36 hist( x=</span><span style="color: rgb(204, 51, 204); font-weight: bold;">${x}</span><span style="font-weight: bold;">, breaks=<span style="color: rgb(204, 51, 204);">${breaks}</span></span> <span style="font-weight: bold; color: rgb(204, 51, 204);">$[Python</span> <span style="color: red;">''</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">if</span> <span style="color: red;">'<span style="font-weight: bold; color: rgb(204, 51, 204);">${freq}</span>'</span><span style="font-weight: bold;">==</span><span style="color: red;">'default'</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">else</span> <span style="color: red;">', <span style="font-weight: bold; color: rgb(204, 51, 204);">${freq}</span>'</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">$]</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">$[Python</span> <span style="color: red;">''</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">if</span> <span style="color: red;">'<span style="font-weight: bold; color: rgb(204, 51, 204);">${main}</span>'</span> <span style="font-weight: bold;">==</span> <span style="color: red;">"default"</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">else</span> <span style="color: red;">', main=<span style="font-weight: bold; color: rgb(204, 51, 204);">${main}</span>'</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">$] $[Python</span> <span style="color: red;">''</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">if</span> <span style="color: red;">'<span style="font-weight: bold; color: rgb(204, 51, 204);">${xlab}</span>'</span> <span style="font-weight: bold;">==</span> <span style="color: red;">"default"</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">else</span> <span style="color: red;">', xlab=<span style="font-weight: bold; color: rgb(204, 51, 204);">${xlab}</span>'</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">$] $[Python</span> <span style="color: red;">''</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">if</span> <span style="color: red;">'<span style="font-weight: bold; color: rgb(204, 51, 204);">${ylab}</span>'</span> <span style="font-weight: bold;">==</span> <span style="color: red;">"default"</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">else</span> <span style="color: red;">', ylab=${ylab}'</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">$]</span><span style="font-weight: bold;"> )</span><br>
+      <span style="font-weight: bold;">37</span>&nbsp; &nbsp;&nbsp; <span style="font-weight: bold; color: rgb(51, 51, 255);">&lt;/template&gt;</span> <br>
+      <span style="font-weight: bold;">38</span> <br>
+      <span style="font-weight: bold; color: rgb(51, 51, 255);"><span style="color: black;">39</span> &lt;/rwizard&gt;</span><br>
+      </small></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+The <span style="font-weight: bold; font-family: monospace; color: rgb(51, 51, 255);">rwizard</span> element defines the wizard with the given unique <span style="font-weight: bold; font-family: monospace;">name</span> (used internally only), a short <span style="font-weight: bold; font-family: monospace;">description</span> (used to generate the menu), the path in the Wizards <span style="font-weight: bold; font-family: monospace;">menu</span> where to insert this wizard and an optional <span style="font-weight: bold; font-family: monospace;">icon</span> file.<br>
+<br>
+It can have an About box defined by the <span style="font-weight: bold; font-family: monospace; color: rgb(51, 51, 255);">about</span> element: please note that given that this is an XML file, one must use <span style="font-style: italic;">escape sequences</span> like <span style="font-weight: bold; font-family: monospace;">&amp;lt;</span> for <span style="font-weight: bold; font-family: monospace;">&lt;</span> and <span style="font-weight: bold; font-family: monospace;">&amp;gt;</span> for <span style="font-weight: bold; font-family: monospace;">&gt;</span> as done in the <span style="font-family: monospace; font-weight: bold;">authors</span> attribute to give the e-mail address!<br>
+<br>
+It can also have some html information, given by the <span style="font-weight: bold; font-family: monospace; color: rgb(51, 51, 255);">help</span> element, which can have any of the following attributes: <span style="font-family: monospace; font-weight: bold;">file</span> (give a local file), <span style="font-family: monospace; font-weight: bold;">url</span> (a remote file) or <span style="font-family: monospace; font-weight: bold;">rhelp</span> (giving an actual sequence of R command to be run in order to procude the help).<br>
+<br>
+The <span style="font-weight: bold; font-family: monospace; color: rgb(51, 51, 255);">vars</span> element contains one or more <span style="font-weight: bold; font-family: monospace; color: rgb(51, 51, 255);">block</span> elements. One <span style="font-weight: bold; font-family: monospace; color: rgb(51, 51, 255);">block</span> creates a dialog box (like the one exemplified <a href="#Plots_a_histogram">above</a> for <span style="font-weight: bold;">Plots a histogram</span>) containing fields as defined by the contained <span style="font-weight: bold; font-family: monospace; color: rgb(51, 51, 255);">variable</span> elements. One <span style="font-weight: bold; font-family: monospace; color: rgb(51, 51, 255);">variable</span> element defines a single variable with a given <span style="font-weight: bold; font-family: monospace;">name</span>, a <span style="font-weight: bold; font-family: monospace;">description</span> of the variable, a <span style="font-weight: bold; font-family: monospace;">type</span>, a <span style="font-weight: bold; font-family: monospace;">default</span> value, a flag specifying if it is <span style="font-weight: bold; font-family: monospace;">required</span> for the variable to have a non-empty value in order for the wizard to finish correctly and an optional <span style="font-weight: bold; font-family: monospace;">tooltip</span> text to be displayed when the mouse is over this variable in the dialog box. There can be several <span style="font-weight: bold; font-family: monospace;">type</span>s of variables: <br>
+<ul>
+  <li><span style="font-weight: bold; color: red; font-family: monospace;">"text"</span> is the simplest and means that the variable can be any text and creates a one-line edit widget in the interface;</li>
+  <li><span style="font-weight: bold; font-family: monospace; color: red;">"list"</span> represents a list of pre-defined values (given by the <span style="font-weight: bold; font-family: monospace; color: rgb(51, 51, 255);">value</span> elements) and the user can select one <span style="font-weight: bold;">(</span><span style="font-family: monospace;"><span style="font-weight: bold;">singlechoice</span>=</span><span style="color: red; font-family: monospace; font-weight: bold;">"True"</span>) through a combobox widget; <span style="font-weight: bold; font-family: monospace;">default</span> in this case is the number of the default choice, starting at 0;</li>
+  <li><span style="font-weight: bold; font-family: monospace; color: red;">"editablelist"</span> is a list of pre-defined values (given by the <span style="font-weight: bold; font-family: monospace; color: rgb(51, 51, 255);">value</span> elements) but the user can introduce a new one as well, through an editable combobox widget; <span style="font-weight: bold; font-family: monospace;">default</span> in this case is a free string, as for <span style="font-weight: bold; color: red; font-family: monospace;">"text"</span>;</li>
+  <li><span style="font-weight: bold; font-family: monospace; color: red;">"bool"</span> is represented by a checkbox widget and stands for a boolean value.</li>
+</ul>
+Finally, the <span style="font-weight: bold; font-family: monospace; color: rgb(51, 51, 255);">template</span>
+element gives the R code template and the replacement rules. This gives
+a fragment of text which is transformed into actual R code to be pasted
+into the current document and/or to be run in the R console simply by
+copying it literally except for replacing the <span style="font-weight: bold;">variable placeholders</span> with their actual values and running any given <span style="font-weight: bold;">Python code</span> and replacing it with the resulting value. <br>
+<br>
+For example, line <span style="font-weight: bold;">36</span> begins with <span style="font-weight: bold; font-family: monospace; background-color: rgb(255, 255, 153);">hist( x=<span style="color: rgb(153, 51, 153);">${x}</span>, </span>. A <span style="font-weight: bold;">variable placeholder</span> begins with <span style="font-weight: bold; font-family: monospace;">${</span> and end with <span style="font-weight: bold; font-family: monospace;">}</span> and contains the name of a variable defined by a previous <span style="font-weight: bold; color: rgb(51, 51, 255); font-family: monospace;">variable</span> element, in this case, <span style="font-weight: bold; font-family: monospace;">x</span> defined on line <span style="font-weight: bold;">21</span> as being a required text. Suppose (as in our <span style="font-weight: bold;">Plots a histogram</span> example) that the user has typed <span style="font-weight: bold;">rnorm(10000)</span> as the value of <span style="font-weight: bold; font-family: monospace;">x</span>; then, <span style="font-weight: bold; font-family: monospace; background-color: rgb(255, 255, 153);"><span style="color: rgb(153, 51, 153);">${x}</span></span>&nbsp; will be replaced by  <span style="font-weight: bold;">rnorm(10000)</span>, producing the final text <span style="font-weight: bold; font-family: monospace; background-color: rgb(255, 255, 153); color: rgb(204, 0, 0);">hist( x=rnorm(10000), </span>. Similarily, <span style="font-weight: bold; font-family: monospace; background-color: rgb(255, 255, 153);"><span style="color: rgb(153, 51, 153);">${breaks}</span></span> will be replaced by <span style="font-weight: bold;">"Sturges"</span>.<br>
+However, now we encounter a Python fragment, marked by <span style="font-weight: bold; font-family: monospace;">$[Python</span> and <span style="font-weight: bold; font-family: monospace;">$]</span>, and which contain a <span style="font-weight: bold;">Pyhton expression</span> which will be evaluated by the Python interpreter to produce a value. Please note that the evaluation taks place <span style="font-style: italic;">after</span> all variable placeholders (if any) are replaced by their actual values, as just described. Thus, <small style="font-family: monospace; background-color: rgb(255, 255, 153);"><span style="font-weight: bold; color: rgb(204, 51, 204);">$[Python</span> <span style="color: red;">''</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">if</span> <span style="color: red;">'<span style="font-weight: bold; color: rgb(204, 51, 204);">${freq}</span>'</span><span style="font-weight: bold;">==</span><span style="color: red;">'default'</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">else</span> <span style="color: red;">', <span style="font-weight: bold; color: rgb(204, 51, 204);">${freq}</span>'</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">$]</span></small>, will give <small style="font-family: monospace; background-color: rgb(255, 255, 153);"><span style="font-weight: bold; color: rgb(204, 51, 204);">$[Python</span> <span style="color: red;">''</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">if</span> <span style="color: red;">'<span style="font-weight: bold; color: rgb(204, 51, 204);">default</span>'</span><span style="font-weight: bold;">==</span><span style="color: red;">'default'</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">else</span> <span style="color: red;">', <span style="font-weight: bold; color: rgb(204, 51, 204);"><span style="font-family: monospace;">default</span></span>'</span> <span style="font-weight: bold; color: rgb(204, 51, 204);">$]</span></small> after replacing <small style="font-family: monospace; background-color: rgb(255, 255, 153);"><span style="color: red;"><span style="font-weight: bold; color: rgb(204, 51, 204);">${freq}</span></span></small> by its given value <span style="font-weight: bold;">default</span>
+(very importantly, please note that quotes are not automatically
+provided in this replacement process and have to be given explicitely,
+if necessary! This is why the title of the plot, in this case, must be
+given with quotes if it is a fixed string - see the tooltip message).
+Afterwards this Python code is evaluated to <span style="font-weight: bold; font-family: monospace; color: red; background-color: rgb(255, 255, 153);">''</span>, which will replace this whole code in the end.<br>
+After all these replacements, the template defined in line <span style="font-weight: bold;">36</span> will be replaced by the text <span style="font-weight: bold; font-family: monospace; color: red; background-color: rgb(255, 255, 153);">hist( x=rnorm(10000), breaks="Sturges",&nbsp; main="Histogram of normal distrib"&nbsp;&nbsp; )</span>, which will be presented to the user for pasting/running (as shown <a href="Help.html#Plots_a_histogram">above</a> for <span style="font-weight: bold;">Plots a histogram</span>).<br>
+<br>
+This mechanism allows the quick defintion of complex wizards through an
+easy to understand XML file. Moreover, it is very flexible and powerful
+as we can use Python code to post-process the values given by user in
+order to generate complex fragments of R code. However, there are two
+potential <big style="color: red; background-color: rgb(255, 255, 153);"><big><span style="font-weight: bold;"><a name="Security_issues"></a>security issues</span></big></big>:<br>
+<ol>
+  <li>in order to unleash the full power of Python (an example of complex string processing is given by the <span style="font-weight: bold; font-family: monospace;">plots_index_plot.xml</span> wizard), the Python code defined within <span style="font-weight: bold; font-family: monospace;">$[Python</span> and <span style="font-weight: bold; font-family: monospace;">$]</span> is allowed access to the <span style="font-weight: bold; font-family: monospace;">__builtins__</span>, which means that <span style="font-weight: bold; color: red;">malicious code can even delete all your files</span> (see here a discussion: <a href="http://diveintopython3.org/advanced-iterators.html#eval">http://diveintopython3.org/advanced-iterators.html#eval</a>) </li>
+  <li>even if the Python code within the template won't format your HDD and eat your cat, there is the possibility that <span style="font-weight: bold; color: red;">the generated R code will do that</span>.</li>
+</ol>
+Thus: <big style="color: red; background-color: rgb(255, 255, 153);"><span style="font-weight: bold;"><br>
+<br>
+</span></big>
+<div style="text-align: center;"><big style="color: red; background-color: rgb(255, 255, 153);"><span style="font-weight: bold;">CHECK THE WIZARDS FOR NASTY PYTHON AND R CODE!</span></big><br>
+<big style="color: red; background-color: rgb(255, 255, 153);"><span style="font-weight: bold;">INSPECT THE GENERATED R CODE UNLESS YOU TRUST THE WIZARD!</span></big><br>
+</div>
+<br>
+Don't say you haven't been warned! If you don't have any wizards
+installed or you have checked those you have, then you should be safe.<br>
+<br>
+And to close on an optimisitc note, <span style="font-weight: bold;">you can write your own wizards</span>!<br>
+<br>
+
+<ol>
+<ol><h2><a name="Profiles"></a>Profiles<br>
+    </h2></ol>
+</ol>
+
+
+<font style="line-height: 200%;"><span style="font-weight: bold;">Profiles</span> are very flexible and powerful and have their own dedictaed help file (also accessible from rgedit's "Edit profiles" dialog) <a href="Help-profiles.html">here</a>.</font><br>
+<br>
+<br>
+<ol><ol><h2><a name="Notes_and_FAQ"></a>Notes and FAQ<br>
+    </h2>
+  </ol>
+</ol>
+<p align="left"><font style="line-height: 200%;">These are several
+notes and questions on
+different aspects of Rgedit:<br>
+</font></p>
+<ol start="1" style="list-style-type: lower-roman;">
+  <li><span style="font-weight: bold;">Quitting R in a console</span>:
+it is possible to quit R in an R console in the usual way (i.e, <span style="font-family: monospace;">q()</span>) but note that the
+workspace is not automatically saved on exit nor is the system asking
+you for that (namely, the R sessions are spawned with&nbsp; <span style="font-family: monospace;">--no-save --no-restore</span>
+arguments). Upon quitting, a standard <span style="font-family: monospace;"></span>shell is available from with R
+can be relaunched (with <span style="font-family: monospace;">R
+--no-save --no-restore</span>) or any other command executed as you
+would do from a normal shell;<br>
+    <span style="font-weight: bold;"></span></li>
+  <li><span style="font-weight: bold;"><a name="ClosingRConsole"></a>Closing
+R console tabs:</span>
+there can be at most three R console tabs simultaneously open and only
+consoles 2 and 3 can be closed. To do this, quit R in the standard
+manner (see above) and simply type <span style="font-family: monospace;">exit</span> when in the <span style="font-family: monospace;"></span>shell. Typing <span style="font-family: monospace;">exit</span> in the first R console
+(after quitting R there) will have no effect (technically, it will
+respawn a <span style="font-family: monospace;"></span>shell after
+quitting the current one);</li>
+  <li><span style="font-weight: bold;">Defining, running and deleting
+source code blocks:</span> blocks are contiguous sequences of source
+code starting at the begining of a given line and ending at the
+begining of another line. They are marked with symbols in the left
+margin and colored background. There can be only two blocks defined at
+any moment in a given source file, identified as block 1 and block 2.
+Block 1 is marked with symbols&nbsp;<img src="../block1_start.png" style="width: 24px; height: 24px;" alt="" title="Block 1 start" align="middle"> and <img src="../block1_end.png" style="width: 24px; height: 24px;" alt="" title="Block 1 end" align="middle"> and the background color is <font style="background-color: lightblue;">light blue</font> (for
+an example, see the <a href="#Screenshot1">first screenshot</a>),
+while block 2 is marked with symbols&nbsp;<img src="../block2_start.png" style="width: 24px; height: 24px;" alt="" title="Block 2 start" align="middle"> and&nbsp;<img src="../block2_end.png" style="width: 24px; height: 24px;" alt="" title="Block 2 end" align="middle"> and the background color is <font style="background-color: gold;">gold</font>. Defining a block
+is very easy: just select the lines you want to be contained (not
+necessarily starting at the beging of the first and ending at end of
+the last line) and press the define block 1&nbsp;<img src="../block1_def.png" style="width: 24px; height: 24px;" alt="" title="Define block 1" align="middle"> or define block 2&nbsp;<img src="../block2_def.png" style="width: 24px; height: 24px;" alt="" title="Define block 2" align="middle"> toolitem or menu entries: if
+the block was already defined it will be simply replaced with the new
+one. Please, note that the last line of the block is actually the
+beginning of the last selected line plus one. Editing the text within a
+defined block will cause the block to automatically adjust;</li>
+  <li><span style="font-weight: bold;"><a name="CopyPaste"></a>Copy and
+paste in the R console</span>:
+in an R console, <span style="font-weight: bold;">&lt;Ctrl+V&gt;</span>
+can be used to Paste but <span style="font-weight: bold;">&lt;Ctrl+C&gt;</span> can still used to stop the current R process, but it can also be allowed to copy the current selection; however, the <a href="#RConsoleMenu">right-click</a> menu gives easy access to Copy
+and Paste actions;</li>
+  <li><span style="font-weight: bold;"><a name="PromptColor"></a>Text
+coloring in R console</span>:
+due to the fact that the interaction with R is done through the
+terminal (see note <a href="Help.html#CommunicateWithR">viii</a>), the
+amount of coloring text is limited; however, the R promot
+can be colored using <a href="http://www.frexx.de/xterm-256-notes/">xterm
+escape sequences</a> and this helps a lot in easily identifying
+commands entered as opposed to text produced by R. However, due to the
+way in which the prompt character length is computed by R's line
+editor, these escape sequences are considered by R as actual
+characters, resulting in <span style="font-weight: bold;">corruptions
+of the current line</span> (extra characters at the begining). If the
+advantage of having a colored prompt exceed the corruption of the
+current line during editing, then feel free to enable this option;<br>
+  </li>
+  <li><span style="font-weight: bold;">Icons and artwork in general</span>:
+as you have probably noted, I am definitely <span style="font-weight: bold; font-style: italic;">not</span> the most
+gifted artist in the Universe! Couple this with my tendency towards
+minimalism and you get the icons and design in <span style="font-weight: bold;">Rgedit</span>. However, .if you have better
+skills and ideas, please consider contributing to the project on <a href="http://sourceforge.net/projects/rgedit/">SourceForge</a>.</li>
+  <li><span style="font-weight: bold;">GTK+ and Python programming</span>:
+also, please note that even if I do have a lot of (especially C/C++)
+programming experience, this is my first ever project using <font style="line-height: 200%;"><a href="http://www.gtk.org/">GTK+</a>&nbsp;<a href="http://www.gtk.org/"><img src="gtk-icon.jpeg" alt="" title="GTK+ logo" style="border: 0px solid ; width: 22px; height: 24px;" align="middle"></a>
+    </font> and <a href="http://www.python.org/">Pyhton</a>&nbsp;<a href="http://www.python.org/"><img src="python-logo.jpeg" alt="" title="Python logo" style="border: 0px solid ; width: 24px; height: 24px;" align="middle"></a>
+(more exactly, <a href="http://www.pygtk.org/">PyGTK</a>), so please
+be
+forgiving about less than optimal (to be nice) programming decisions.
+Again, if you feel you can improve bits an pieces please consider
+contributing to the project on <a href="http://sourceforge.net/projects/rgedit/">SourceForge</a>;</li>
+  <li><span style="font-weight: bold;"><a name="CommunicateWithR"></a>Why
+communicate with R through
+the console as opposed to embedding the shared library?</span> This is
+a legitimate question, given that the embedding of R's shared library
+is <a href="http://cran.r-project.org/doc/manuals/R-exts.html#Embedding-R-under-Unix_002dalikes">the
+recommended strategy</a> for building R GUIs and a number of R IDEs
+(including <a href="http://rkward.sourceforge.net/">rkward</a>) do it
+this way? Well, this decision has both pros and cons (as usual). The <span style="font-weight: bold;">cons</span> are obvious and
+include limited interaction with R (e.g., Rgedit
+cannot browse, display and edit in a nice way the defined objects in
+the current workspace) but the <span style="font-weight: bold;">pros</span>
+include a lighter and
+faster IDE which does not require any compiling nor does it bring R
+down because of its own bugs (no
+criticism of other IDEs intended!). Plus, it's much easier to write and
+maintain. If you think otherwise, please let me know your reasons and
+suggestions and either contribute to this project, start a new one or
+use one of the other IDEs/editors listed <a href="http://www.sciviews.org/_rgui/">here</a>;</li>
+  <li><span style="font-weight: bold;">To whom is Rgedit best addressed?</span>
+I designed <span style="font-weight: bold;">Rgedit</span> with the
+proficient/professional R user in mind, a user which does not need a
+menu-driven interface to data analysis but is comfortable with the
+script itself, the R extensive help and R's website search facilities.
+Such a user supposedly would need a way to edit their extensive and
+complex R scripts and a good editor like gedit would obviously help.
+They would also need a way to pipe sections of this script into R and
+see what happens. Eventually, using <span style="font-family: monospace;">relimp</span>'s very good <span style="font-family: monospace;">showData()</span> function to see how
+a <span style="font-family: monospace;">data.frame</span> looks and
+very rarely <span style="font-family: monospace;">fix()</span> to edit
+it would be more than enough. For beginners and casual users I would
+certainly recommend <a href="http://rkward.sourceforge.net/">rkward</a>,
+    <a href="http://jgr.markushelbig.org/JGR.html">JGR</a> or <a href="http://socserv.mcmaster.ca/jfox/Misc/Rcmdr/">R Commander</a>
+instead!<br>
+  </li>
+</ol>
+<br>
+<ol>
+  <ol>
+    <h2><a name="Acknowledgements"></a>Acknowledgements<br>
+    </h2>
+  </ol>
+</ol>
+This project would not have been
+possible without the <a href="www.r-project.org">R project</a> in the
+first place, and the ideas I've got from its pre-existing IDEs, mainly <a href="http://rkward.sourceforge.net/">rkward</a>, <a href="http://sourceforge.net/projects/tinn-r/">Tinn-R</a> and <a href="http://jgr.markushelbig.org/JGR.html">JGR</a> - congratulations
+for a very good job! Secondly, I have been helped a lot by various
+examples, tutorials and dicussions concerning GTK+, pygtk and python,
+too many to be included here, but very important ones are <a href="http://www.pygtk.org/">http://www.pygtk.org/</a>, <a href="http://library.gnome.org/devel/references">http://library.gnome.org/devel/references</a>,
+<a href="http://live.gnome.org/Gedit/PythonPluginHowTo">http://live.gnome.org/Gedit/PythonPluginHowTo</a>,
+<a href="http://www.python.org/">http://www.python.org/</a> and Paolo
+Borelli's old VTE terminal for gedit python code (included in <a href="http://ftp.gnome.org/pub/gnome/sources/gedit-plugins/2.26/gedit-plugins-2.26.3.tar.gz">gedit-plugins
+2.6.23</a>).
+The wizards idea has been initially discussed with Aleksandar Blagotić
+and some have been inspired by Rcommander and the standard Windows R
+GUI.<br>
+<br>
+<br>
+I hope you will enjoy using <img src="../Rgedit-icon.png" style="width: 64px; height: 64px;" alt="Rgedit" title="Rgedit logo" align="middle">,<br>
+best wishes,<br><a href="http://www.mpi.nl/people/dediu-dan" target="_blank">
+Dan Dediu</a><br>
+<br>
+December 2012,<br>
+Ede, The Netherlands<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</body></html>

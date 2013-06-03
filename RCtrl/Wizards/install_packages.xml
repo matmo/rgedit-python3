@@ -1,0 +1,27 @@
+<!-- Define a rwizard -->
+<rwizard name="installpackages" description="Install packages from a CRAN mirror" 
+         menu="/Package management" icon="install_packages.png">
+    <about 
+        name="Install packages"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Install packages from a CRAN mirror"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="install_packages.png"/>
+        
+    <help rhelp="?install.packages"/>
+
+    <vars/>  
+
+    <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+    <!-- ATTENTION! in the R code template you must use XML substitution codes (e.g., "<" must be given as "&lt;")! -->
+    <template> 
+install.packages(NULL, .libPaths()[1L], dependencies = NA,type = getOption("pkgType"))
+    </template> 
+
+</rwizard>

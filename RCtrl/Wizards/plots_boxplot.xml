@@ -1,0 +1,34 @@
+<!-- Define a rwizard -->
+<rwizard name="boxplot" description="Boxplot of a single variable" 
+         menu="/Plots" icon="plots_boxplot.png">
+    <about 
+        name="Boxplot"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Boxplot of a single variable. Inspired by R Commander's 'Boxplot'"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="plots_boxplot.png"/>
+        
+    <help rhelp="?boxplot"/>
+
+    <vars>  
+        <block title="Boxplot's parameters...">
+            <variable name="x" description="The variable/formula to be plotted" type="text" default="" required="True" tooltip="A numeric vector, a list of vectors or a formula (see &lt;b&gt;?boxplot&lt;/b&gt; for details)"/>
+            <variable name="names" description="The group labels" type="text" default='default' required="True" tooltip="Character vector of expression (see &lt;b&gt;?plotmath&lt;/b&gt;)"/>
+            <variable name="main" description="The plot's main title" type="text" default="default" required="True" tooltip="Make sure to quote fixed strings!"/>
+            <variable name="xlab" description="The x-axis label" type="text" default="default" required="True" tooltip="Make sure to quote fixed strings!"/>
+            <variable name="ylab" description="The y-axis label" type="text" default="default" required="True" tooltip="Make sure to quote fixed strings!"/>
+        </block>
+    </vars>  
+
+    <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+    <template> 
+boxplot( ${x} $[Python ('',', names=${names}')[not ('${names}'=='default')] $] $[Python ('',', main=${main}')[not ('${main}' == "default")] $] $[Python ('',', xlab=${xlab}')[not ('${xlab}' == "default")] $] $[Python ('',', ylab=${ylab}')[not ('${ylab}' == "default")] $] )
+    </template> 
+
+</rwizard>

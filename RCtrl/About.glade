@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<glade-interface>
+  <!-- interface-requires gtk+ 2.12 -->
+  <!-- interface-naming-policy toplevel-contextual -->
+  <widget class="GtkAboutDialog" id="AboutDialog">
+    <property name="border_width">9</property>
+    <property name="type_hint">normal</property>
+    <property name="program_name">rgedit</property>
+    <property name="version">0.8</property>
+    <property name="copyright" translatable="yes">(c) 2009 - 2012, Dan Dediu</property>
+    <property name="comments" translatable="yes">Plug-in transforming gedit into a light-weight IDE
+primarily for the statistical language R, but also 
+for Octave, Python, and even remote SSH sessions.</property>
+    <property name="website">http://sourceforge.net/projects/rgedit/</property>
+    <property name="license" translatable="yes">    Rgedit: gedit plugin for R
+    Copyright (C) 2009-2010  Dan Dediu
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</property>
+    <property name="authors">Dan Dediu</property>
+    <property name="translator_credits" translatable="yes" comments="TRANSLATORS: Replace this string with your names, one name per line.">translator-credits</property>
+    <property name="logo">Rgedit-icon.png</property>
+    <child internal-child="vbox">
+      <widget class="GtkVBox" id="dialog-vbox1">
+        <property name="visible">True</property>
+        <property name="spacing">2</property>
+        <child>
+          <placeholder/>
+        </child>
+        <child internal-child="action_area">
+          <widget class="GtkHButtonBox" id="dialog-action_area1">
+            <property name="visible">True</property>
+          </widget>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</glade-interface>

@@ -1,0 +1,53 @@
+<!-- Define a rwizard -->
+<rwizard name="corr" description="Compute correlation" 
+         menu="/Association tests/Correlation" icon="corr.png" toolbar="false" shortcut="Ctrl+Alt+C"
+         selectionas="V1">
+    <!-- name and description provide user-visible text, 
+         menu gives the desired menu entry, icon the desired icon, toolbar if it should be shown on toolbar, shortcut the desired keyboard shortcut
+         (all 4 be overridden by the user) 
+         selectionas means that if any text is currently selected then it will be the initial value of the given variable (works only for text variables) -->
+    <about 
+        name="Compute correlation"
+        version="0.1"
+        copyright="(c) 2010 Dan Dediu"
+        comments="Compute a simple correlation between two variables"
+        license="GLPv3"
+        website="http://rgedit.sourceforge.net/"
+        authors="Dan Dediu &lt;ddediu@hotmail.com&gt;,Also Me &lt;me@gamil.com&gt;" 
+        documenters=""
+        artists=""
+        translator_credits=""
+        logo_icon_name="corr.png"/>
+        
+    <help file="corr-help.html"/> <!-- could be url="..." instead -->
+
+    <vars>  
+        <!-- Define the variables (placeholders) -->
+    
+        <!-- This will be a single dialog (screen) in the vertical order given -->
+        <block title="Please select the variables...">
+            <variable name="V1" description="First variable" type="text" default="" required="True"/>
+            <variable name="V2" description="Second variable" type="text" default="" required="True"/>
+        </block>
+        
+        <block title="... and the method">  <!--  This will be the next dialog (screen), for test purposes only -->
+            <variable name="Method" description="Method" type="list" singlechoice="True" default="0" required="False">  <!-- "singlechoice" lists are displayed as comboboxes -->
+                <value name="Pearson"/>
+                <value name="Spearman"/>
+                <value name="Kendall"/>
+            </variable> 
+            <variable name="Print" description="Print the result?" type="bool" default="True" required="False"/>  <!-- checkbox -->
+        </block>
+        
+    </vars>  
+
+    <!-- The actual R code template: only strange thing is the placeholders call using ${PLACEHOLDER_NAME} -->
+    <template> 
+if( $[Python str(${Print}).upper() $] ) {
+    print( cor.test( ${V1}, ${V2}, method="${Method}" ) );
+} else {
+    cor.test( ${V1}, ${V2}, method="${Method}" );
+}
+    </template> 
+
+</rwizard>
