@@ -58,7 +58,7 @@ from xml.dom import minidom
 import xml.sax.saxutils
 import re
 import signal
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import webbrowser
 
 
@@ -2336,14 +2336,14 @@ class RCtrlWindowHelper(GObject.Object):
         
         # And the latest version available on the server:
         try:
-            latest_version = urllib2.urlopen('http://rgedit.sourceforge.net/latest.version.gtk3').read()
+            latest_version = urllib.request.urlopen('http://rgedit.sourceforge.net/latest.version.gtk3').read()
         except:
             error_dialog = Gtk.MessageDialog( None, Gtk.DialogFlags.MODAL, Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, _("Cannot read the latest available version from rgedit's website!\nPlease, try again later...") )
             error_dialog.run()
             error_dialog.destroy()
             return
         try:
-            wizards_latest_version = urllib2.urlopen('http://rgedit.sourceforge.net/wizards.latest.version').read()
+            wizards_latest_version = urllib.request.urlopen('http://rgedit.sourceforge.net/wizards.latest.version').read()
         except:
             error_dialog = Gtk.MessageDialog( None, Gtk.DialogFlags.MODAL, Gtk.MessageType.ERROR, Gtk.ButtonsType.OK, _("Cannot read the latest available version of the wizards package from rgedit's website!\nPlease, try again later...") )
             error_dialog.run()
@@ -4145,7 +4145,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         self.save_prefs()
         
         # Force rebuilding the profile menus for all windows:
-        for window in self._instances.keys():
+        for window in list(self._instances.keys()):
             self._instances[window].create_or_update_profiles_menu(update_menus=True)
         
         return
@@ -4909,7 +4909,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
             self.prefs['R_structure_functions'] = check_IncludeFunctionsCheck.get_active()
             self.prefs['R_structure_dataframes'] = check_IncludeDataframesCheck.get_active()
             # Update the panels of all windows:
-            for window in self._instances.keys():
+            for window in list(self._instances.keys()):
                 self._instances[window]._rstructurepanel.create_pattern_matcher()
                 self._instances[window]._rstructurepanel.on_force_refresh(None)
             
@@ -4958,7 +4958,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
             # Update the folding:
             if not self.prefs['use_rgedit_code_folding']:
                 # Unfold everything:
-                for window in self._instances.keys():
+                for window in list(self._instances.keys()):
                     for view in window.get_views():
                         self.code_folding_engine.unfold_all(view.get_buffer(),view) 
             
