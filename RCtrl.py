@@ -3149,7 +3149,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
             
         # Load the saved preferences:
         try:
-            pref_file = open(os.path.expanduser("~/.rgedit-preferences"),"r")
+            pref_file = open(os.path.expanduser("~/.rgedit-preferences"),"rb")
             saved_prefs = pickle.load(pref_file)
             pref_file.close()
             for i in list(self.prefs.keys()):
@@ -3452,7 +3452,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
 
     def save_prefs(self):
         try:
-            pref_file = open(os.path.expanduser("~/.rgedit-preferences"),"w")
+            pref_file = open(os.path.expanduser("~/.rgedit-preferences"),"wb")
             pickle.dump(self.prefs,pref_file)
             pref_file.close()
         except:
