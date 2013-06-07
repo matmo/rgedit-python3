@@ -3338,7 +3338,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         for signal in ('tab-added', 'tab-removed', 'active-tab-changed'):
             method = getattr(self, 'on_window_' + signal.replace('-', '_'))
             handler_ids.append(self.window.connect(signal, method))
-        self.window.set_data(self.id_name, handler_ids)
+        self.window.RCtrlPlugin = handler_ids
 
         for view in self.window.get_views():
             self.connect_view(view,self._instances[self.window])
@@ -3354,7 +3354,7 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
 
     def connect_view(self, view, rctrlwindowhelper):
         handler_id = view.connect('populate-popup', self.on_view_populate_popup, rctrlwindowhelper)
-        view.set_data(self.id_name, [handler_id])
+        view.RCtrlPlugin = [handler_id]
         
         # Key press dispatcher for processing the shortcuts:
         handler_id = view.connect('key_press_event', self.on_view_key_press_event, rctrlwindowhelper)
@@ -3369,7 +3369,10 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
         self.connect_view(tab.get_view(),self._instances[window])
         
         doc = tab.get_document()
-        handler_id = doc.get_data(self.id_name)
+        if hasattr(doc, "RCtrlPlugin"):
+            handler_id = doc.get_data(self.id_name)
+        else:
+            handler_id = None
         if handler_id is None:
             self.connect_document(doc,window)
 
@@ -3711,13 +3714,16 @@ class RCtrlPlugin(GObject.Object, Gedit.WindowActivatable):
     def connect_document(self, doc, window):
         handler_id = doc.connect("saved", self.on_document_saved, window)
         handler_id = doc.connect("loaded", self.on_document_loaded, window)
-        doc.set_data(self.id_name, [handler_id])
+        doc.RCtrlPlugin = [handler_id]
 
     def on_window_tab_added(self, window, tab):
         self.connect_view(tab.get_view(),self._instances[window])
         
         doc = tab.get_document()
-        handler_id = doc.get_data(self.id_name)
+        if hasattr(doc, "RCtrlPlugin"):
+            handler_id = doc.RCtrlPlugin
+        else:
+            handler_id = None
         if handler_id is None:
             self.connect_document(doc,window)
 
